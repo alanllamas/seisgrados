@@ -10,18 +10,15 @@
 	<p><strong>Los campos obligatorios están marcados con *</strong></p>
 	
 	<div id="formularioC" ng-controller="MainCtrl as main">
-		<form action="">
-			<cuenta></cuenta>
-			<hr>
-			<personal></personal>
-			<hr>
-			<estudios></estudios>	
-			<hr>	
-			<buscas></buscas>	
-			<hr>
-			<membresia></membresia>	
-			<hr>
-			<fotografia></fotografia>
+		<button  ng-click="main.currStep(1)" >Empezar</button>
+		{{main.step}}
+		<form novalidate ng-switch="main.step" >
+			<cuenta ng-switch-when="1" ></cuenta>
+			<personal ng-switch-when="2"></personal>
+			<estudios ng-switch-when="3"></estudios>		
+			<buscas ng-switch-when="4"></buscas>	
+			<membresia ng-switch-when="5"></membresia>	
+			<fotografia ng-switch-when="6"></fotografia>
 
 		</form>
 	</div>

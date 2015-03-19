@@ -2,10 +2,27 @@
 	var app = angular.module('wizard', []);
 
 	app.controller('MainCtrl', ['$scope', function ($scope) {
-
-		this.currStep = function  () {
-			
-		}
+		this.step = 0;
+		this.currStep = function (curr) {
+			if (curr === 1) {
+				return this.step = curr;
+			};
+			if (curr === 2) {
+				return this.step = curr;
+			};
+			if (curr === 3) {
+				return this.step = curr;
+			};
+			if (curr === 4) {
+				return this.step = curr;
+			};
+			if (curr === 5) {
+				return this.step = curr;
+			};
+			if (curr === 6) {
+				return this.step = 6;
+			};
+		};
 	}]);
 
 	app.directive('cuenta', [function () {
