@@ -1,29 +1,1028 @@
-
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Seis Grados</title>
-	</head>
-<body ng-app="wizard">
-	<p>Completa hoy tu registro y vive Encuentros Inteligentes®</p>
-	<p><strong>Los campos obligatorios están marcados con *</strong></p>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Wizard</title>
+	<link rel="stylesheet" href="public/lib/angular-wizard/dist/angular-wizard.min.css">
+</head>
+<body ng-controller="MainCtrl as main" ng-app="myApp" >
+
+
+
+
+	<wizard name="wizard" on-finish="finishedWizard()"> 
+	    <wz-step title="Cuenta" canexit="pass">
+	    	<form name="cuenta" action="">
+
+				<h2>Datos para tu Cuenta</h2>
+
+				<div>
+
+					<h3>Nombres</h3>
+
+					<div>
+						<input required name="firstname" type="text" size="20" id="firstname" ng-model="firstname" >
+						<span>*</span>
+					</div>
+
+					<h3>Apellidos</h3>
+
+					<div>
+						<input required name="lastname" type="text" size="20" id="lastname" ng-model="lastname" >
+						<span>*</span>
+					</div>
+
+				</div>
+
+				<div>
+					<h3>Correo Electrónico</h3>
+					<div>
+						<input required name="email" type="text" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" >
+						<span>*</span>
+					</div>
+
+					<h3>Confirmación de Correo Electrónico</h3>
+
+					<div>
+						<input required name="confirm" type="text" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+						<span>*</span>
+					</div>
+
+				</div>
+
+				<div>
+					<h3>Contraseña</h3>
+					<div>
+						<input required name="password" type="text" size="30" maxlength="30" id="password" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="password" >
+						<span>*</span>
+					</div>
+					<h3>Confirmación de Contraseña</h3>
+					<input required name="confirmPassword" type="text" size="30" id="confirmPassword"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+					<span>*</span>
+				</div>
+
+				<div>
+
+					<h3>¿Cómo nos encontraste?</h3>
+					<div>
+
+						<select required name="found" id="found" ng-model="found" >
+
+							<option selected>selecciona...</option>
+							<option value="Participante de la Revista Moi">Participante de la Revista Moi</option>
+							<option value="Actitud FEM">Actitud FEM</option>
+							<option value="Airport Style">Airport Style</option>
+							<option value="Alto Nivel">Alto Nivel</option>
+							<option value="El Efecto Leopi">El Efecto Leopi</option>
+							<option value="El Financiero">El Financiero</option>
+							<option value="El Respetable">El Respetable</option>
+							<option value="Email">Email</option>
+							<option value="Estilo DF">Estilo DF</option>
+							<option value="Facebook">Facebook</option>
+							<option value="Forbes">Forbes</option>
+							<option value="GQ">GQ</option>
+							<option value="Google">Google</option>
+							<option value="Intrend Magazine">Intrend Magazine</option>
+							<option value="Linked In">Linked In</option>
+							<option value="Martha Debayle">Martha Debayle</option>
+							<option value="Milenio">Milenio</option>
+							<option value="Mojoe">Mojoe</option>
+							<option value="Moi">Moi</option>
+							<option value="Netas Divinas">Netas Divinas</option>
+							<option value="Networking Nights">Networking Nights</option>
+							<option value="Radio">Radio</option>
+							<option value="Recomendacion de un amigo">Recomendacion de un amigo</option>
+							<option value="Recomendacion de un socio">Recomendacion de un socio</option>
+							<option value="S1ngular">S1ngular</option>
+							<option value="Smartbox">Smartbox</option>
+							<option value="Soho">Soho</option>
+							<option value="Soltera pero No Sola">Soltera pero No Sola</option>
+							<option value="Solteros Club">Solteros Club</option>
+							<option value="The Box Club">The Box Club</option>
+							<option value="Televisión">Televisión</option>
+							<option value="Twitter">Twitter</option>
+							<option value="Otros">OTROS</option>
+
+						</select>
+
+						<span>*</span>
+					</div>
+
+					<h3>Código Promocional o ID de Cuentahabiente</h3>
+					<div>
+						<input name="PromoCode" id="PromoCode" type="text" size="30" value="" ng-model="promocode" >
+					</div>
+
+				</div>
+			
+			
+		    	<input type="submit" wz-next value="Siguiente" />
+	    	</form>
+	    </wz-step>
+	    <wz-step title="Informacion Personal">
+        	<form name="pers" action="">
+				<div>
+
+					<h2>Datos Personales</h2>
+
+					<div>
+
+						<div>
+							<h3>Edad</h3>
+
+							<div>
+								<select name="age" id="age">
+									<option selected>edad</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+									<option value="61">61</option>
+									<option value="62">62</option>
+									<option value="63">63</option>
+									<option value="64">64</option>
+									<option value="65">65</option>
+								</select>
+								<span>*</span>
+							</div>
+						</div>
+
+						<div>
+							<h3>Género</h3>
+
+							<div>
+								<select name="sexo" id="sexo">
+									<option selected>Género...</option>
+									<option value="femenino">femenino</option>
+									<option value="masculino">masculino</option>
+								</select>
+								<span>*</span>
+							</div>
+						</div>
+
+						<div>
+							<h3>Estatura</h3>
+
+							<div>
+								<select name="estatura">
+									<option>Estatura...</option>
+									<option value="1.50 o menos">1.50 o menos</option>
+									<option value="1.51">1.51</option>
+									<option value="1.52">1.52</option>
+									<option value="1.53">1.53</option>
+									<option value="1.54">1.54</option>
+									<option value="1.55">1.55</option>
+									<option value="1.56">1.56</option>
+									<option value="1.57">1.57</option>
+									<option value="1.58">1.58</option>
+									<option value="1.59">1.59</option>
+									<option value="1.60">1.60</option>
+									<option value="1.61">1.61</option>
+									<option value="1.62">1.62</option>
+									<option value="1.63">1.63</option>
+									<option value="1.64">1.64</option>
+									<option value="1.65">1.65</option>
+									<option value="1.66">1.66</option>
+									<option value="1.67">1.67</option>
+									<option value="1.68">1.68</option>
+									<option value="1.69">1.69</option>
+									<option value="1.70">1.70</option>
+									<option value="1.71">1.71</option>
+									<option value="1.72">1.72</option>
+									<option value="1.73">1.73</option>
+									<option value="1.74">1.74</option>
+									<option value="1.75">1.75</option>
+									<option value="1.76">1.76</option>
+									<option value="1.77">1.77</option>
+									<option value="1.78">1.78</option>
+									<option value="1.79">1.79</option>
+									<option value="1.80">1.80</option>
+									<option value="1.81">1.81</option>
+									<option value="1.82">1.82</option>
+									<option value="1.83">1.83</option>
+									<option value="1.84">1.84</option>
+									<option value="1.85">1.85</option>
+									<option value="1.86">1.86</option>
+									<option value="1.87">1.87</option>
+									<option value="1.88">1.88</option>
+									<option value="1.89">1.89</option>
+									<option value="1.90">1.90</option>
+									<option value="1.91">1.91</option>
+									<option value="1.92">1.92</option>
+									<option value="1.93">1.93</option>
+									<option value="1.94">1.94</option>
+									<option value="1.95">1.95</option>
+									<option value="1.96">1.96</option>
+									<option value="1.97">1.97</option>
+									<option value="1.98">1.98</option>
+									<option value="1.99">1.99</option>
+									<option value="2.00">2.00</option>
+									<option value="2.01">2.01 o más</option>
+								</select>
+								<span>*</span>
+							</div>
+						</div>
+
+						<div>	
+							<h3>Peso</h3>
+
+							<div>
+
+								<select name="peso">
+									<option>Peso...</option>
+									<option value="35 o menos">35 o menos</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+									<option value="61">61</option>
+									<option value="62">62</option>
+									<option value="63">63</option>
+									<option value="64">64</option>
+									<option value="65">65</option>
+									<option value="66">66</option>
+									<option value="67">67</option>
+									<option value="68">68</option>
+									<option value="69">69</option>
+									<option value="70">70</option>
+									<option value="71">71</option>
+									<option value="72">72</option>
+									<option value="73">73</option>
+									<option value="74">74</option>
+									<option value="75">75</option>
+									<option value="76">76</option>
+									<option value="77">77</option>
+									<option value="78">78</option>
+									<option value="79">79</option>
+									<option value="80">80</option>
+									<option value="81">81</option>
+									<option value="82">82</option>
+									<option value="83">83</option>
+									<option value="84">84</option>
+									<option value="85">85</option>
+									<option value="86">86</option>
+									<option value="87">87</option>
+									<option value="88">88</option>
+									<option value="89">89</option>
+									<option value="90">90</option>
+									<option value="91">91</option>
+									<option value="92">92</option>
+									<option value="93">93</option>
+									<option value="94">94</option>
+									<option value="95">95</option>
+									<option value="96">96</option>
+									<option value="97">97</option>
+									<option value="98">98</option>
+									<option value="99">99</option>
+									<option value="100 o más">100 o más</option>
+								</select>
+								<span>*</span>
+							</div>
+						</div>
+
+						<div>
+							<h3>Teléfono</h3>
+
+							<div>
+								<select name="tel1_tipo" id="tel1_tipo">
+									<option selected>tipo...</option>
+									<option value="casa">casa</option>
+									<option value="trabajo">trabajo</option>
+									<option value="celular">celular</option>
+									<option value="nextel">nextel</option>
+								</select>
+
+								<input id="lada"  value="LADA" name="lada" type="text" size="2" maxlength="3">
+								<span>*</span>
+								<input id="phone"  value="Teléfono" name="phone" type="text" size="9" maxlength="8">
+								<span>*</span></div>
+							</div>
+						</div>
+						
+						<div>
+							<h3>Vivo en Estado</h3>
+
+							<div>
+								<select name="estado" size="1">
+									<option>Seleccione...</option>
+									<option value="Aguascalientes">Aguascalientes</option>
+									<option value="Baja California ">Baja California </option>
+									<option value="Baja California Sur ">Baja California Sur </option>
+									<option value="Campeche ">Campeche </option>
+									<option value="Chiapas ">Chiapas </option>
+									<option value="Chihuahua ">Chihuahua </option>
+									<option value="Coahuila ">Coahuila </option>
+									<option value="Colima ">Colima </option>
+									<option value="Distrito Federal">Distrito Federal</option>
+									<option value="Durango ">Durango </option>
+									<option value="Estado de México ">Estado de México </option>
+									<option value="Guanajuato ">Guanajuato </option>
+									<option value="Guerrero ">Guerrero </option>
+									<option value="Hidalgo ">Hidalgo </option>
+									<option value="Jalisco ">Jalisco </option>
+									<option value="Michoacán ">Michoacán </option>
+									<option value="Morelos ">Morelos </option>
+									<option value="Nayarit ">Nayarit </option>
+									<option value="Nuevo León ">Nuevo León </option>
+									<option value="Oaxaca ">Oaxaca </option>
+									<option value="Puebla ">Puebla </option>
+									<option value="Querétaro ">Querétaro </option>
+									<option value="Quintana Roo ">Quintana Roo </option>
+									<option value="San Luis Potosí ">San Luis Potosí </option>
+									<option value="Sinaloa ">Sinaloa </option>
+									<option value="Sonora ">Sonora </option>
+									<option value="Tabasco ">Tabasco </option>
+									<option value="Tamaulipas ">Tamaulipas </option>
+									<option value="Tlaxcala ">Tlaxcala </option>
+									<option value="Veracruz ">Veracruz </option>
+									<option value="Yucatán ">Yucatán </option>
+									<option value="Zacatecas">Zacatecas</option>
+								</select>
+								<span>*</span>
+							</div>
+						</div>
+
+						<div>
+							<h3>Ciudad</h3>
+
+							<div>
+								<input name="ciudad" type="text" id="ciudad" size="20" />
+								<span>*</span>
+							</div>
+						</div>
+						
+						<div>
+							<h3>Delegación o Municipio</h3>
+
+							<div>
+								<input name="cp" type="text" id="cp" size="20" />
+							</div>
+						</div>		
+
+						<div>
+							<h3>Mi Estado civil</h3>
+
+							<div>
+								<select name="estadi_civil" id="estadi_civil">
+									<option selected>Selecciona..</option>
+									<option value="Soltero (a)">Soltero (a)</option>
+									<option value="Divorciado (a)">Divorciado (a)</option>
+									<option value="En proceso de divorcio">En proceso de divorcio</option>
+									<option value="Separado (a)">Separado (a)</option>
+									<option value="Viudo (a)">Viudo (a)</option>
+								</select>
+							</div>
+						</div>
+
+						<div>
+							<h3>¿Tienes hijos?</h3>
+
+							<div>
+								<p>
+									<input name="posesion_hijos" type="radio" id="radio"  value="si">
+									Sí
+									<input name="posesion_hijos" type="radio" id="radio2" value="no" checked="checked">
+									No 
+									<span>*</span>
+								</p>
+							</div>
+						</div>
+						
+						<div>
+							<h3>¿Cuantos?</h3>
+
+							<div>
+								<select name="cuantosHijos">
+									<option selected>Selecciona...</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="Más de 3">Más de 3</option>
+								</select>
+							</div>
+						</div>
+
+						<div>
+							<h3>Teléfono Adicional</h3>
+
+							<div>
+								<select name="tel2_tipo" id="tel2_tipo">
+									<option selected>tipo...</option>
+									<option value="casa">casa</option>
+									<option value="trabajo">trabajo</option>
+									<option value="celular">celular</option>
+									<option value="nextel">nextel</option>
+								</select>
+							
+								<input id="lada2" name="lada2" value="LADA" type="text" size="2" maxlength="3" onblur="if(this.value == ''){ this.value = 'LADA'; this.style.color = '#BBB';}" onfocus="if(this.value == 'LADA'){ this.value = ''; this.style.color = '#000';}">
+								<span>*</span>
+								<input id="phone2"  value="Teléfono" name="phone2" type="text" size="9" maxlength="8" onblur="if(this.value == ''){ this.value = 'Teléfono'; this.style.color = '#BBB';}" onfocus="if(this.value == 'Teléfono'){ this.value = ''; this.style.color = '#000';}">
+								<span>*</span>&nbsp; <span>Debe ser distinto del que ingresaste más arriba</span></div>
+							</div>
+						</div>
+
+						<div>
+							<h3>Correo Electrónico Adicional</h3>
+
+							<div>
+								<input name="email2" type="text" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+								<span>*</span>
+							</div>
+						</div>
+						
+						<div>
+							<h3>Confirmación de Correo Electrónico Adicional</h3>
+
+							<div>
+								<input name="email2confirma" type="text" size="30" id="email2confirma" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+								<span>*</span>
+							</div>
+						</div>
+						
+						<div>
+							<h3>Usuario de Facebook</h3>
+							
+							<div>
+								<input name="usuario_fb" type="text" size="20" maxlength="30" id="usuario_fb">
+							</div>
+						</div>
+
+						<div>
+							<h3>Usuario de Twitter</h3>
+
+							<div>
+								<input name="usuario_twitter" type="text" size="20" maxlength="30" id="usuario_twitter">
+							</div>
+						</div>
+						
+				</div>
+				<input type="submit" wz-previous value="Anterior" />
+		        <input type="submit" wz-next value="Siguiente" />
+    		</form>
+	        	
+	    </wz-step>
+	    <wz-step title="Estudios">
+        	<form name="estudios" action="">
+		        <div>
+
+					<h2>Estudios y trabajo</h2>
+
+					<div>
+
+						<h3>Máximo título académico</h3>
+
+						<div>
+							<select name="max_tit_academico" id="max_tit_academico" >
+								<option>Seleccione...</option>
+								<option value="Estudios de doctorado">Estudios de doctorado</option>
+								<option value="Estudios de maestría">Estudios de maestría</option>
+								<option value="Estudios de postgrado">Estudios de postgrado</option>
+								<option value="Estudios universitarios">Estudios universitarios</option>
+								<option value="Bachillerato general">Bachillerato general</option>
+								<option value="Profesional técnico">Profesional técnico</option>
+							</select>
+							<span>*</span>
+						</div>
+
+						<h4>Institución</h4>
+						<div>
+							<input type="text" name="institucion_educativa" id="institucion_educativa" />
+							<span>*</span>
+						</div>
+					</div>
+
+
+					<div>
+						<h3>Profesión</h3>
+						<div>
+							<select name="profesion" id="profesion"  onChange="profe()">
+								<option>Seleccione...</option>
+								<option value="Empleado (a)">Empleado (a)</option>
+								<option value="Empresario (a)">Empresario (a)</option>
+								<option value="Independiente">Independiente</option>
+								<option value="Burócrata">Burócrata</option>
+								<option value="Pensionado (a)">Pensionado (a)</option>
+								<option value="Desempleado (a)">Desempleado (a)</option>
+								<option value="Ejecutivo (a)">Ejecutivo (a)</option>
+								<option value="Gerente">Gerente</option>
+								<option value="Director (a)">Director (a)</option>
+								<option value="otra">Otra...</option>
+							</select>
+							<span>*</span>
+						</div>
+					</div>
+
+
+					<div>
+						<h3>Indica brevemente tu actividad laboral</h3>
+						<div>
+							<input name="actividad_laboral" type="text"  id="actividad_laboral" size="48"/>
+							<span>*</span>
+						</div>
+					</div>
+
+
+					<div>
+						<h3>Sector</h3>
+						<div>
+							<select name="sector" id="sector" >
+								<option>Seleccione...</option>
+								<option value="Agricultura/Pesca/Servicios forestales/Cuidado de animales">Agricultura/Pesca/Servicios forestales/Cuidado de animales</option>
+								<option value="Alta dirección">Alta dirección</option>
+								<option value="Arte / Diseño / Entretenimiento">Arte / Diseño / Entretenimiento </option>
+								<option value="Automóviles / Partes automotrices">Automóviles / Partes automotrices </option>
+								<option value="Bienes raíces">Bienes raíces </option>
+								<option value="Biotecnología / Farmacéutica ">Biotecnología / Farmacéutica </option>
+								<option value="Ciencias e investigación ">Ciencias e investigación </option>
+								<option value="Comercio / Ventas ">Comercio / Ventas </option>
+								<option value="Comunidad/Servicios sociales/Religión/Proyectos no lucrativos ">Comunidad/Servicios sociales/Religión/Proyectos no lucrativos </option>
+								<option value="Construcción / Minería / Obreros especializados ">Construcción / Minería / Obreros especializados </option>
+								<option value="Control de calidad y seguridad ">Control de calidad y seguridad </option>
+								<option value="Diseño gráfico / Interiores / Modas ">Diseño gráfico / Interiores / Modas </option>
+								<option value="Educación, cuidado infantil / Librerías ">Educación, cuidado infantil / Librerías </option>
+								<option value="Finanzas / Contabilidad / Seguros ">Finanzas / Contabilidad / Seguros </option>
+								<option value="Gobierno">Gobierno </option>
+								<option value="Hotelería / Turismo ">Hotelería / Turismo </option>
+								<option value="Industria manufacturera ">Industria manufacturera </option>
+								<option value="Ingeniería/arquitectura ">Ingeniería/arquitectura </option>
+								<option value="Instalación, mantenimiento y reparaciones ">Instalación, mantenimiento y reparaciones </option>
+								<option value="Joyería ">Joyería </option>
+								<option value="Labores administrativas y de oficina ">Labores administrativas y de oficina </option>
+								<option value="Labores generales ">Labores generales </option>
+								<option value="Legal ">Legal </option>
+								<option value="Medios / periodismo / impresión / Servicios editoriales ">Medios / periodismo / impresión / Servicios editoriales </option>
+								<option value="Mercadotecnia / publicidad / RP / Desarrollo de negocios ">Mercadotecnia / publicidad / RP / Desarrollo de negocios </option>
+								<option value="Operación / logística / Almacenaje ">Operación / logística / Almacenaje </option>
+								<option value="Recreación / deportes ">Recreación / deportes </option>
+								<option value="Recursos humanos ">Recursos humanos </option>
+								<option value="Restaurantes / Gastronomía ">Restaurantes / Gastronomía </option>
+								<option value="Servicio a clientes ">Servicio a clientes </option>
+								<option value="Servicios arreglo personal / Seguridad / Esparcimiento ">Servicios arreglo personal / Seguridad / Esparcimiento </option>
+								<option value="Servicios de protección / Seguridad ">Servicios de protección / Seguridad </option>
+								<option value="Servicios de salud / medicina ">Servicios de salud / medicina </option>
+								<option value="Software / sistemas de información / Desarrollo de hardware ">Software / sistemas de información / Desarrollo de hardware </option>
+								<option value="Tecnología de la información ">Tecnología de la información </option>
+								<option value="Transportes / Mudanzas de materiales ">Transportes / Mudanzas de materiales </option>
+								<option value="Ventas / Servicio a clientes ">Ventas / Servicio a clientes </option>
+							</select>
+							<span>*</span>
+						</div>
+					</div>
+
+				</div>
+				<input type="submit" wz-previous value="Anterior" />
+		        <input type="submit" wz-next value="Siguiente" />
+    		</form>
+	        	
+	    </wz-step>
+	    <wz-step title="¿Que Buscas?">
+        	<form name="buscas" action="">
+		        <div>
+
+					<h2>¿A quién buscas?</h2>
+
+					<div>
+
+						<h3>Busco alguien entre</h3>
+						<div>
+
+							<select name="edad1" id="edad1" >
+								<option>Edad...</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+								<option value="33">33</option>
+								<option value="34">34</option>
+								<option value="35">35</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+								<option value="45">45</option>
+								<option value="46">46</option>
+								<option value="47">47</option>
+								<option value="48">48</option>
+								<option value="49">49</option>
+								<option value="50">50</option>
+								<option value="51">51</option>
+								<option value="52">52</option>
+								<option value="53">53</option>
+								<option value="54">54</option>
+								<option value="55">55</option>
+								<option value="56">56</option>
+								<option value="57">57</option>
+								<option value="58">58</option>
+								<option value="59">59</option>
+								<option value="60">60</option>
+								<option value="61">61</option>
+								<option value="62">62</option>
+								<option value="63">63</option>
+								<option value="64">64</option>
+								<option value="65">65</option>
+								<option value="66">66</option>
+								<option value="67">67</option>
+								<option value="68">68</option>
+								<option value="69">69</option>
+								<option value="70">70</option>
+							</select>
+
+							<p>y</p>
+
+							<select name="edad2" id="edad2" >
+								<option>Edad...</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+								<option value="33">33</option>
+								<option value="34">34</option>
+								<option value="35">35</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+								<option value="45">45</option>
+								<option value="46">46</option>
+								<option value="47">47</option>
+								<option value="48">48</option>
+								<option value="49">49</option>
+								<option value="50">50</option>
+								<option value="51">51</option>
+								<option value="52">52</option>
+								<option value="53">53</option>
+								<option value="54">54</option>
+								<option value="55">55</option>
+								<option value="56">56</option>
+								<option value="57">57</option>
+								<option value="58">58</option>
+								<option value="59">59</option>
+								<option value="60">60</option>
+								<option value="61">61</option>
+								<option value="62">62</option>
+								<option value="63">63</option>
+								<option value="64">64</option>
+								<option value="65">65</option>
+								<option value="66">66</option>
+								<option value="67">67</option>
+								<option value="68">68</option>
+								<option value="69">69</option>
+								<option value="70">70</option>
+							</select>
+
+							<input type="hidden" name="edad_entre" id="edad_entre"/>
+							<span>*</span>
+						</div>
+
+					</div>
+
+					<div>
+						<h3>Quisiera conocer</h3>
+						<div>
+							<p>
+								<input type="radio" name="quisiera_conocer" id="radio60" value="Hombre" />
+								Hombre
+								<input type="radio" name="quisiera_conocer" id="radio61" value="Mujer" />
+								Mujer 
+								<span>*</span>
+							</p>
+						</div> 
+					</div>
+
+					<div>
+						<h3 id="etiqueta_gay_1">Soy</h3>
+						<div id="campo_gay_1">
+							<p>
+								<input type="radio" name="tipo_gay" id="gay_activo" value="Activo" />
+								Activo
+								<input type="radio" name="tipo_gay" id="gay_pasivo" value="Pasivo" />
+								Pasivo
+								<input type="radio" name="tipo_gay" id="gay_versatil" value="Versatil" />
+								Versátil
+							</p>
+						</div>
+					</div>
+
+					<div>
+						<h3 id="etiqueta_gay_2">Busco</h3>
+						<div id="campo_gay_2">
+							<p>
+								<input type="checkbox" name="busco_gay_activo" id="busco_gay_activo" value="Activo" />
+								Activo
+								<input type="checkbox" name="busco_gay_pasivo" id="busco_gay_pasivo" value="Pasivo" />
+								Pasivo
+								<input type="checkbox" name="busco_gay_versatil" id="busco_gay_versatil" value="Versátil" />
+								Versátil 
+							</p>
+						</div>
+					</div>
+				</div>
+		        <input type="submit" wz-previous value="Anterior" />
+		        <input type="submit" wz-next value="Siguiente" />
+    		</form>
+	        	
+	    </wz-step>
+	    <wz-step title="Membresia">
+        	<form name="memb" action="">
+		        <div>
+
+					<h2>Referente a tu membresía</h2>
+
+					<div>
+						<p>Debido a que nuestro servicio es Personalizado, Confidencial y Exclusivo, te pedimos que selecciones la Membresía que te gustaría adquirir el día de la Entrevista con tu Head Hunter Social:
+						</p> 
+					</div>
+
+					<div>
+
+						<h3>¿Qué tipo de membresía te interesa? <span>*</span></h3>
+						<div>
+							<h4>Membresía 3 Grados <input type="radio" name="tipo_membresia" id="radioTipoE" value="3Grados" /></h4>
+							<div>
+								<p>Incluye:</p>
+								<ul>
+								<li>3 Encuentros Inteligentes </li>
+								<li>Entrevista Personal de 60 Minutos con una Head Hunter Social</li>
+								<li>120 Minutos de Asesoría Personal o Virtual en temas de Comunicación e Imagen</li>
+								<li>1 Encuentro Adicional</li>
+								<li>Feedback de las fortalezas y debilidades en tus encuentros al final de tu proceso</li>
+								</ul>
+								<p>Costo: $3,900 MN (+ IVA) </p>
+							</div>
+						</div>
+
+
+
+
+						<div>
+							<h4>Membresía 6 Grados<input type="radio" name="tipo_membresia" id="radioTipoE" value="6Grados" /></h4>
+							<div>
+								<p>Incluye:</p>
+								<ul>
+									<li>6 Encuentros Inteligentes</li>
+									<li>Entrevista Personal de 60 minutos con una Head Hunter Social</li>
+									<li>120 Minutos de asesoría Personal o virtual en temas de Comunicación e Imagen</li>
+									<li>2 Encuentros Adicionales</li>
+									<li>Feedback de las fortalezas y debilidades en tus encuentros a la mitad de tu proceso</li>
+									<li>Feedback de las fortalezas y debilidades en tus encuentros al final de tu proceso</li>
+									<li>Un Acceso VIP al Evento Social de Seis Grados</li>
+								</ul>
+								<p>Costo: $5,900 MN (+ IVA) </p>
+							</div>
+						</div>
+
+					</div>
+
+					<div>
+						<p>En breve nos comunicaremos contigo vía telefónica, por lo que te solicitamos nos ayudes con tu disponibilidad de horario para que en la medida de lo posible podamos apegarnos al tiempo que tienes disponible. ¡Gracias!
+						</p>
+						<div>
+							<h4>Opción 1</h4>
+							<div>
+								<h5>Días:</h5>
+								<input name="dia_lu_1" id="dia_lu_1" type="checkbox" value="Lunes,"/>
+								Lu
+								<input name="dia_ma_1" id="dia_ma_1" type="checkbox" value="Martes,"/>
+								Ma
+								<input name="dia_mi_1" id="dia_mi_1" type="checkbox" value="Miércoles,"/>
+								Mi
+								<input name="dia_ju_1" id="dia_ju_1" type="checkbox" value="Jueves,"/>
+								Ju
+								<input name="dia_vi_1" id="dia_vi_1" type="checkbox" value="Viernes,"/>
+								Vi
+								<input name="dia_sa_1" id="dia_sa_1" type="checkbox" value="Sábado,"/>
+								Sa
+								<input name="dia_do_1" id="dia_do_1" type="checkbox" value="Domingo,"/>
+								Do 
+							</div>
+
+
+							<h5>Hora desde:</h5>
+
+							<select name="hora_entrevista_ini1" id="hora_entrevista_ini1" size="1">
+								<option>Seleccione...</option>
+								<option value="8am">8am</option>
+								<option value="9am">9am</option>
+								<option value="10am">10am</option>
+								<option value="11am">11am</option>
+								<option value="12pm">12pm</option>
+								<option value="1pm">1pm</option>
+								<option value="2pm">2pm</option>
+								<option value="3pm">3pm</option>
+								<option value="4pm">4pm</option>
+								<option value="5pm">5pm</option>
+								<option value="6pm">6pm</option>
+								<option value="7pm">7pm</option>
+								<option value="8pm">8pm</option>
+							</select>
+
+							<span>*</span>
+
+							<h5>hasta:</h5>
+
+							<select name="hora_entrevista_fin1" id="hora_entrevista_fin1" size="1">
+								<option>Seleccione...</option>
+								<option value="9am">9am</option>
+								<option value="10am">10am</option>
+								<option value="11am">11am</option>
+								<option value="12pm">12pm</option>
+								<option value="1pm">1pm</option>
+								<option value="2pm">2pm</option>
+								<option value="3pm">3pm</option>
+								<option value="4pm">4pm</option>
+								<option value="5pm">5pm</option>
+								<option value="6pm">6pm</option>
+								<option value="7pm">7pm</option>
+								<option value="8pm">8pm</option>
+								<option value="9pm">9pm</option>
+							</select>
+							<span>*</span>
+							<input type="hidden" name="entrevista_opc1" id="entrevista_opc1" value=""/></td>
+						</div>
+
+					</div>
+
+					<div>
+						<h4>Opción 2</h4>
+						<h5> Días:</h5>
+						<div>
+							<input name="dia_lu_2" id="dia_lu_2" type="checkbox" value="Lunes,"  />
+							Lu
+							<input name="dia_ma_2" id="dia_ma_2" type="checkbox" value="Martes,"  />
+							Ma
+							<input name="dia_mi_2" id="dia_mi_2" type="checkbox" value="Miércoles,"  />
+							Mi
+							<input name="dia_ju_2" id="dia_ju_2" type="checkbox" value="Jueves,"  />
+							Ju
+							<input name="dia_vi_2" id="dia_vi_2" type="checkbox" value="Viernes,"  />
+							Vi
+							<input name="dia_sa_2" id="dia_sa_2" type="checkbox" value="Sábado,"  />
+							Sa
+							<input name="dia_do_2" id="dia_do_2" type="checkbox" value="Domingo,"  />
+							Do 
+						</div>
+
+
+						<div>
+							<h5>Hora desde:</h5>
+								<select name="hora_entrevista_ini2" id="hora_entrevista_ini2" size="1">
+									<option>Seleccione...</option>
+									<option value="8am">8am</option>
+									<option value="9am">9am</option>
+									<option value="10am">10am</option>
+									<option value="11am">11am</option>
+									<option value="12pm">12pm</option>
+									<option value="1pm">1pm</option>
+									<option value="2pm">2pm</option>
+									<option value="3pm">3pm</option>
+									<option value="4pm">4pm</option>
+									<option value="5pm">5pm</option>
+									<option value="6pm">6pm</option>
+									<option value="7pm">7pm</option>
+									<option value="8pm">8pm</option>
+								</select>
+							<span>*</span> 
+							<h5>hasta:</h5>
+								<select name="hora_entrevista_fin2" id="hora_entrevista_fin2" size="1">
+									<option>Seleccione...</option>
+									<option value="9am">9am</option>
+									<option value="10am">10am</option>
+									<option value="11am">11am</option>
+									<option value="12pm">12pm</option>
+									<option value="1pm">1pm</option>
+									<option value="2pm">2pm</option>
+									<option value="3pm">3pm</option>
+									<option value="4pm">4pm</option>
+									<option value="5pm">5pm</option>
+									<option value="6pm">6pm</option>
+									<option value="7pm">7pm</option>
+									<option value="8pm">8pm</option>
+									<option value="9pm">9pm</option>
+								</select>
+							<span>*</span>
+						</div>
+						<input type="hidden" name="entrevista_opc2" id="entrevista_opc2" value=""/>
+					</div>
+
+				</div>
+		        <input type="submit" wz-previous value="Anterior" />
+		        <input type="submit" wz-next value="Siguiente" />
+    		</form>
+	        	
+	    </wz-step>
+	    <wz-step title="Fotografia">
+        	<form name="foto" action="">
+		        <div>
+					<h3>Fotografía</h3>
+					<div>
+						<h4>Seleccione...</h4>
+						<div>
+							<input id="photo" type="file" container_id="0" name="photo" accept="image/*" />
+							<p>Se acepta formato JPG o PNG</p>
+							<p>
+								<strong>
+									<span style="color:#ff3333">El tamaño no debe ser mayor a 5Mb</span>
+								</strong>
+							</p>
+							<p>
+							Te recordamos que tu información e imagen son exclusivamente de uso interno de Seis Grados y ten la tranquilidad que ninguno de los usuarios tendrá acceso a nuestro banco de imágenes, las cuales únicamente le ayudan a tu Head Hunter Social a reconocerte el día de tu entrevista.
+							</p>
+						</div>
+					</div>
+
+
+					<div>
+						<p>Buenas fotos</p>
+						<div><img src="" /></div>
+					</div>
+					<div>
+						<p>Se rechazarán las siguientes fotos</p>
+						<div><img src="" /></div>
+					</div>
+				</div>
+		        <input type="submit" wz-previous value="Anterior" />
+		        <input type="submit" wz-next value="Enviar" />
+    		</form>
+	        	
+	    </wz-step>
+	</wizard>
 	
-	<div id="formularioC" ng-controller="MainCtrl as main">
-		<button  ng-click="main.currStep(1)" >Empezar</button>
-		{{main.step}}
-		<form novalidate ng-switch="main.step" >
-			<cuenta ng-switch-when="1" ></cuenta>
-			<personal ng-switch-when="2"></personal>
-			<estudios ng-switch-when="3"></estudios>		
-			<buscas ng-switch-when="4"></buscas>	
-			<membresia ng-switch-when="5"></membresia>	
-			<fotografia ng-switch-when="6"></fotografia>
 
-		</form>
-	</div>
-
-	<script src="public/lib/angular/angular.min.js"></script>
+	<script src="public/lib/angular/angular.min.js" ></script>
 	<script src="js/app.js" ></script>
+	<script src="public/lib/angular-wizard/dist/angular-wizard.min.js" ></script>
+	<script src="public/lib/lodash/dist/lodash.compat.min.js" ></script>
+
 </body>
 </html>
