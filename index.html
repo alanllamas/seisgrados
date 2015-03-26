@@ -2,125 +2,101 @@
 <html lang="en" >
 <head>
 	<meta charset="UTF-8">
-	<title>Angular Wizard</title>
+	<title>HEXAGRADOS</title>
 	<link rel="stylesheet" href="public/lib/angular-wizard/dist/angular-wizard.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="MainCtrl as main" ng-app="myApp" >
 
 
 
 
-	<wizard name="wizard" on-finish="finishedWizard()"> 
+	<wizard name="wizard" edit-mode="true"> 
 	    <wz-step title="Cuenta" canexit="pass">
-	    	<form name="cuenta" action="">
+	    	<form novalidate class="form"  id="cuenta" name="cuenta">
 
 				<h2>Datos para tu Cuenta</h2>
 
-				<div>
+				<h3>Nombres</h3>
 
-					<h3>Nombres</h3>
-
-					<div>
-						<input required name="firstname" type="text" size="20" id="firstname" ng-model="firstname" >
-						<span>*</span>
-					</div>
-
-					<h3>Apellidos</h3>
-
-					<div>
-						<input required name="lastname" type="text" size="20" id="lastname" ng-model="lastname" >
-						<span>*</span>
-					</div>
-
-				</div>
-
-				<div>
-					<h3>Correo Electrónico</h3>
-					<div>
-						<input required name="email" type="text" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" >
-						<span>*</span>
-					</div>
-
-					<h3>Confirmación de Correo Electrónico</h3>
-
-					<div>
-						<input required name="confirm" type="text" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
-						<span>*</span>
-					</div>
-
-				</div>
-
-				<div>
-					<h3>Contraseña</h3>
-					<div>
-						<input required name="password" type="text" size="30" maxlength="30" id="password" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="password" >
-						<span>*</span>
-					</div>
-					<h3>Confirmación de Contraseña</h3>
-					<input required name="confirmPassword" type="text" size="30" id="confirmPassword"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+				
+					<input required name="firstname" type="text" size="20" id="firstname" ng-model="firstname" >
 					<span>*</span>
-				</div>
 
-				<div>
+				<h3>Apellidos</h3>
 
-					<h3>¿Cómo nos encontraste?</h3>
-					<div>
-
-						<select required name="found" id="found" ng-model="found" >
-
-							<option selected>selecciona...</option>
-							<option value="Participante de la Revista Moi">Participante de la Revista Moi</option>
-							<option value="Actitud FEM">Actitud FEM</option>
-							<option value="Airport Style">Airport Style</option>
-							<option value="Alto Nivel">Alto Nivel</option>
-							<option value="El Efecto Leopi">El Efecto Leopi</option>
-							<option value="El Financiero">El Financiero</option>
-							<option value="El Respetable">El Respetable</option>
-							<option value="Email">Email</option>
-							<option value="Estilo DF">Estilo DF</option>
-							<option value="Facebook">Facebook</option>
-							<option value="Forbes">Forbes</option>
-							<option value="GQ">GQ</option>
-							<option value="Google">Google</option>
-							<option value="Intrend Magazine">Intrend Magazine</option>
-							<option value="Linked In">Linked In</option>
-							<option value="Martha Debayle">Martha Debayle</option>
-							<option value="Milenio">Milenio</option>
-							<option value="Mojoe">Mojoe</option>
-							<option value="Moi">Moi</option>
-							<option value="Netas Divinas">Netas Divinas</option>
-							<option value="Networking Nights">Networking Nights</option>
-							<option value="Radio">Radio</option>
-							<option value="Recomendacion de un amigo">Recomendacion de un amigo</option>
-							<option value="Recomendacion de un socio">Recomendacion de un socio</option>
-							<option value="S1ngular">S1ngular</option>
-							<option value="Smartbox">Smartbox</option>
-							<option value="Soho">Soho</option>
-							<option value="Soltera pero No Sola">Soltera pero No Sola</option>
-							<option value="Solteros Club">Solteros Club</option>
-							<option value="The Box Club">The Box Club</option>
-							<option value="Televisión">Televisión</option>
-							<option value="Twitter">Twitter</option>
-							<option value="Otros">OTROS</option>
-
-						</select>
-
-						<span>*</span>
-					</div>
-
-					<h3>Código Promocional o ID de Cuentahabiente</h3>
-					<div>
-						<input name="PromoCode" id="PromoCode" type="text" size="30" value="" ng-model="promocode" >
-					</div>
-
-				</div>
 			
-			
-		    	<input type="submit" wz-next value="Siguiente" />
+					<input required name="lastname" type="text" size="20" id="lastname" ng-model="lastname" >
+					<span>*</span>
+		
+				<h3>Correo Electrónico</h3>
+					<input required name="email" type="email" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" >
+					<span>*</span>
+
+				<h3>Confirmación de Correo Electrónico</h3>
+
+					<input required name="confirm" type="email" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
+					<span>*</span>
+
+				<h3>Contraseña</h3>
+					<input required name="password" type="password" size="30" maxlength="30" id="password" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="password" >
+					<span>*</span>
+
+				<h3>Confirmación de Contraseña</h3>
+					<input required name="confirm" type="password" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmPassword" ui-validate="'$value === password'" ui-validate="'password'">
+					<span>*</span>
+
+				<h3>¿Cómo nos encontraste?</h3>
+
+					<select ng-model="found" required name="found" id="found" >
+						
+						<option value="" selected>Selecciona...</option>
+						<option value="Participante de la Revista Moi">Participante de la Revista Moi</option>
+						<option value="Actitud FEM">Actitud FEM</option>
+						<option value="Airport Style">Airport Style</option>
+						<option value="Alto Nivel">Alto Nivel</option>
+						<option value="El Efecto Leopi">El Efecto Leopi</option>
+						<option value="El Financiero">El Financiero</option>
+						<option value="El Respetable">El Respetable</option>
+						<option value="Email">Email</option>
+						<option value="Estilo DF">Estilo DF</option>
+						<option value="Facebook">Facebook</option>
+						<option value="Forbes">Forbes</option>
+						<option value="GQ">GQ</option>
+						<option value="Google">Google</option>
+						<option value="Intrend Magazine">Intrend Magazine</option>
+						<option value="Linked In">Linked In</option>
+						<option value="Martha Debayle">Martha Debayle</option>
+						<option value="Milenio">Milenio</option>
+						<option value="Mojoe">Mojoe</option>
+						<option value="Moi">Moi</option>
+						<option value="Netas Divinas">Netas Divinas</option>
+						<option value="Networking Nights">Networking Nights</option>
+						<option value="Radio">Radio</option>
+						<option value="Recomendacion de un amigo">Recomendacion de un amigo</option>
+						<option value="Recomendacion de un socio">Recomendacion de un socio</option>
+						<option value="S1ngular">S1ngular</option>
+						<option value="Smartbox">Smartbox</option>
+						<option value="Soho">Soho</option>
+						<option value="Soltera pero No Sola">Soltera pero No Sola</option>
+						<option value="Solteros Club">Solteros Club</option>
+						<option value="The Box Club">The Box Club</option>
+						<option value="Televisión">Televisión</option>
+						<option value="Twitter">Twitter</option>
+						<option value="Otros">OTROS</option>
+
+					</select>
+
+					<span>*</span>
+
+				<h3>Código Promocional o ID de Cuentahabiente</h3>
+					<input name="PromoCode" id="PromoCode" type="text" size="30" value=""  >
+		
+		    	<input type="submit" wz-next  ng-disabled="!cuenta.$valid" value="Siguiente" />
 	    	</form>
 	    </wz-step>
-	    <wz-step title="Informacion Personal">
-        	<form name="pers" action="">
+	    <wz-step title="Informacion Personal" canexit="pass">
+        	<form novalidate class="form"  id="pers" name="pers">
 				<div>
 
 					<h2>Datos Personales</h2>
@@ -131,8 +107,8 @@
 							<h3>Edad</h3>
 
 							<div>
-								<select name="age" id="age">
-									<option selected>edad</option>
+								<select ng-model="age" name="age" id="age" required>
+									<option value="" selected>edad</option>
 									<option value="25">25</option>
 									<option value="26">26</option>
 									<option value="27">27</option>
@@ -183,8 +159,8 @@
 							<h3>Género</h3>
 
 							<div>
-								<select name="sexo" id="sexo">
-									<option selected>Género...</option>
+								<select ng-model="main.sexo"  name="sexo" id="sexo" required>
+									<option value="" selected>Género...</option>
 									<option value="femenino">femenino</option>
 									<option value="masculino">masculino</option>
 								</select>
@@ -196,8 +172,8 @@
 							<h3>Estatura</h3>
 
 							<div>
-								<select name="estatura">
-									<option>Estatura...</option>
+								<select ng-model="estatura"  name="estatura" required>
+									<option selected value="">Estatura...</option>
 									<option value="1.50 o menos">1.50 o menos</option>
 									<option value="1.51">1.51</option>
 									<option value="1.52">1.52</option>
@@ -260,8 +236,8 @@
 
 							<div>
 
-								<select name="peso">
-									<option>Peso...</option>
+								<select ng-model="peso" name="peso" required>
+									<option selected value="">Peso...</option>
 									<option value="35 o menos">35 o menos</option>
 									<option value="36">36</option>
 									<option value="37">37</option>
@@ -337,18 +313,18 @@
 							<h3>Teléfono</h3>
 
 							<div>
-								<select name="tel1_tipo" id="tel1_tipo">
-									<option selected>tipo...</option>
+								<select ng-model="tel1_tipo" name="tel1_tipo" id="tel1_tipo" required>
+									<option value="" selected>tipo...</option>
 									<option value="casa">casa</option>
 									<option value="trabajo">trabajo</option>
 									<option value="celular">celular</option>
 									<option value="nextel">nextel</option>
 								</select>
 
-								<input id="lada"  value="LADA" name="lada" type="text" size="2" maxlength="3">
+								<input id="lada"  placeholder="LADA" text="{{ lada }}"  ng-model="lada" name="lada" type="tel" ng-keyup="  validate(lada, 'lada')" size="2" maxlength="3" required>
 								<span>*</span>
-								<input id="phone"  value="Teléfono" name="phone" type="text" size="9" maxlength="8">
-								<span>*</span></div>
+								<input id="phone" placeholder="" text="{{ phone }}" ng-model="phone" name="phone" type="tel" ng-keyup=" validate(phone, 'phone')" size="9" maxlength="8" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ui-mask="{{mask1}}" required>
+								<span>*</span>
 							</div>
 						</div>
 						
@@ -356,8 +332,8 @@
 							<h3>Vivo en Estado</h3>
 
 							<div>
-								<select name="estado" size="1">
-									<option>Seleccione...</option>
+								<select ng-model="estado" name="estado" size="1" required>
+									<option selected value="">Selecciona...</option>
 									<option value="Aguascalientes">Aguascalientes</option>
 									<option value="Baja California ">Baja California </option>
 									<option value="Baja California Sur ">Baja California Sur </option>
@@ -399,7 +375,7 @@
 							<h3>Ciudad</h3>
 
 							<div>
-								<input name="ciudad" type="text" id="ciudad" size="20" />
+								<input ng-model="ciudad" name="ciudad" type="text" id="ciudad" size="20" required />
 								<span>*</span>
 							</div>
 						</div>
@@ -408,7 +384,7 @@
 							<h3>Delegación o Municipio</h3>
 
 							<div>
-								<input name="cp" type="text" id="cp" size="20" />
+								<input ng-model="cp" name="cp" type="text" id="cp" size="20" />
 							</div>
 						</div>		
 
@@ -416,8 +392,8 @@
 							<h3>Mi Estado civil</h3>
 
 							<div>
-								<select name="estadi_civil" id="estadi_civil">
-									<option selected>Selecciona..</option>
+								<select ng-model="estadi_civil" name="estadi_civil" id="estadi_civil">
+									<option value="" selected>Selecciona..</option>
 									<option value="Soltero (a)">Soltero (a)</option>
 									<option value="Divorciado (a)">Divorciado (a)</option>
 									<option value="En proceso de divorcio">En proceso de divorcio</option>
@@ -432,21 +408,22 @@
 
 							<div>
 								<p>
-									<input name="posesion_hijos" type="radio" id="radio"  value="si">
-									Sí
-									<input name="posesion_hijos" type="radio" id="radio2" value="no" checked="checked">
-									No 
+									<input name="posesion_hijos"  type="radio" id="radio" ng-model="r1" value="si" required >
+									<label for="radio">Sí</label>
+									<input  name="posesion_hijos" type="radio" id="radio2" ng-model="r1" value="no"  required >
+									<label for="radio2">No</label> 
 									<span>*</span>
 								</p>
 							</div>
 						</div>
 						
-						<div>
+						
+						<div ng-if="r1 === 'si'" >
 							<h3>¿Cuantos?</h3>
 
 							<div>
-								<select name="cuantosHijos">
-									<option selected>Selecciona...</option>
+								<select ng-model="cuantosHijos" name="cuantosHijos">
+									<option value="" selected>Selecciona...</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -459,17 +436,17 @@
 							<h3>Teléfono Adicional</h3>
 
 							<div>
-								<select name="tel2_tipo" id="tel2_tipo">
-									<option selected>tipo...</option>
+								<select ng-model="tel2_tipo" name="tel2_tipo" id="tel2_tipo" >
+									<option value="" selected>tipo...</option>
 									<option value="casa">casa</option>
 									<option value="trabajo">trabajo</option>
 									<option value="celular">celular</option>
 									<option value="nextel">nextel</option>
 								</select>
 							
-								<input id="lada2" name="lada2" value="LADA" type="text" size="2" maxlength="3" onblur="if(this.value == ''){ this.value = 'LADA'; this.style.color = '#BBB';}" onfocus="if(this.value == 'LADA'){ this.value = ''; this.style.color = '#000';}">
+								<input ng-model="lada2" id="lada2" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="validate(lada2)" size="2" maxlength="3"  required>
 								<span>*</span>
-								<input id="phone2"  value="Teléfono" name="phone2" type="text" size="9" maxlength="8" onblur="if(this.value == ''){ this.value = 'Teléfono'; this.style.color = '#BBB';}" onfocus="if(this.value == 'Teléfono'){ this.value = ''; this.style.color = '#000';}">
+								<input ng-model="phone2" id="phone2" placeholder="Teléfono" value="" name="phone2" type="tel" ng-keyup="validate(phone2)" size="9" maxlength="8" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required ui-validate="'$value = phone'" ui-validate="'phone'" >
 								<span>*</span>&nbsp; <span>Debe ser distinto del que ingresaste más arriba</span></div>
 							</div>
 						</div>
@@ -478,7 +455,7 @@
 							<h3>Correo Electrónico Adicional</h3>
 
 							<div>
-								<input name="email2" type="text" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+								<input ng-model="email2" name="email2" type="email" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
 								<span>*</span>
 							</div>
 						</div>
@@ -487,7 +464,7 @@
 							<h3>Confirmación de Correo Electrónico Adicional</h3>
 
 							<div>
-								<input name="email2confirma" type="text" size="30" id="email2confirma" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+								<input ng-model="email2confirma" name="confirm" type="email" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required ui-validate="'$value === email2'" ui-validate="'email2'" >
 								<span>*</span>
 							</div>
 						</div>
@@ -496,7 +473,7 @@
 							<h3>Usuario de Facebook</h3>
 							
 							<div>
-								<input name="usuario_fb" type="text" size="20" maxlength="30" id="usuario_fb">
+								<input ng-model="usuario_fb" name="usuario_fb" type="text" size="20" maxlength="30" id="usuario_fb">
 							</div>
 						</div>
 
@@ -504,18 +481,18 @@
 							<h3>Usuario de Twitter</h3>
 
 							<div>
-								<input name="usuario_twitter" type="text" size="20" maxlength="30" id="usuario_twitter">
+								<input ng-model="usuario_twitter" name="usuario_twitter" type="text" size="20" maxlength="30" id="usuario_twitter">
 							</div>
 						</div>
 						
 				</div>
 				<input type="submit" wz-previous value="Anterior" />
-		        <input type="submit" wz-next value="Siguiente" />
+		        <input type="submit" wz-next ng-disabled="!pers.$valid" value="Siguiente" />
     		</form>
 	        	
 	    </wz-step>
-	    <wz-step title="Estudios">
-        	<form name="estudios" action="">
+	    <wz-step title="Estudios" canexit="pass">
+        	<form novalidate class="form"  id="estudios" name="estudios">
 		        <div>
 
 					<h2>Estudios y trabajo</h2>
@@ -525,8 +502,8 @@
 						<h3>Máximo título académico</h3>
 
 						<div>
-							<select name="max_tit_academico" id="max_tit_academico" >
-								<option>Seleccione...</option>
+							<select required ng-model="max_tit_academico"  name="max_tit_academico" id="max_tit_academico" >
+								<option value="">Selecciona...</option>
 								<option value="Estudios de doctorado">Estudios de doctorado</option>
 								<option value="Estudios de maestría">Estudios de maestría</option>
 								<option value="Estudios de postgrado">Estudios de postgrado</option>
@@ -539,7 +516,7 @@
 
 						<h4>Institución</h4>
 						<div>
-							<input type="text" name="institucion_educativa" id="institucion_educativa" />
+							<input required ng-model="institucion_educativa" type="text" name="institucion_educativa" id="institucion_educativa" />
 							<span>*</span>
 						</div>
 					</div>
@@ -548,8 +525,8 @@
 					<div>
 						<h3>Profesión</h3>
 						<div>
-							<select name="profesion" id="profesion"  onChange="profe()">
-								<option>Seleccione...</option>
+							<select required ng-model="profesion" name="profesion" id="profesion"  >
+								<option value="">Selecciona...</option>
 								<option value="Empleado (a)">Empleado (a)</option>
 								<option value="Empresario (a)">Empresario (a)</option>
 								<option value="Independiente">Independiente</option>
@@ -569,7 +546,7 @@
 					<div>
 						<h3>Indica brevemente tu actividad laboral</h3>
 						<div>
-							<input name="actividad_laboral" type="text"  id="actividad_laboral" size="48"/>
+							<input required ng-model="actividad_laboral" name="actividad_laboral" type="text"  id="actividad_laboral" size="48"/>
 							<span>*</span>
 						</div>
 					</div>
@@ -578,8 +555,8 @@
 					<div>
 						<h3>Sector</h3>
 						<div>
-							<select name="sector" id="sector" >
-								<option>Seleccione...</option>
+							<select required ng-model="sector"  name="sector" id="sector" >
+								<option value="">Selecciona...</option>
 								<option value="Agricultura/Pesca/Servicios forestales/Cuidado de animales">Agricultura/Pesca/Servicios forestales/Cuidado de animales</option>
 								<option value="Alta dirección">Alta dirección</option>
 								<option value="Arte / Diseño / Entretenimiento">Arte / Diseño / Entretenimiento </option>
@@ -624,12 +601,12 @@
 
 				</div>
 				<input type="submit" wz-previous value="Anterior" />
-		        <input type="submit" wz-next value="Siguiente" />
+		        <input type="submit" wz-next  ng-disabled="!estudios.$valid" value="Siguiente" />
     		</form>
 	        	
 	    </wz-step>
-	    <wz-step title="¿Que Buscas?">
-        	<form name="buscas" action="">
+	    <wz-step title="¿Que Buscas?" canexit="pass">
+        	<form novalidate class="form"  id="buscas" name="buscas">
 		        <div>
 
 					<h2>¿A quién buscas?</h2>
@@ -639,8 +616,8 @@
 						<h3>Busco alguien entre</h3>
 						<div>
 
-							<select name="edad1" id="edad1" >
-								<option>Edad...</option>
+							<select required ng-model="edad1" value="Edad..." name="edad1" id="edad1" >
+								<option value="" >Edad...</option>
 								<option value="25">25</option>
 								<option value="26">26</option>
 								<option value="27">27</option>
@@ -691,8 +668,8 @@
 
 							<p>y</p>
 
-							<select name="edad2" id="edad2" >
-								<option>Edad...</option>
+							<select required value="Edad..." ng-model="edad2" name="edad2" id="edad2" >
+								<option value="">Edad...</option>
 								<option value="25">25</option>
 								<option value="26">26</option>
 								<option value="27">27</option>
@@ -741,7 +718,6 @@
 								<option value="70">70</option>
 							</select>
 
-							<input type="hidden" name="edad_entre" id="edad_entre"/>
 							<span>*</span>
 						</div>
 
@@ -751,50 +727,43 @@
 						<h3>Quisiera conocer</h3>
 						<div>
 							<p>
-								<input type="radio" name="quisiera_conocer" id="radio60" value="Hombre" />
-								Hombre
-								<input type="radio" name="quisiera_conocer" id="radio61" value="Mujer" />
-								Mujer 
+								<input type="radio" name="quisiera_conocer" id="radio60" ng-model="main.busco" value="Hombre" required/>
+								<label for="radio60">Hombre</label>
+								<input type="radio" name="quisiera_conocer" id="radio61" ng-model="main.busco" value="Mujer" required/>
+								<label for="radio61">Mujer</label> 
 								<span>*</span>
 							</p>
 						</div> 
 					</div>
-
-					<div>
-						<h3 id="etiqueta_gay_1">Soy</h3>
-						<div id="campo_gay_1">
-							<p>
-								<input type="radio" name="tipo_gay" id="gay_activo" value="Activo" />
-								Activo
-								<input type="radio" name="tipo_gay" id="gay_pasivo" value="Pasivo" />
-								Pasivo
-								<input type="radio" name="tipo_gay" id="gay_versatil" value="Versatil" />
-								Versátil
-							</p>
-						</div>
-					</div>
-
-					<div>
-						<h3 id="etiqueta_gay_2">Busco</h3>
-						<div id="campo_gay_2">
-							<p>
-								<input type="checkbox" name="busco_gay_activo" id="busco_gay_activo" value="Activo" />
-								Activo
-								<input type="checkbox" name="busco_gay_pasivo" id="busco_gay_pasivo" value="Pasivo" />
-								Pasivo
-								<input type="checkbox" name="busco_gay_versatil" id="busco_gay_versatil" value="Versátil" />
-								Versátil 
-							</p>
+					<div ng-if="main.busco === 'Hombre' && main.sexo == 'masculino'">
+						<div  >
+							<h3 id="etiqueta_gay_1">Soy</h3>
+							<div id="campo_gay_1">
+								<p>
+									<label for="gay_pasivo"><input type="radio" name="tipo_gay" id="gay_pasivo" ng-model="g1" value="Pasivo"/>Pasivo</label>
+									<label for="gay_versatil"><input type="radio" name="tipo_gay" id="gay_versatil" ng-model="g1" value="Versatil"/>Versátil</label>
+								</p>
+							</div>
+						
+							<h3 id="etiqueta_gay_2">Busco</h3>
+							<div id="campo_gay_2">
+								<p>
+									
+									<label for="busco_gay_activo"><input class="gay" type="checkbox"  name="busco_gay_activo" id="busco_gay_activo" ng-model="gay.activo" ng-checked="gay.activo" value="Activo" />Activo</label>
+									<label for="busco_gay_pasivo"><input class="gay" type="checkbox"  name="busco_gay_pasivo" id="busco_gay_pasivo" ng-model="gay.pasivo" value="Pasivo"  />Pasivo</label>
+									<label for="busco_gay_versatil"><input class="gay" type="checkbox"  name="busco_gay_versatil" id="busco_gay_versatil" ng-model="gay.versatil" value="Versátil"  />Versátil</label> 
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 		        <input type="submit" wz-previous value="Anterior" />
-		        <input type="submit" wz-next value="Siguiente" />
+		        <input type="submit" wz-next  ng-disabled="!buscas.$valid" value="Siguiente" />
     		</form>
 	        	
 	    </wz-step>
-	    <wz-step title="Membresia">
-        	<form name="memb" action="">
+	    <wz-step title="Membresia" canexit="pass">
+        	<form novalidate class="form"  id="memb" name="memb">
 		        <div>
 
 					<h2>Referente a tu membresía</h2>
@@ -808,7 +777,7 @@
 
 						<h3>¿Qué tipo de membresía te interesa? <span>*</span></h3>
 						<div>
-							<h4>Membresía 3 Grados <input type="radio" name="tipo_membresia" id="radioTipoE" value="3Grados" /></h4>
+							<label for="radioTipoE"><h4>Membresía 3 Grados</h4></label> <input type="radio" name="tipo_membresia" required ng-model="mem" id="radioTipoE" value="3Grados" />
 							<div>
 								<p>Incluye:</p>
 								<ul>
@@ -826,7 +795,7 @@
 
 
 						<div>
-							<h4>Membresía 6 Grados<input type="radio" name="tipo_membresia" id="radioTipoE" value="6Grados" /></h4>
+							<label for="radioTipoE1"><h4>Membresía 6 Grados</h4></label><input type="radio" name="tipo_membresia" required ng-model="mem" id="radioTipoE1" value="6Grados" />
 							<div>
 								<p>Incluye:</p>
 								<ul>
@@ -845,33 +814,33 @@
 					</div>
 
 					<div>
-						<p>En breve nos comunicaremos contigo vía telefónica, por lo que te solicitamos nos ayudes con tu disponibilidad de horario para que en la medida de lo posible podamos apegarnos al tiempo que tienes disponible. ¡Gracias!
+						<p>En breve nos comunicaremos contigo vía telefónica, por lo que te solicitamos nos ayudes con tu disponibilidad de horario para que en la medida de lo posible podamos apegarnos al tiempo que tienes disponible. ¡Gracias
 						</p>
 						<div>
 							<h4>Opción 1</h4>
 							<div>
 								<h5>Días:</h5>
-								<input name="dia_lu_1" id="dia_lu_1" type="checkbox" value="Lunes,"/>
-								Lu
-								<input name="dia_ma_1" id="dia_ma_1" type="checkbox" value="Martes,"/>
-								Ma
-								<input name="dia_mi_1" id="dia_mi_1" type="checkbox" value="Miércoles,"/>
-								Mi
-								<input name="dia_ju_1" id="dia_ju_1" type="checkbox" value="Jueves,"/>
-								Ju
-								<input name="dia_vi_1" id="dia_vi_1" type="checkbox" value="Viernes,"/>
-								Vi
-								<input name="dia_sa_1" id="dia_sa_1" type="checkbox" value="Sábado,"/>
-								Sa
-								<input name="dia_do_1" id="dia_do_1" type="checkbox" value="Domingo,"/>
-								Do 
+								<input name="dia_lu_1" id="dia_lu_1" class="day1" type="checkbox" ng-model="day1.lu" ng-checked="day1.lu" value="Lunes,"/>
+								<label for="dia_lu_1">Lu</label>
+								<input name="dia_ma_1" id="dia_ma_1" class="day1" type="checkbox" ng-model="day1.ma" ng-checked="day1.ma" value="Martes,"/>
+								<label for="dia_ma_1">Ma</label>
+								<input name="dia_mi_1" id="dia_mi_1" class="day1" type="checkbox" ng-model="day1.mi" ng-checked="day1.mi" value="Miércoles,"/>
+								<label for="dia_mi_1">Mi</label>
+								<input name="dia_ju_1" id="dia_ju_1" class="day1" type="checkbox" ng-model="day1.ju" ng-checked="day1.ju" value="Jueves,"/>
+								<label for="dia_ju_1">Ju</label>
+								<input name="dia_vi_1" id="dia_vi_1" class="day1" type="checkbox" ng-model="day1.vi" ng-checked="day1.vi" value="Viernes,"/>
+								<label for="dia_vi_1">Vi</label>
+								<input name="dia_sa_1" id="dia_sa_1" class="day1" type="checkbox" ng-model="day1.sa" ng-checked="day1.sa" value="Sábado,"/>
+								<label for="dia_sa_1">Sa</label>
+								<input name="dia_do_1" id="dia_do_1" class="day1" type="checkbox" ng-model="day1.do" ng-checked="day1.do" value="Domingo,"/>
+								<label for="dia_do_1">Do</label> 
 							</div>
 
 
 							<h5>Hora desde:</h5>
 
-							<select name="hora_entrevista_ini1" id="hora_entrevista_ini1" size="1">
-								<option>Seleccione...</option>
+							<select required ng-model="hora_entrevista_ini1"  name="hora_entrevista_ini1" id="hora_entrevista_ini1" size="1">
+								<option value="">Selecciona...</option>
 								<option value="8am">8am</option>
 								<option value="9am">9am</option>
 								<option value="10am">10am</option>
@@ -891,9 +860,9 @@
 
 							<h5>hasta:</h5>
 
-							<select name="hora_entrevista_fin1" id="hora_entrevista_fin1" size="1">
-								<option>Seleccione...</option>
-								<option value="9am">9am</option>
+							<select  required ng-model="hora_entrevista_fin1"  name="hora_entrevista_fin1" id="hora_entrevista_fin1" size="1">
+								<option value="">Selecciona...</option>
+								<option value="9 ="" ><am">9am</option>
 								<option value="10am">10am</option>
 								<option value="11am">11am</option>
 								<option value="12pm">12pm</option>
@@ -908,36 +877,35 @@
 								<option value="9pm">9pm</option>
 							</select>
 							<span>*</span>
-							<input type="hidden" name="entrevista_opc1" id="entrevista_opc1" value=""/></td>
 						</div>
 
 					</div>
 
 					<div>
 						<h4>Opción 2</h4>
-						<h5> Días:</h5>
+						<h5> Días:</h5> 
 						<div>
-							<input name="dia_lu_2" id="dia_lu_2" type="checkbox" value="Lunes,"  />
-							Lu
-							<input name="dia_ma_2" id="dia_ma_2" type="checkbox" value="Martes,"  />
-							Ma
-							<input name="dia_mi_2" id="dia_mi_2" type="checkbox" value="Miércoles,"  />
-							Mi
-							<input name="dia_ju_2" id="dia_ju_2" type="checkbox" value="Jueves,"  />
-							Ju
-							<input name="dia_vi_2" id="dia_vi_2" type="checkbox" value="Viernes,"  />
-							Vi
-							<input name="dia_sa_2" id="dia_sa_2" type="checkbox" value="Sábado,"  />
-							Sa
-							<input name="dia_do_2" id="dia_do_2" type="checkbox" value="Domingo,"  />
-							Do 
+							<input name="dia_lu_2" id="dia_lu_2" class="day2" type="checkbox" ng-model="day2.lu" ng-checked="day2.lu" value="Lunes,"  />
+							<label for="dia_lu_2">Lu</label>
+							<input name="dia_ma_2" id="dia_ma_2" class="day2" type="checkbox" ng-model="day2.ma" ng-checked="day2.ma" value="Martes,"  />
+							<label for="dia_ma_2">Ma</label>
+							<input name="dia_mi_2" id="dia_mi_2" class="day2" type="checkbox" ng-model="day2.mi" ng-checked="day2.mi" value="Miércoles,"  />
+							<label for="dia_mi_2">Mi</label>
+							<input name="dia_ju_2" id="dia_ju_2" class="day2" type="checkbox" ng-model="day2.ju" ng-checked="day2.ju" value="Jueves,"  />
+							<label for="dia_ju_2">Ju</label>
+							<input name="dia_vi_2" id="dia_vi_2" class="day2" type="checkbox" ng-model="day2.vi" ng-checked="day2.vi" value="Viernes,"  />
+							<label for="dia_vi_2">Vi</label>
+							<input name="dia_sa_2" id="dia_sa_2" class="day2" type="checkbox" ng-model="day2.sa" ng-checked="day2.sa" value="Sábado,"  />
+							<label for="dia_sa_2">Sa</label>
+							<input name="dia_do_2" id="dia_do_2" class="day2" type="checkbox" ng-model="day2.do" ng-checked="day2.do" value="Domingo,"  />
+							<label for="dia_do_2">Do</label>  
 						</div>
 
 
 						<div>
 							<h5>Hora desde:</h5>
-								<select name="hora_entrevista_ini2" id="hora_entrevista_ini2" size="1">
-									<option>Seleccione...</option>
+								<select  required ng-model="hora_entrevista_ini2"  name="hora_entrevista_ini2" id="hora_entrevista_ini2" size="1">
+									<option value="">Selecciona...</option>
 									<option value="8am">8am</option>
 									<option value="9am">9am</option>
 									<option value="10am">10am</option>
@@ -954,8 +922,8 @@
 								</select>
 							<span>*</span> 
 							<h5>hasta:</h5>
-								<select name="hora_entrevista_fin2" id="hora_entrevista_fin2" size="1">
-									<option>Seleccione...</option>
+								<select  required ng-model="hora_entrevista_fin2"  name="hora_entrevista_fin2" id="hora_entrevista_fin2" size="1">
+									<option value="">Selecciona...</option>
 									<option value="9am">9am</option>
 									<option value="10am">10am</option>
 									<option value="11am">11am</option>
@@ -972,23 +940,22 @@
 								</select>
 							<span>*</span>
 						</div>
-						<input type="hidden" name="entrevista_opc2" id="entrevista_opc2" value=""/>
 					</div>
 
 				</div>
 		        <input type="submit" wz-previous value="Anterior" />
-		        <input type="submit" wz-next value="Siguiente" />
+		        <input type="submit" wz-next  ng-disabled="!memb.$valid" value="Siguiente" />
     		</form>
 	        	
 	    </wz-step>
-	    <wz-step title="Fotografia">
-        	<form name="foto" action="">
+	    <wz-step title="Fotografia" canexit="pass">
+        	<form novalidate class="form"  id="foto" name="foto">
 		        <div>
 					<h3>Fotografía</h3>
 					<div>
 						<h4>Seleccione...</h4>
 						<div>
-							<input id="photo" type="file" container_id="0" name="photo" accept="image/*" />
+							<input  required ng-model="photo" id="photo" type="file" container_id="0" name="photo" accept="image/*" />
 							<p>Se acepta formato JPG o PNG</p>
 							<p>
 								<strong>
@@ -1004,11 +971,11 @@
 
 					<div>
 						<p>Buenas fotos</p>
-						<div><img src="" /></div>
+						<div><img src="img/fotos-ok.jpg" /></div>
 					</div>
 					<div>
 						<p>Se rechazarán las siguientes fotos</p>
-						<div><img src="" /></div>
+						<div><img src="img/fotos-ko.jpg" /></div>
 					</div>
 				</div>
 		        <input type="submit" wz-previous value="Anterior" />
@@ -1019,10 +986,13 @@
 	</wizard>
 	
 
+	<script src="public/lib/jquery/dist/jquery.min.js" ></script>
 	<script src="public/lib/angular/angular.min.js" ></script>
+	<script src="public/lib/angular-ui-utils/ui-utils.min.js" ></script>
 	<script src="js/app.js" ></script>
 	<script src="public/lib/angular-wizard/dist/angular-wizard.min.js" ></script>
 	<script src="public/lib/lodash/dist/lodash.compat.min.js" ></script>
+	<script src="public/lib/store.js/store.min.js" ></script>
 
 </body>
 </html>

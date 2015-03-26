@@ -7,14 +7,14 @@
 		<h3>Nombres</h3>
 
 		<div>
-			<input name="firstname" type="text" size="20" id="firstname" >
+			<input name="firstname" type="text" size="20" id="firstname" ng-model="firstname" >
 			<span>*</span>
 		</div>
 
 		<h3>Apellidos</h3>
 
 		<div>
-			<input name="lastname" type="text" size="20" id="lastname" >
+			<input name="lastname" type="text" size="20" id="lastname" ng-model="lastname" >
 			<span>*</span>
 		</div>
 
@@ -23,7 +23,7 @@
 	<div>
 		<h3>Correo Electrónico</h3>
 		<div>
-			<input name="email" type="text" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+			<input name="email" type="text" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" >
 			<span>*</span>
 		</div>
 
@@ -39,9 +39,12 @@
 	<div>
 		<h3>Contraseña</h3>
 		<div>
-			<input name="password" type="text" size="30" maxlength="30" id="password" >
+			<input name="password" type="text" size="30" maxlength="30" id="password" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="password" >
 			<span>*</span>
 		</div>
+		<h3>Confirmación de Contraseña</h3>
+		<input name="confirmPassword" type="text" size="30" id="confirmPassword"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+		<span>*</span>
 	</div>
 
 	<div>
@@ -49,7 +52,7 @@
 		<h3>¿Cómo nos encontraste?</h3>
 		<div>
 
-			<select name="found" id="found" >
+			<select name="found" id="found" ng-model="found" >
 
 				<option selected>selecciona...</option>
 				<option value="Participante de la Revista Moi">Participante de la Revista Moi</option>
@@ -93,7 +96,7 @@
 
 		<h3>Código Promocional o ID de Cuentahabiente</h3>
 		<div>
-			<input name="PromoCode" id="PromoCode" type="text" size="30" value="" >
+			<input name="PromoCode" id="PromoCode" type="text" size="30" value="" ng-model="promocode" >
 		</div>
 
 	</div>
