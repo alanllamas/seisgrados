@@ -12,26 +12,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate', ]);
 				return
 			}
 		};
-		$scope.validate = function (data, id){
-		    if (data) {
-				validate = /^[0-9]*$/.test(data);
-				$log.log(validate);
-					id = $('#' + id);
-					btn = $('#pers');
-					if (!validate) {
-						
-						id.addClass('ng-invalid');
-						id.addClass('ng-touched');
-					}else{
-						id.removeClass('ng-invalid');
-						
-					};
-					$log.log(data, id);
-				   	return validate ;
-
-		    };
-		}; 
-
+		
 		$scope.pass = function () {
 
 			form =$('form');
@@ -142,14 +123,20 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate', ]);
 					
 				};
 			};
-			//	store.set('info', info);
-			//	get = store.get('info');
-				//console.log(get);
+				store.set('info', info);
+				get = store.get('info');
+				console.log(get);
 			
 			console.log(info)
 		
 			return	true;
 		};
+		$scope.end = function () {
+			foto = $('#photo');
+			ff = foto[0].files[0];
+			//for (var i = 0; i < ff.length; i++) {};
+				$log.log(ff);
+		}
 
 
 

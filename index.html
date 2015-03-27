@@ -11,7 +11,7 @@
 
 	{{main.info}}
 
-	<wizard name="wizard" edit-mode="true"> 
+	<wizard name="wizard" edit-mode="true" on-finish="end()"> 
 	    <wz-step title="Cuenta" canexit="pass">
 	    	<form novalidate class="form"  id="cuenta" name="cuenta">
 
@@ -96,7 +96,7 @@
 	    	</form>
 	    </wz-step>
 	    <wz-step title="Informacion Personal" canexit="pass">
-        	<form novalidate class="form" ng-change="validate"  id="pers" name="pers">
+        	<form novalidate class="form"   id="pers" name="pers">
 				<div>
 
 					<h2>Datos Personales</h2>
@@ -955,8 +955,9 @@
 					<div>
 						<h4>Seleccione...</h4>
 						<div>
-							<input  required ng-model="photo" id="photo" type="file" container_id="0" name="photo" accept="image/*" />
+							<input   ng-model="photo" id="photo" type="file" container_id="0" name="photo" accept="image/*" />
 							<p>Se acepta formato JPG o PNG</p>
+				
 							<p>
 								<strong>
 									<span style="color:#ff3333">El tamaño no debe ser mayor a 5Mb</span>
@@ -979,7 +980,7 @@
 					</div>
 				</div>
 		        <input type="submit" wz-previous value="Anterior" />
-		        <input type="submit" wz-next value="Enviar" />
+		        <input type="submit" wz-next id="end" value="Enviar" />
     		</form>
 	        	
 	    </wz-step>
