@@ -6,185 +6,35 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate' ]);
 		info = [{},{},{},{},{}];
 		this.info =  info;
 			
-	
-			
-
 		this.store = function  () {
 			if (!store.enabled) {
 				alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
 				return
 			}
 		};
-
-/*
-		$scope.firstname;
-		$scope.lastname;
-		$scope.email;
-		$scope.confirmEmail;
-		$scope.password;
-		$scope.confirmPassword;
-		$scope.found;
-		$scope.age;
-		$scope.sexo;
-		$scope.estatura;
-		$scope.peso;
-		$scope.tel1_tipo;
-		$scope.lada;
-		$scope.phone;
-		$scope.estado;
-		$scope.ciudad;
-		$scope.cp;
-		$scope.estadi_civil;
-		$scope.r1;
-		$scope.r1;
-		$scope.cuantosHijos;
-		$scope.tel2_tipo;
-		$scope.lada2;
-		$scope.phone2;
-		$scope.email2;
-		$scope.email2confirma;
-		$scope.usuario_fb;
-		$scope.usuario_twitter;
-		$scope.max_tit_academico;
-		$scope.institucion_educativa;
-		$scope.profesion;
-		$scope.actividad_laboral;
-		$scope.sector;
-		$scope.edad1;
-		$scope.edad2;
-		$scope.busco;
-		$scope.busco;
-		$scope.g1;
-		$scope.g1;
-		$scope.gay = {};
-		$scope.gay.activo;
-		$scope.gay.pasivo;
-		$scope.gay.versatil;
-		$scope.mem;
-		$scope.mem;
-		$scope.day1 = {};
-		$scope.day1.lu;
-		$scope.day1.ma;
-		$scope.day1.mi;
-		$scope.day1.ju;
-		$scope.day1.vi;
-		$scope.day1.sa;
-		$scope.day1.do;
-		$scope.hora_entrevista_ini1;
-		$scope.hora_entrevista_fin1;
-		$scope.day2 = {};
-		$scope.day2.lu;
-		$scope.day2.ma;
-		$scope.day2.mi;
-		$scope.day2.ju;
-		$scope.day2.vi;
-		$scope.day2.sa;
-		$scope.day2.do;
-		$scope.hora_entrevista_ini2;
-		$scope.hora_entrevista_fin2;
-		$scope.photo;
-		getInfo = store.get('info');
-		for (var i = 0; i < getInfo.length; i++) {
-			if (getInfo[i] && getInfo[i] != "") {
-				info[i] = getInfo[i];
-
-
-
-
-					$scope.firstname = info[i].firstname;
-					$scope.lastname;
-					$scope.email;
-					$scope.confirmEmail;
-					$scope.password;
-					$scope.confirmPassword;
-					$scope.found;
-					$scope.age;
-					$scope.sexo;
-					$scope.estatura;
-					$scope.peso;
-					$scope.tel1_tipo;
-					$scope.lada;
-					$scope.phone;
-					$scope.estado;
-					$scope.ciudad;
-					$scope.cp;
-					$scope.estadi_civil;
-					$scope.r1;
-					$scope.r1;
-					$scope.cuantosHijos;
-					$scope.tel2_tipo;
-					$scope.lada2;
-					$scope.phone2;
-					$scope.email2;
-					$scope.email2confirma;
-					$scope.usuario_fb;
-					$scope.usuario_twitter;
-					$scope.max_tit_academico;
-					$scope.institucion_educativa;
-					$scope.profesion;
-					$scope.actividad_laboral;
-					$scope.sector;
-					$scope.edad1;
-					$scope.edad2;
-					$scope.busco;
-					$scope.busco;
-					$scope.g1;
-					$scope.g1;
-					$scope.gay = {};
-					$scope.gay.activo;
-					$scope.gay.pasivo;
-					$scope.gay.versatil;
-					$scope.mem;
-					$scope.mem;
-					$scope.day1 = {};
-					$scope.day1.lu;
-					$scope.day1.ma;
-					$scope.day1.mi;
-					$scope.day1.ju;
-					$scope.day1.vi;
-					$scope.day1.sa;
-					$scope.day1.do;
-					$scope.hora_entrevista_ini1;
-					$scope.hora_entrevista_fin1;
-					$scope.day2 = {};
-					$scope.day2.lu;
-					$scope.day2.ma;
-					$scope.day2.mi;
-					$scope.day2.ju;
-					$scope.day2.vi;
-					$scope.day2.sa;
-					$scope.day2.do;
-					$scope.hora_entrevista_ini2;
-					$scope.hora_entrevista_fin2;
-					$scope.photo;
-
-				$log.log('info descargado de store:',  info[i]);
-			};
-		};
-*/
-
-		//$('.datepicker').datepicker(); $( ".datepicker" ).datepicker({altFormat: "yy-mm-dd"});
-	
-
-
-
-
-
+		
 		$scope.pass = function () {
 
 			form =$('form');
 			check = [];
 			check2 = [];
+			$('.datepicker').datepicker({
+				changeMonth: true,
+				changeYear: true,
+				dateFormat: 'yy/mm/dd',
+				dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+				yearRange: "1930:1995",
+				monthNamesShort: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "octubre", "Noviembre", "Diciembre" ]
+
+			});
 
 			C = WizardHandler.wizard('wizard').currentStepNumber()-1;
 			f = form[C];
 				console.log(f.name);
 			if (f.name != "foto") {
 
-							$('.datepicker').datepicker();
 				for (var i = 0; i < f.length; i++) {
 				
-							
 
 						if (f[i].type === 'radio') {
 							r = angular.element(f[i]).hasClass('ng-valid-parse');
@@ -225,9 +75,8 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate' ]);
 										return false;
 									}else{
 										D1.addClass('ng-valid');
-											D1.addClass('ng-untouched');
 										
-										D1.removeClass('ng-touched');
+
 										D1.removeClass('ng-invalid');
 									};
 								info[C][v + "1"]= f[i].checked ;
@@ -278,16 +127,18 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate' ]);
 							};
 
 						};
-				
-							 
-					
+	
 				};
 			};
 				store.set('info', info);
+				get = store.get('info');
+				console.log(get);
+			
+			console.log(info)
 		
 			return	true;
 		};
-		$scope.end = function () {
+			$scope.end = function () {
 			foto = $('#photo');
 			ff = foto[0].files[0];
 				if (ff) {
@@ -304,6 +155,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate' ]);
 				$log.log(info);
 				$log.log(ff);
 		};
+
 
 
 

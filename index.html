@@ -3,45 +3,42 @@
 <head>
 	<meta charset="UTF-8">
 	<title>HEXAGRADOS</title>
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="public/lib/jquery-ui/themes/smoothness/jquery-ui.min.css">
 	<link rel="stylesheet" href="public/lib/angular-wizard/dist/angular-wizard.min.css">
-
-	
-	
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="MainCtrl as main" ng-app="myApp" >
 
 
+	{{main.info}}
 
-	<wizard name="wizard" edit-mode="true" on-finish="end()"> 
+	<wizard name="wizard" edit-mode="false" on-finish="end()"> 
 	    <wz-step title="Cuenta" canexit="pass">
 	    	<form novalidate class="form"  id="cuenta" name="cuenta">
 
 				<h2>Datos para tu Cuenta</h2>
 
-				<h3>Nombres<span>*</span></h3>
+				<h3>Nombres</h3>
 
 				
-					<label for="firstname">Primer Nombre</label><input required name="firstname" type="text" size="20" id="firstname" ng-model="firstname" >
-					
+					<label for="firstname">Nombre</label><input required name="firstname" type="text" size="20" id="firstname" ng-model="firstname" >
+					<span>*</span>
 					<label for="secondname">Segundo Nombre</label><input  name="secondname" type="text" size="20" id="secondname" ng-model="secondname" >
-				
 
-
-				<h3>Apellidos<span>*</span></h3>
+				<h3>Apellidos <span>*</span></h3>
 
 			
 					<label for="lastname1">Apellido Paterno</label><input required name="lastname1" type="text" size="20" id="lastname1" ng-model="lastname1" >
 					<label for="lastname2">Apellido Materno</label><input required name="lastname2" type="text" size="20" id="lastname2" ng-model="lastname2" >
+					
 		
 				<h3>Correo Electrónico</h3>
-					<input required name="email" type="email" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-pattern="/\S+@\S+\.\S+/" >
+					<input required name="email" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" >
 					<span>*</span>
 
 				<h3>Confirmación de Correo Electrónico</h3>
 
-					<input required name="confirm" type="email" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" ng-pattern="/\S+@\S+\.\S+/" >
+					<input required name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 					<span>*</span>
 
 				<h3>Contraseña</h3>
@@ -110,12 +107,11 @@
 					<div>
 
 						<div>
-							<h3>Edad</h3>
+							<h3>Fecha de Nacimiento</h3>
 
 							<div>
 
-								<input type="text" class="datepicker" readonly placeholder="selecciona tu fecha" ng-model="date" name="datepicker" required />
-
+								<input type="text" class="datepicker" readonly placeholder="selecciona tu fecha" ng-model="date" name="datepicker" required />	
 								<span>*</span>
 							</div>
 						</div>
@@ -275,7 +271,7 @@
 						</div>
 
 						<div>
-							<h3>Teléfono<span>*</span></h3>
+							<h3>Teléfono</h3>
 
 							<div>
 								<select ng-model="tel1_tipo" class="tel1" name="tel1_tipo" id="tel1_tipo" required>
@@ -287,9 +283,9 @@
 								</select>
 
 								<input ng-pattern="/^[0-9]*$/" id="lada"  placeholder="LADA" class="tel1" ng-model="lada" name="lada" type="tel" ng-keyup=" " size="2" maxlength="3" minlength="2" required>
-							
+								<span>*</span>
 								<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Teléfono" class="tel1" ng-model="phone" name="phone" type="tel" ng-keyup=" " size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  required      >
-							
+								<span>*</span>
 							</div>
 						</div>
 						
@@ -372,19 +368,18 @@
 							<h3>¿Tienes hijos?</h3>
 
 							<div>
-
 								<select name="posesion_hijos" id="pos_hijos">
 									<option value="">Hijos...</option>
 									<option value="si">Sì</option>
 									<option value="no">No</option>
 								</select>
-
 							</div>
 						</div>
 						
+						
 
 						<div>
-							<h3>Teléfono Adicional <span>*</span></h3>
+							<h3>Teléfono Adicional</h3>
 
 							<div>
 								<select ng-model="tel2_tipo" class="tel2" name="tel2_tipo" id="tel2_tipo" required >
@@ -396,9 +391,9 @@
 								</select>
 							
 								<input ng-pattern="/^[0-9]*$/" ng-model="lada2" id="lada2" class="tel2" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2"required>
-								
+								<span>*</span>
 								<input ng-pattern="/^[0-9]*$/" ng-model="phone2" id="phone2" class="tel2" placeholder="Teléfono" value="" name="phone2" type="tel" ng-keyup="" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required   ui-validate="'$value != phone'" ui-validate="'phone'" >
-								<span>Debe ser distinto del que ingresaste más arriba</span></div>
+								<span>*</span>&nbsp; <span>Debe ser distinto del que ingresaste más arriba</span></div>
 							</div>
 						</div>
 
@@ -406,7 +401,7 @@
 							<h3>Correo Electrónico Adicional</h3>
 
 							<div>
-								<input ng-model="email2" name="email2" type="email" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
+								<input ng-model="email2" name="email2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
 								<span>*</span>
 							</div>
 						</div>
@@ -415,7 +410,7 @@
 							<h3>Confirmación de Correo Electrónico Adicional</h3>
 
 							<div>
-								<input ng-model="email2confirma" name="confirm" type="email" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required ui-validate="'$value === email2'" ui-validate="'email2'" >
+								<input ng-model="email2confirma" name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required ui-validate="'$value === email2'" ui-validate="'email2'" >
 								<span>*</span>
 							</div>
 						</div>
@@ -465,6 +460,7 @@
 							<span>*</span>
 						</div>
 
+					
 					</div>
 
 
@@ -487,6 +483,9 @@
 							<span>*</span>
 						</div>
 					</div>
+
+
+					
 
 					<div>
 						<h3>Sector</h3>
@@ -672,7 +671,8 @@
 						</div> 
 					</div>
 					<div ng-show="main.busco === 'Hombre' && main.sexo == 'masculino'">
-						<div  >						
+						<div>
+						
 							<h3 id="etiqueta_gay_2">Busco</h3>
 							<div id="campo_gay_2">
 								<p>
@@ -746,7 +746,7 @@
 						</p>
 						<div>
 							<h4>Opción 1</h4>
-								<h5>Días: <span>*</span></h5>
+								<h5>Días:</h5>
 							<div id="dias1" >
 								<input name="dia_lu_1" id="dia_lu_1" class="day1" type="checkbox" ng-model="day1.lu" ng-checked="day1.lu" value="Lunes,"/>
 								<label for="dia_lu_1">Lu</label>
@@ -811,7 +811,7 @@
 
 					<div>
 						<h4>Opción 2</h4>
-						<h5> Días: <span>*</span></h5> 
+						<h5> Días:</h5> 
 						<div id="dias2">
 							<input name="dia_lu_2" id="dia_lu_2" class="day2" type="checkbox" ng-model="day2.lu" ng-checked="day2.lu" value="Lunes,"  />
 							<label for="dia_lu_2">Lu</label>
@@ -919,10 +919,10 @@
 	<script src="public/lib/jquery-ui/jquery-ui.min.js"></script>
 	<script src="public/lib/angular/angular.min.js" ></script>
 	<script src="public/lib/angular-ui-utils/ui-utils.min.js" ></script>
+	<script src="js/app.js" ></script>
 	<script src="public/lib/angular-wizard/dist/angular-wizard.min.js" ></script>
 	<script src="public/lib/lodash/dist/lodash.compat.min.js" ></script>
 	<script src="public/lib/store.js/store.min.js" ></script>
-	<script src="js/app.js" ></script>
 
 </body>
 </html>
