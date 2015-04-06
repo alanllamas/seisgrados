@@ -1,3 +1,6 @@
+body{
+	color: white;
+}
 .ng-invalid.ng-touched{
 	box-shadow: 0 0 4px 1px red;
 }
@@ -9,8 +12,50 @@
 }
 .par{
 	padding: 1%;
+	font-size: 1.6em;
+}
+.par a{
+	color: lightblue;
 }
 #terminos{
 	margin: 5% 0;
 	padding: 1.5%;
 }
+header{
+	background: rgba(0,0,0,.5);
+}
+body {
+	background: gray url(grados_back_2.jpg)  fixed;
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.wizard{
+	background: rgba(0,0,0,.7);
+	max-width: 88%;
+	margin: 2px auto;
+	padding: 3%;
+}
+.container{
+	background: rgba(255,255,255,.0);
+}
+.input {
+	color: black;
+	background: rgba(255,255,255,.75);
+	border-radius: 0;
+	border: none;
+}
+select{
+	color: black;
+	background: rgba(255,255,255,.75);
+	border-radius: 0;
+	border: none;
+}
+.btn{
+	border-radius: 0;
+	border: none;
+}
+
