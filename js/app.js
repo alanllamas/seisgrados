@@ -5,6 +5,20 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		this.busco;
 		info = [{},{},{},{},{}];
 		this.info =  info;
+		body = document.body;
+		body.style.background = 'url(img/grados_back_1.png) fixed';
+		urls = [
+			'url(img/grados_back_2.png)',
+			'url(img/grados_back_3.png)',
+			'url(img/grados_back_4.png)',
+			'url(img/grados_back_1.png)',
+			'url(img/grados_back_2.png)',
+			'url(img/grados_back_3.png)',
+			'url(img/grados_back_4.png)',
+			'url(img/grados_back_1.png)',
+			'url(img/grados_back_2.png)'
+		]
+		
 
 			
 		this.store = function  () {
@@ -117,12 +131,21 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				changeYear: true,
 				dateFormat: 'yy/mm/dd',
 				dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
-				yearRange: "1930:1995",
-				monthNamesShort: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "octubre", "Noviembre", "Diciembre" ]
+				yearRange: "1930:1990",
+				monthNamesShort: [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" ],
+				minDate: "-85y",
+				maxDate: "-25y"
 
 			});
+				$log.log(C)
+				body.setAttribute('style', 'background:gray ' + urls[C] + 'fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; '
+				);
+				//background = 'gray ' + urls[C] + 'fixed';
+				$log.log(urls[C])
+			for (var i = 0; i < 6; i++) {
+			};
 
-				$log.log(f.name);
+			
 			if (f.name != "foto") {
 
 				for (var i = 0; i < f.length; i++) {
