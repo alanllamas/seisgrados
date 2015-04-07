@@ -23,11 +23,11 @@
 				<img src="img/6-grados_logo.png" alt="seis grados">
 			</div>
 		</header>
-		<div class="container col-sm-12">
-			<wizard name="wizard"   on-finish="end()" class=" wizard"> 
+		
+			<wizard name="wizard"   on-finish="end()" class=" col-sm-11 col-sm-offset-1 wizard"> 
 			    <wz-step title="Cuenta" canexit="pass">
 			    	<form novalidate class="form"  id="cuenta" name="cuenta">
-						<div class="container row">
+						<div class="container">
 							
 							<h2>Datos para tu Cuenta</h2>
 							<div class="row">
@@ -92,7 +92,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm-4 ">
+								<div class="col-sm-5 ">
 								<h3>¿Cómo nos encontraste?</h3>
 									
 									<select ng-model="found" ng-value="found" required name="found" id="found" >
@@ -139,7 +139,7 @@
 
 							
 								
-								<div class="col-sm-6">
+								<div class="col-sm-7">
 									<h3>Código Promocional o ID de Cuentahabiente</h3>
 										<input class="input form-control" name="PromoCode" id="PromoCode" ng-value="PromoCode" type="text" size="30" value=""  >
 							
@@ -1059,7 +1059,7 @@
 			        	
 			    </wz-step>
 			</wizard>
-		</div>
+		
 		
 
 	
