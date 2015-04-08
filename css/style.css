@@ -98,12 +98,6 @@ select{
 	background:  #C9302C;
 	color: white;
 }
-footer{
-	background: rgba(0,0,0,1);
-	height: 50%;
-	width: 100%;
-	content: "";
-}
 .steps-indicator {
   right: 0;
   bottom: 0;
@@ -113,7 +107,7 @@ footer{
   margin: 0 0 74px 0;
   list-style: none;
   position: fixed;
-  background: rgba(0,0,0,.5);
+  background: rgba(0,0,0,.8);
 }
 .steps-indicator li a {
      color: #fff;
