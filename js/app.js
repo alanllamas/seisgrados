@@ -6,7 +6,8 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		info = [{},{},{},{},{}];
 		this.info =  info;
 		body = document.body;
-		body.style.background = 'url(img/grados_back_1.png) fixed';
+		body.setAttribute('style', 'background:gray url(img/grados_back_1.png)fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; '
+				);
 		urls = [
 			'url(img/grados_back_2.png)',
 			'url(img/grados_back_3.png)',

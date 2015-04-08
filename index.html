@@ -149,15 +149,15 @@
 							
 							    	</div>
 								</div>
-						    	<div class="row">
-						    		<div class=" col-sm-6 col-sm-offset-3">
-						    			<input class="btn form-control btn-danger" type="submit" wz-next  ng-disabled="!cuenta.$valid" value="Siguiente" />
-						    			
-						    		
-						    		</div>
-						    	</div>
 							</div>
 						</div>
+				    	<div class="row btn-row">
+				    		<div class=" col-sm-6 col-sm-offset-3">
+				    			<input class="btn form-control btn-danger" type="submit" wz-next  ng-disabled="!cuenta.$valid" value="Siguiente" />
+				    			
+				    		
+				    		</div>
+				    	</div>
 			    	</form>
 			    </wz-step>
 			    <wz-step title="Informacion Personal" canexit="pass">
@@ -513,15 +513,17 @@
 										</div>
 									</div>
 								</div>
-
-									<div class="col-sm-6 ">
+								<div class="row btn-row">
+									
+									<div class="col-sm-5 col-sm-offset-1 ">
 										
 										<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 ">
 										
 							      	  <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" value="Siguiente" />
 									</div>
+								</div>
 							</fieldset>	
 							</div>
 						</div>
@@ -624,16 +626,18 @@
 									<span>*</span>
 								</div>
 							</div>
-
-							<div class="col-sm-6 ">
-									
-								<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
-								</div>
-								<div class="col-sm-6">
-									
-						        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!estudios.$valid" value="Siguiente" />
+							<div class="row btn-row">
 								
-					       	</div>
+								<div class="col-sm-5 col-sm-offset-1 ">
+										
+									<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
+									</div>
+									<div class="col-sm-5 ">
+										
+							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!estudios.$valid" value="Siguiente" />
+									
+						       	</div>	
+							</div>
 						</div>
 		    		</form>
 			        	
@@ -788,14 +792,17 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-6 ">
-										
-								<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
-								</div>
-								<div class="col-sm-6">
-									
-						        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!buscas.$valid" value="Siguiente" />
+							<div class="row btn-row">
 								
+								<div class="col-sm-5 col-sm-offset-1 ">
+											
+									<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
+									</div>
+									<div class="col-sm-5 ">
+										
+							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!buscas.$valid" value="Siguiente" />
+									
+								</div>
 					       	</div>
 				        
 						</div>
@@ -990,15 +997,18 @@
 
 								
 							</div>
-									<div class="col-sm-6">
-												
-										<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
-										</div>
-										<div class="col-sm-6">
+							<div class="row btn-row">
+								
+								<div class="col-sm-5 col-sm-offset-1 ">
 											
-								        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!memb.$valid" value="Siguiente" />
+									<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
+									</div>
+									<div class="col-sm-5 ">
 										
-							       	</div>
+							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!memb.$valid" value="Siguiente" />
+									
+						       	</div>
+							</div>
 							      
 						</div>
 		    		</form>
@@ -1045,12 +1055,12 @@
 								<div id="terminos" class="par">
 									Al hacer click en el botón, aceptas todos los <a href="#">Términos y Condiciones</a> y confirmas haber leído el <a href="#">Aviso de Privacidad</a> de Seis Grados
 								</div>
-								<div class="row">
-									<div class="col-sm-6">
+								<div class="row btn-row">
+									<div class="col-sm-5 col-sm-offset-1 ">
 												
 										<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-5 ">
 											
 								        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!foto.$valid" id="end" value="Registrarme" />
 										
@@ -1063,6 +1073,10 @@
 			        	
 			    </wz-step>
 			</wizard>
+
+	<footer>
+		<div></div>
+	</footer>
 		
 		
 		
