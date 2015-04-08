@@ -122,5 +122,8 @@ select{
 .steps-indicator li.current a:before {
   background-color: #999999;
 }
+.steps-indicator:before {
+  display: none;
+}
 
 
