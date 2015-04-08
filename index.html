@@ -86,13 +86,13 @@
 								<h3 class="col-sm-12 ">Contraseña<span>*</span></h3>
 								<div class="col-sm-6 ">
 									
-									<input class="input form-control" required name="password" type="password" size="30" maxlength="30" id="password" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="password" ng-value="password" >
+									<input class="input form-control" required name="password" type="password" minlength='8' size="30" maxlength="30" id="password" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="password" ng-value="password" >
 									
 								</div>
 								<div class="col-sm-6">
 									
 
-									<input class="input form-control" required name="confirm" type="password" size="30" id="confirm" placeholder="Confirma tu contraseña"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmPassword" ng-value="confirmPassword" ui-validate="'$value === password'" ui-validate="'password'">
+									<input class="input form-control" required name="confirm" type="password" minlength='8' size="30" id="confirm" placeholder="Confirma tu contraseña"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmPassword" ng-value="confirmPassword" ui-validate="'$value === password'" ui-validate="'password'">
 								</div>
 							</div>
 							<div class="row">

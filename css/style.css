@@ -115,5 +115,18 @@ footer{
   position: fixed;
   background: rgba(0,0,0,.5);
 }
+.steps-indicator li a {
+     color: #fff;
+    
+}
+.steps-indicator li a:hover {
+  color: #fff;
+}
+.steps-indicator li.default a:hover {
+  color: #fff;
+}
+.steps-indicator li.current a:before {
+  background-color: #999999;
+}
 
 
