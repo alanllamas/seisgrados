@@ -115,8 +115,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		
 		$scope.pass = function () {
 
-			$log.log($('.steps-indicator li')[0])
-			$('.steps-indicator li')[0].setAttribute('style','display:none;')
+	
 
 			form =$('form');
 			check = [];
