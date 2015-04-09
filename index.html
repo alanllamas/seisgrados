@@ -28,18 +28,30 @@
 					<img src="img/6-grados_logo.png" alt="seis grados">
 				</div>
 			</header>
-			<wizard name="wizard"   on-finish="end()" class="wizard"> 
-				<wz-step title="Inicio">
+			
+			<section class="welcome" ng-hide="welcome" >
+				
 					<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en 6grados. </h1>
+					<h3>
+						<p>
+							6Grados desarrolla experiencias personalizadas pensadas en tus necesidades particulares.
+							Al pagar una membresía* anual, podrás comenzar a gozar de los beneficios de pertenecer a 6Grados. *(generar un hipervínculo a la descripción de la membresía, los beneficios, el funcionamiento, la duración, etc.) 
+							Por favor completa los siguientes datos para contactarte (ver política de datos personales) 
+						</p>
+					</h3>
 					<div class="row btn-row">
 						<div class=" col-sm-6 col-sm-offset-3">
 				    			
-				    			
+				    			<button ng-model="welcome" ng-click="welcome = true;" class="btn btn-danger form-control">
+				    				Comenzar
+				    			</button>
 				    		
-						<input type="submit" class="btn btn-danger form-control" wz-next value="Comenzar">
+						
 			    		</div>
 					</div>
-				</wz-step>
+			</section>
+			<wizard name="wizard" ng-show="welcome"  on-finish="end()" class="wizard"> 
+			
 			    <wz-step title="Cuenta" canexit="pass">
 			    	<form novalidate class="form"  id="cuenta" name="cuenta">
 						<div class="row">
