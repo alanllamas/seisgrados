@@ -28,7 +28,18 @@
 					<img src="img/6-grados_logo.png" alt="seis grados">
 				</div>
 			</header>
-			<wizard name="wizard"   on-finish="end()" class=" wizard"> 
+			<wizard name="wizard"   on-finish="end()" class="wizard"> 
+				<wz-step title="Inicio">
+					<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en 6grados. </h1>
+					<div class="row btn-row">
+						<div class=" col-sm-6 col-sm-offset-3">
+				    			
+				    			
+				    		
+						<input type="submit" class="btn btn-danger form-control" wz-next value="Comenzar">
+			    		</div>
+					</div>
+				</wz-step>
 			    <wz-step title="Cuenta" canexit="pass">
 			    	<form novalidate class="form"  id="cuenta" name="cuenta">
 						<div class="row">
@@ -82,19 +93,7 @@
 									<input class="input form-control" required name="confirm" type="email" placeholder="Confirma tu correo" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 								</div>
 							</div>
-							<div class="row">
-								<h3 class="col-sm-12 ">Contraseña<span>*</span></h3>
-								<div class="col-sm-6 ">
-									
-									<input class="input form-control" required name="password" type="password" minlength='8' size="30" maxlength="30" id="password" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="password" ng-value="password" >
-									
-								</div>
-								<div class="col-sm-6">
-									
 
-									<input class="input form-control" required name="confirm" type="password" minlength='8' size="30" id="confirm" placeholder="Confirma tu contraseña"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmPassword" ng-value="confirmPassword" ui-validate="'$value === password'" ui-validate="'password'">
-								</div>
-							</div>
 							<div class="row">
 								<div class="col-sm-5 ">
 								<h3>¿Cómo nos encontraste?</h3>
@@ -141,14 +140,7 @@
 									<span>*</span>
 								</div>
 
-							
-								
-								<div class="col-sm-7">
-									<h3>Código Promocional o ID de Cuentahabiente</h3>
-										<input class="input form-control" name="PromoCode" id="PromoCode" ng-value="PromoCode" type="text" size="30" value=""  >
-							
-							    	</div>
-								</div>
+
 							</div>
 						</div>
 				    	<div class="row btn-row">
@@ -195,7 +187,7 @@
 										</div>
 									</div>
 
-									<div class="col-sm-3">
+									<div class="col-sm-3 col-sm-offset-1">
 										<h3>Estatura</h3>
 
 										<div>
@@ -260,7 +252,7 @@
 
 								
 								
-									<div class="col-sm-3 col-sm-offset-1">	
+									<div class="col-sm-2 col-sm-offset-1">	
 										<h3>Peso</h3>
 
 										<div>
@@ -354,7 +346,7 @@
 										</div>
 									</div>
 									
-									<div class="col-sm-4" >
+									<div class="col-sm-4 col-sm-offset-1" >
 										<h3 >¿Tienes hijos?</h3>
 
 										<div>
@@ -453,10 +445,10 @@
 										</div>
 									</div>
 										<div class="col-sm-6">
-										<h3>Teléfono Adicional<span>*</span></h3>
+										<h3>Teléfono Adicional</h3>
 
 											<div>
-												<select ng-model="tel2_tipo" ng-value="tel2_tipo" class="tel2" name="tel2_tipo" id="tel2_tipo" required >
+												<select ng-model="tel2_tipo" ng-value="tel2_tipo" class="tel2" name="tel2_tipo" id="tel2_tipo">
 													<option value="" selected>tipo...</option>
 													<option value="casa">casa</option>
 													<option value="trabajo">trabajo</option>
@@ -464,9 +456,9 @@
 													<option value="nextel">nextel</option>
 												</select>
 											
-												<input ng-pattern="/^[0-9]*$/" ng-model="lada2" ng-value="lada2" id="lada2" class="input tel2" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2"required>
+												<input ng-pattern="/^[0-9]*$/" ng-model="lada2" ng-value="lada2" id="lada2" class="input tel2" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2">
 
-												<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2" placeholder="Teléfono" value="" name="phone2" type="tel" ng-keyup="" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required   ui-validate="'$value != phone'" ui-validate="'phone'" >
+												<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2" placeholder="Teléfono" value="" name="phone2" type="tel" ng-keyup="" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"    ui-validate="'$value != phone'" ui-validate="'phone'" >
 												
 											</div>
 										</div>
@@ -475,11 +467,11 @@
 								<div class="row">
 									<div class="col-sm-12 ">
 										
-										<h3 class=" col-sm-12" >Correo Electrónico Adicional<span>*</span></h3>
+										<h3 class=" col-sm-12" >Correo Electrónico Adicional</h3>
 										<div class="col-sm-6 ">
 
 											<div>
-												<input class="input form-control" ng-model="email2" placeholder="" ng-value="email2" name="email2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
+												<input class="input form-control" ng-model="email2" placeholder="" ng-value="email2" name="email2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
 												
 											</div>
 										</div>
@@ -487,7 +479,7 @@
 										<div class="col-sm-6">
 
 											<div >
-												<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo" name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required ui-validate="'$value === email2'" ui-validate="'email2'" >
+												<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo" name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  ui-validate="'$value === email2'" ui-validate="'email2'" >
 											</div>
 										</div>
 									</div>

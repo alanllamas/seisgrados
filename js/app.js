@@ -19,9 +19,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			'url(img/grados_back_1.png)',
 			'url(img/grados_back_2.png)'
 		]
-		
-
-			
 		this.store = function  () {
 			if (!store.enabled) {
 				alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
@@ -34,8 +31,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			for (var i = 0; i < info.length; i++) {
 				info[i]= getinfo[i];
 			};
-			$log.log('hay info')
-			$log.log(getinfo)
 
 			//se obtienen datos del primer objeto/forma
 			$scope.firstname = getinfo[0]['firstname'];
@@ -85,15 +80,12 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			$scope.main.busco = getinfo[3]['quisiera_conocer']
 			if ( getinfo[3]['busco_gay_activo']) {
 			$scope.gay1 = getinfo[3]['busco_gay_activo'];
-				console.log($scope.gay1);
 			};
 			if ( getinfo[3]['busco_gay_pasivo']) {
 				$scope.gay2 = getinfo[3]['busco_gay_pasivo'];
-				console.log($scope.gay2);
 			};
 			if ( getinfo[3]['busco_gay_versatil']) {
 				$scope.gay3 = getinfo[3]['busco_gay_versatil'];
-				console.log($scope.gay3);
 			};
 
 			//se obtienen datos del quinto objeto/forma
@@ -120,7 +112,11 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		};
 		json = JSON.stringify(info,undefined,6);
 		
+		
 		$scope.pass = function () {
+
+			$log.log($('.steps-indicator li')[0])
+			$('.steps-indicator li')[0].setAttribute('style','display:none;')
 
 			form =$('form');
 			check = [];
@@ -138,11 +134,11 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				maxDate: "-25y"
 
 			});
-				$log.log(C)
+				
 				body.setAttribute('style', 'background:gray ' + urls[C] + 'fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; '
 				);
-				//background = 'gray ' + urls[C] + 'fixed';
-				$log.log(urls[C])
+				
+				
 			for (var i = 0; i < 6; i++) {
 			};
 
@@ -165,7 +161,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 
 							g = angular.element(f[i]).hasClass('gay');
 							if (f[i].name == 'quisiera_conocer') {
-								$log.log(f[i])
+								
 							};
 							if (g) {
 								 
@@ -245,15 +241,12 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 								info[C][n]= v ;
 
 							};
-
 						};
-	
 				};
 			};
 				store.set('info', info);
 				get = store.get('info');
 			
-			console.log(info)
 		
 			return	true;
 		};
@@ -264,16 +257,23 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 					alert('has terminado el wizard');
 					foto.removeClass('ng-invalid');
 					foto.removeClass('ng-touched');
+					$('.wizard').empty();
+					$('.wizard').append("<h1>Gracias por tu información.</h1> <h3> En las próximas 24hrs nos comunicaremos contigo para comenzar a crear la experiencia 6grados.</h3>");
+							
 				}else{
 					alert('necesitas ingresar una foto');
 					foto.addClass('ng-invalid');
 					foto.addClass('ng-touched');
 				};
 				get = store.get('info');
-				$log.log(ff);
+				
 		};
 
 
 
 
 	}]);
+					//$('.wizard').empty();
+					//$('.wizard').append('<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en 6grados. </h1><div class="row btn-row"><div class=" col-sm-6 col-sm-offset-3"><input type="submit" class="btn btn-danger form-control" wz-next value="Comenzar"></div></div>');
+
+
