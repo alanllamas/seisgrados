@@ -74,6 +74,15 @@ select{
     font-weight: bolder;
     padding: 2px;
 }
+.btn-warning{
+	background: none;
+	border-radius: 0;
+	border: none;
+    border: 2px solid #EC971F;
+    color: #EC971F;
+    font-weight: bolder;
+    padding: 2px;
+}
 .btn-row{
 	 position: fixed;
     bottom: 0;

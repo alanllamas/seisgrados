@@ -68,8 +68,8 @@
 										<div>
 											<select ng-model="main.sexo" ng-value="main.sexo"  name="sexo" ng-value="sexo" id="sexo" required>
 												<option value="" selected>Género...</option>
-												<option value="femenino">femenino</option>
-												<option value="masculino">masculino</option>
+												<option value="femenino">Mujer</option>
+												<option value="masculino">Hombre</option>
 											</select>
 											
 										</div>
@@ -340,11 +340,11 @@
 									</div>
 									<div class="col-sm-4 ">
 										
-							      	  <input class="btn form-control btn-danger" type="submit" wz-next  ng-disabled="!cuenta.$valid" value="Siguiente" />
+							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
 									</div>
 									<div class="col-sm-4 ">
 										
-							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
+							      	  <input class="btn form-control btn-danger" type="submit" wz-next  ng-disabled="!cuenta.$valid" value="Siguiente" />
 									</div>
 						</div>
 			    	</form>
@@ -698,11 +698,11 @@
 									</div>
 									<div class="col-sm-4 ">
 										
-							      	  <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" value="Siguiente" />
+							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
 									</div>
 									<div class="col-sm-4 ">
 										
-							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
+							      	  <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" value="Siguiente" />
 									</div>
 								</div>
 							</fieldset>	
@@ -813,15 +813,15 @@
 										
 								<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
 								</div>
+					       		<div class="col-sm-4 ">
+										
+							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
+								</div>
 								<div class="col-sm-4 ">
 									
 						        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!estudios.$valid" value="Siguiente" />
 								
 					       		</div>	
-					       		<div class="col-sm-4 ">
-										
-							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
-								</div>
 							</div>
 						</div>
 		    		</form>
@@ -875,16 +875,16 @@
 									<div class="col-sm-4 ">
 												
 										<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
-										</div>
-										<div class="col-sm-4 ">
-											
-								        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!foto.$valid" id="end" value="Registrarme" />
-										
-							       	</div>
+									</div>
 							       	<div class="col-sm-4 ">
 										
 							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
 									</div>
+									<div class="col-sm-4 ">
+											
+								        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!foto.$valid" id="end" value="Registrarme" />
+										
+							       	</div>
 								</div>
 							</div>
 						</div>
