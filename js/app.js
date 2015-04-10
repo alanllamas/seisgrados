@@ -198,9 +198,10 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				
 		};
 		$scope.reset = function () {
-			alert('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')
-			store.clear();
-			window.location.reload(true)
+			if (confirm('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')) {
+				store.clear();
+				window.location.reload(true)
+			};
 		}
 
 
