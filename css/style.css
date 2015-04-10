@@ -20,11 +20,12 @@
 	margin: 20px 0;
 }
 .par{
-	font-size: 1.6em;
+	font-size: 1.3em;
 	padding: 1%;
 }
 .par a{
-	color: lightblue;
+	color: #C9302C;
+	font-weight: bolder;
 }
 #terminos{
 	margin: 5% 0;
@@ -41,6 +42,7 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	padding-bottom: 16%;
+	font-family: 'Dosis', sans-serif;
 }
 .wizard{
 	background: rgba(0,0,0,.7);
@@ -71,9 +73,6 @@ select{
     color: #C9302C;
     font-weight: bolder;
     padding: 2px;
-
-   
-   
 }
 .btn-row{
 	 position: fixed;
@@ -117,7 +116,7 @@ select{
   color: #fff;
 }
 .steps-indicator li.default a:hover {
-  color: #fff;
+  color: #000;
 }
 .steps-indicator li.current a:before {
   background-color: #999999;
@@ -125,9 +124,21 @@ select{
 .steps-indicator:before {
   display: none;
 }
+.steps-indicator li a:before {
+ background-color: #555;
+}
+.steps-indicator li.done a:before {
+  background-color: #fff;
+}
+.steps-indicator li.editing a:before {
+  background-color: #C9302C;
+}
 .welcome{
 	background: rgba(0,0,0,.9);
 	margin: 10%;
 	padding: 3%;
+}
+.req{
+	color: #C9302C;
 }
 

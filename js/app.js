@@ -33,81 +33,63 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			};
 
 			//se obtienen datos del primer objeto/forma
-			$scope.firstname = getinfo[0]['firstname'];
-			$scope.secondname = getinfo[0]['secondname'];
-			$scope.lastname1 = getinfo[0]['lastname1'];
-			$scope.lastname2 = getinfo[0]['lastname2'];
-			$scope.email = getinfo[0]['email'];
-			$scope.confirmEmail = getinfo[0]['email'];
-			$scope.password = getinfo[0]['password'];
-			$scope.confirmPassword = getinfo[0]['password'];
-			$scope.found = getinfo[0]['found'];
-			$scope.PromoCode = getinfo[0]['PromoCode'];
+				$scope.main.sexo = getinfo[0]['sexo'];
+				$scope.edad1 = getinfo[0]['edad1'];
+				$scope.edad2 = getinfo[0]['edad2'];
+				$scope.main.busco = getinfo[0]['quisiera_conocer']
+				if ( getinfo[0]['busco_gay_activo']) {
+				$scope.gay1 = getinfo[0]['busco_gay_activo'];
+				};
+				if ( getinfo[0]['busco_gay_pasivo']) {
+					$scope.gay2 = getinfo[0]['busco_gay_pasivo'];
+				};
+				if ( getinfo[0]['busco_gay_versatil']) {
+					$scope.gay3 = getinfo[0]['busco_gay_versatil'];
+				};
+
 
 			//se obtienen datos del segundo objeto/forma
-			$scope.date = getinfo[1]['datepicker'];
-			$scope.main.sexo = getinfo[1]['sexo'];
-			$scope.estatura = getinfo[1]['estatura'];
-			$scope.peso = getinfo[1]['peso'];
-			if (getinfo[1]['tel']) {
-				$scope.tel1_tipo = getinfo[1]['tel'][0];
-				$scope.lada = getinfo[1]['tel'][1];
-				$scope.phone = getinfo[1]['tel'][2];
-			};
-			$scope.estado = getinfo[1]['estado'];
-			$scope.ciudad = getinfo[1]['ciudad'];
-			$scope.cp = getinfo[1]['cp'];
-			$scope.estadi_civil = getinfo[1]['estadi_civil'];
-			$scope.hijos = getinfo[1]['posesion_hijos'];
-			if ( getinfo[1]['tel2']) {
-				$scope.tel2_tipo = getinfo[1]['tel2'][0];
-				$scope.lada2 = getinfo[1]['tel2'][1];
-				$scope.phone2 = getinfo[1]['tel2'][2];
-			};
-			$scope.email2 = getinfo[1]['email2'];
-			$scope.email2confirma = getinfo[1]['email2'];
-			$scope.usuario_fb = getinfo[1]['usuario_fb'];
-			$scope.usuario_twitter = getinfo[1]['usuario_twitter'];
+
+			
+			$scope.firstname = getinfo[1]['firstname'];
+			$scope.secondname = getinfo[1]['secondname'];
+			$scope.lastname1 = getinfo[1]['lastname1'];
+			$scope.lastname2 = getinfo[1]['lastname2'];
+			$scope.email = getinfo[1]['email'];
+			$scope.confirmEmail = getinfo[1]['email'];
+			$scope.found = getinfo[1]['found'];
 			
 			//se obtienen datos del tercer objeto/forma
-			$scope.max_tit_academico = getinfo[2]['max_tit_academico'];
-			$scope.profesion = getinfo[2]['profesion'];
-			$scope.sector = getinfo[2]['sector'];
+			$scope.date = getinfo[2]['datepicker'];
+			$scope.estatura = getinfo[2]['estatura'];
+			$scope.peso = getinfo[2]['peso'];
+			$scope.estado = getinfo[2]['estado'];
+			$scope.ciudad = getinfo[2]['ciudad'];
+			$scope.cp = getinfo[2]['cp'];
+			$scope.estadi_civil = getinfo[2]['estadi_civil'];
+			$scope.hijos = getinfo[2]['posesion_hijos'];
+			if (getinfo[2]['tel']) {
+				$scope.tel1_tipo = getinfo[2]['tel'][0];
+				$scope.lada = getinfo[2]['tel'][1];
+				$scope.phone = getinfo[2]['tel'][2];
+			};
+			if ( getinfo[2]['tel2']) {
+				$scope.tel2_tipo = getinfo[2]['tel2'][0];
+				$scope.lada2 = getinfo[2]['tel2'][1];
+				$scope.phone2 = getinfo[2]['tel2'][2];
+			};
+			$scope.email2 = getinfo[2]['email2'];
+			$scope.email2confirma = getinfo[2]['email2'];
+			$scope.usuario_fb = getinfo[2]['usuario_fb'];
+			$scope.usuario_twitter = getinfo[2]['usuario_twitter'];
+			
 			
 			//se obtienen datos del cuarto objeto/forma
-			$scope.edad1 = getinfo[3]['edad1'];
-			$scope.edad2 = getinfo[3]['edad2'];
-			$scope.main.busco = getinfo[3]['quisiera_conocer']
-			if ( getinfo[3]['busco_gay_activo']) {
-			$scope.gay1 = getinfo[3]['busco_gay_activo'];
-			};
-			if ( getinfo[3]['busco_gay_pasivo']) {
-				$scope.gay2 = getinfo[3]['busco_gay_pasivo'];
-			};
-			if ( getinfo[3]['busco_gay_versatil']) {
-				$scope.gay3 = getinfo[3]['busco_gay_versatil'];
-			};
+		
+			$scope.max_tit_academico = getinfo[3]['max_tit_academico'];
+			$scope.profesion = getinfo[3]['profesion'];
+			$scope.sector = getinfo[3]['sector'];
 
-			//se obtienen datos del quinto objeto/forma
-			$scope.mem = getinfo[4]['tipo_membresia'];
-				$scope.day1lu = getinfo[4]['Lunes,1'];
-				$scope.day1ma = getinfo[4]['Martes,1'];
-				$scope.day1mi = getinfo[4]['Miércoles,1'];
-				$scope.day1ju = getinfo[4]['Jueves,1'];
-				$scope.day1vi = getinfo[4]['Viernes,1'];
-				$scope.day1sa = getinfo[4]['Sábado,1'];
-				$scope.day1do = getinfo[4]['Domingo,1'];
-			$scope.hora_entrevista_ini1 = getinfo[4]['hora_entrevista_ini1'];
-			$scope.hora_entrevista_fin1 = getinfo[4]['hora_entrevista_fin1'];
-				$scope.day2lu = getinfo[4]['Lunes,2'];
-				$scope.day2ma = getinfo[4]['Martes,2'];
-				$scope.day2mi = getinfo[4]['Miércoles,2'];
-				$scope.day2ju = getinfo[4]['Jueves,2'];
-				$scope.day2vi = getinfo[4]['Viernes,2'];
-				$scope.day2sa = getinfo[4]['Sábado,2'];
-				$scope.day2do = getinfo[4]['Domingo,2'];
-			$scope.hora_entrevista_ini2 = getinfo[4]['hora_entrevista_ini2'];
-			$scope.hora_entrevista_fin2 = getinfo[4]['hora_entrevista_fin2'];
 
 		};
 		json = JSON.stringify(info,undefined,6);
@@ -118,8 +100,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 	
 
 			form =$('form');
-			check = [];
-			check2 = [];
 			C = WizardHandler.wizard('wizard').currentStepNumber()-1;
 			f = form[C];
 			$('.datepicker').datepicker({
@@ -170,56 +150,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 							};
 
 							
-							d1 = angular.element(f[i]).hasClass('day1');
-							D1 = $('.day1');
-							if (d1) {
-								if (f[i].checked) {
-									check.push(1);
-								}else{
-									check.push(0);
-								};
-									v =	f[i].value;
-									n = f[i].name;
-									if (check.length == 7 && check.indexOf(1) == -1) {
-										D1.addClass('ng-invalid');
-										D1.addClass('ng-touched');
-
-										D1.removeClass('ng-valid');
-										D1.removeClass('ng-untouched');
-										return false;
-									}else{
-										D1.addClass('ng-valid');
-										
-
-										D1.removeClass('ng-invalid');
-									};
-								info[C][v + "1"]= f[i].checked ;
-							};
-
-
-							d2 = angular.element(f[i]).hasClass('day2');
-							D2 = $('.day2');
-							if (d2) {
-								if (f[i].checked) {
-									check2.push(1);
-								}else{
-									check2.push(0);
-								};
-									v =	f[i].value;
-									n = f[i].name;
-									if (check2.length == 7 && check2.indexOf(1) == -1) {
-										D2.addClass('ng-invalid');
-										D2.addClass('ng-touched');
-
-										D2.removeClass('ng-valid');
-										D2.removeClass('ng-untouched');
-										return false;
-									}else{
-										D2.addClass('ng-valid');
-										D2.removeClass('ng-invalid');
-									};
-								info[C][v + "2"]= f[i].checked ;
-							};
+							
 						};
 						if (angular.element(f[i]).hasClass('tel1')) {
 							tel = [f['tel1_tipo'].value,f['lada'].value,f['phone'].value];
@@ -253,11 +184,10 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			foto = $('#photo');
 			ff = foto[0].files[0];
 				if (ff) {
-					alert('has terminado el wizard');
 					foto.removeClass('ng-invalid');
 					foto.removeClass('ng-touched');
 					$('.wizard').empty();
-					$('.wizard').append("<h1>Gracias por tu información.</h1> <h3> En las próximas 24hrs nos comunicaremos contigo para comenzar a crear la experiencia 6grados.</h3>");
+					$('.wizard').append("<h1 class='text-center' >Gracias por tu información.</h1> <h3>En las próximas 48 hrs. nos comunicaremos contigo para comenzar a crear la experiencia 6grados.</h3>");
 							
 				}else{
 					alert('necesitas ingresar una foto');
@@ -267,12 +197,14 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				get = store.get('info');
 				
 		};
+		$scope.reset = function () {
+			alert('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')
+			store.clear();
+			window.location.reload(true)
+		}
 
 
 
 
 	}]);
-					//$('.wizard').empty();
-					//$('.wizard').append('<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en 6grados. </h1><div class="row btn-row"><div class=" col-sm-6 col-sm-offset-3"><input type="submit" class="btn btn-danger form-control" wz-next value="Comenzar"></div></div>');
-
-
+				
