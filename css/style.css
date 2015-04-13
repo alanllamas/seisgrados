@@ -10,6 +10,10 @@
 		display: none;
 	visibility: hidden;
 }
+.placeholder{
+	font-weight: bolder;
+	color: #fff;
+}
 .ng-invalid.ng-touched{
 	box-shadow: 0 0 4px 1px red;
 }
@@ -85,7 +89,7 @@ select{
 }
 .btn-row{
 	 position: fixed;
-    bottom: 0;
+    bottom: 5%;
     width: 101.2%;
     background: rgba(0,0,0,.9);
     left: 0
@@ -108,7 +112,7 @@ select{
 }
 .steps-indicator {
   right: 0;
-  bottom: 0;
+  bottom: 3%;
   left: 0;
   height: 30px;
   padding: 40px;
@@ -149,5 +153,22 @@ select{
 }
 .req{
 	color: #C9302C;
+}
+.req a{
+	color: #C9302C;	
+}
+.req a:hover{
+	color: #9E221B;
+}
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 110%;
+	
+	padding: 1.8% 20%;
+
+	font-weight: bolder;
+	background: rgba(0,0,0,.9);
+
 }
 

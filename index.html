@@ -32,14 +32,16 @@
 			
 			<section class="welcome" ng-hide="welcome" >
 				
-					<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en 6grados. </h1>
-					<h3>
+					<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en <span class="req">6</span>grados. </h1>
+					<h3 class="text-center">
 						<p>
-							6Grados desarrolla experiencias personalizadas pensadas en tus necesidades particulares.
-							Al pagar una membresía* anual, podrás comenzar a gozar de los beneficios de pertenecer a 6Grados. *(generar un hipervínculo a la descripción de la membresía, los beneficios, el funcionamiento, la duración, etc.) 
-							Por favor completa los siguientes datos para contactarte (ver política de datos personales) 
+							<span class="req">6</span> rados desarrolla experiencias personalizadas pensadas en ti. Al pagar una <span class="req"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">membresía</a></span> anual, podrás  gozar de sus beneficios. Por favor completa los siguientes <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">datos personales</a></span> para poder contactarte.
 						</p>
 					</h3>
+					<h2 class="text-center">
+						
+							<span class="req">6</span> rados. Encuentros Inteligentes.
+					</h2>
 					<div class="row btn-row">
 						<div class=" col-sm-6 col-sm-offset-3">
 				    			
@@ -191,7 +193,7 @@
 							<div class="row">
 								<div class="col-sm-12 ">
 									
-									<h3>Quisiera conocer <span class="req" >*</span></h3>
+									<h3>Quisiera conocer <span class="req">*</span></h3>
 									<div>
 										<p>
 											<label for="radio60" class="col-sm-2"><input type="radio" name="quisiera_conocer" id="radio60" ng-model="main.busco"  value="Hombre" required/>Hombre</label>
@@ -243,27 +245,27 @@
 							
 								<div class="col-sm-6 ">
 									
-									<input class="input form-control" required name="firstname" type="text" size="20" placeholder="Nombre" id="firstname" ng-model="firstname" ng-value="firstname" ng-value="firstname" >
+									<input class="input form-control placeholder" required name="firstname" type="text" size="20" placeholder="Nombre (requerido)" id="firstname" ng-model="firstname" ng-value="firstname" ng-value="firstname" >
 									
 								</div> 
 
 								<div class="col-sm-6">
 									
-								<input class="input form-control" placeholder="Nombre"  name="secondname" type="text" size="20" id="secondname" ng-model="secondname" ng-value="secondname" >
+								<input class="input form-control placeholder" placeholder="Otros Nombres (opcional)"  name="secondname" type="text" size="20" id="secondname" ng-model="secondname" ng-value="secondname" >
 								</div>
 
 							</div>
 							<div class="row">
 								
-								<h3 class="col-sm-12 ">Apellidos <span class="req" >*</span></h3>
+								<h3 class="col-sm-12 ">Apellido(s) <span class="req" >*</span></h3>
 
 									<div class="col-sm-6 ">
 										
-									<input class="input form-control" placeholder="Paterno" required name="lastname1" placeholder="Apellido Paterno" type="text" size="20" id="lastname1" ng-model="lastname1" ng-value="lastname1" >
+									<input class="input form-control placeholder" placeholder="Paterno (requerido)" required name="lastname1"  type="text" size="20" id="lastname1" ng-model="lastname1" ng-value="lastname1" >
 									</div>
 									<div class="col-sm-6">
 										
-									<input class="input form-control" placeholder="Materno" required name="lastname2" placeholder="Apellido Materno" type="text" size="20" id="lastname2" ng-model="lastname2" ng-value="lastname2" >
+									<input class="input form-control placeholder" placeholder="Materno (opcional)"name="lastname2"  type="text" size="20" id="lastname2" ng-model="lastname2" ng-value="lastname2" >
 									</div>
 									
 						
@@ -272,12 +274,12 @@
 								<h3 class="col-sm-12 ">Correo Electrónico<span class="req" >*</span></h3>
 								<div class="col-sm-6 ">
 									
-									<input class="input form-control" required name="email" type="email" placeholder="Correo Electronico" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
+									<input class="input form-control placeholder" required name="email" type="email" placeholder="Correo Electronico (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
 									
 								</div>
 								<div class="col-sm-6 ">
 									
-									<input class="input form-control" required name="confirm" type="email" placeholder="Confirma tu correo" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
+									<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Confirma tu correo (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 								</div>
 							</div>
 
@@ -365,7 +367,7 @@
 
 										<div>
 
-											<input  type="text" class="input datepicker form-control" readonly placeholder="selecciona tu fecha" ng-model="date" ng-value="date" name="datepicker" required />	
+											<input  type="text" class="input datepicker form-control" readonly placeholder="selecciona tu fecha (requerido)" ng-model="date" ng-value="date" name="datepicker" required />	
 											
 										</div>
 									</div>
@@ -581,6 +583,45 @@
 												<option value="Yucatán">Yucatán </option>
 												<option value="Zacatecas">Zacatecas</option>
 											</select>
+
+										<!--
+											<select id="estado" ng-model="estado" ng-value="estado"
+size="1" required class="form-control A" name="estado">
+												<option value="">Estado...</option>
+												<option value="1">Aguascalientes</option>
+												<option value="2">Baja California</option>
+												<option value="3">Baja California Sur</option>
+												<option value="4">Campeche</option>
+												<option value="7">Chiapas</option>
+												<option value="8">Chihuahua</option>
+												<option value="5">Coahuila</option>
+												<option value="6">Colima</option>
+												<option value="9">Distrito Federal</option>
+												<option value="10">Durango</option>
+												<option value="15">Estado de México</option>
+												<option value="11">Guanajuato</option>
+												<option value="12">Guerrero</option>
+												<option value="13">Hidalgo</option>
+												<option value="14">Jalisco</option>
+												<option value="16">Michoacán</option>
+												<option value="17">Morelos</option>
+												<option value="18">Nayarit</option>
+												<option value="19">Nuevo León</option>
+												<option value="20">Oaxaca</option>
+												<option value="21">Puebla</option>
+												<option value="22">Querétaro</option>
+												<option value="23">Quintana Roo</option>
+												<option value="24">San Luis Potosí</option>
+												<option value="25">Sinaloa</option>
+												<option value="26">Sonora</option>
+												<option value="27">Tabasco</option>
+												<option value="28">Tamaulipas</option>
+												<option value="29">Tlaxcala</option>
+												<option value="30">Veracruz</option>
+												<option value="31">Yucatán</option>
+												<option value="32">Zacatecas</option>
+											</select> 
+										-->
 											
 										</div>
 									</div>
@@ -597,7 +638,7 @@
 										<h3>Ciudad<span class="req" >*</span></h3>
 
 										<div>
-											<input class="input form-control" ng-model="ciudad" ng-value="ciudad" name="ciudad" type="text" id="ciudad" size="20" required />
+											<input class="input form-control" ng-model="ciudad" ng-value="ciudad" name="ciudad" placeholder="(requerido)" type="text" id="ciudad" size="20" required />
 											
 										</div>
 									</div>
@@ -606,7 +647,7 @@
 										<h3>Delegación o Municipio</h3>
 
 										<div>
-											<input class="input form-control" ng-model="cp" ng-value="cp" name="cp" type="text" id="cp" size="20" />
+											<input class="input form-control" ng-model="cp" ng-value="cp" placeholder="(opcional)" name="cp" type="text" id="cp" size="20" />
 										</div>
 									</div>
 								</div>	
@@ -626,7 +667,7 @@
 
 											<input ng-pattern="/^[0-9]*$/" id="lada"  placeholder="LADA" class="input tel1 col-sm-2 col-sm-offset-1" ng-model="lada" ng-value="lada" name="lada" type="tel" size="2" maxlength="3" minlength="2" required>
 											
-											<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Teléfono" class="input tel1 col-sm-3 col-sm-offset-1" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
+											<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Teléfono (requerido)" class="input tel1 col-sm-3 col-sm-offset-1" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
 										</div>
 									</div>
 										<div class="col-sm-6">
@@ -643,7 +684,7 @@
 											
 												<input ng-pattern="/^[0-9]*$/" ng-model="lada2" ng-value="lada2" id="lada2" class="input tel2 col-sm-2 col-sm-offset-1" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2">
 
-												<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2 col-sm-3 col-sm-offset-1" placeholder="Teléfono" value="" name="phone2" type="tel" size="9" maxlength="8" minlength="7" autocomplete="off"    ui-validate="'!$value || $value != phone'" ui-validate="'phone'" >
+												<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2 col-sm-3 col-sm-offset-1" placeholder="Teléfono (opcional)" value="" name="phone2" type="tel" size="9" maxlength="8" minlength="7" autocomplete="off"    ui-validate="'!$value || $value != phone'" ui-validate="'phone'" >
 												
 											</div>
 										</div>
@@ -656,7 +697,7 @@
 										<div class="col-sm-6 ">
 
 											<div>
-												<input class="input form-control" ng-model="email2" placeholder="" ng-value="email2" name="email2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
+												<input class="input form-control" ng-model="email2" placeholder="(opcional)" ng-value="email2" name="email2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
 												
 											</div>
 										</div>
@@ -664,7 +705,7 @@
 										<div class="col-sm-6">
 
 											<div >
-												<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo" name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  ui-validate="'$value === email2'" ui-validate="'email2'" >
+												<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo (opcional)" name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  ui-validate="'$value === email2'" ui-validate="'email2'" >
 											</div>
 										</div>
 									</div>
@@ -677,7 +718,7 @@
 											<h3>Usuario de Facebook</h3>
 											
 											<div>
-												<input class="input form-control" ng-model="usuario_fb" ng-value="usuario_fb" name="usuario_fb" type="text" size="20" maxlength="30" id="usuario_fb">
+												<input class="input form-control" placeholder="(opcional)" ng-model="usuario_fb" ng-value="usuario_fb" name="usuario_fb" type="text" size="20" maxlength="30" id="usuario_fb">
 											</div>
 										</div>
 
@@ -685,7 +726,7 @@
 											<h3>Usuario de Twitter</h3>
 
 											<div>
-												<input class="input form-control" ng-model="usuario_twitter" ng-value="usuario_twitter" name="usuario_twitter" type="text" size="20" maxlength="30" id="usuario_twitter">
+												<input class="input form-control" placeholder="(opcional)" ng-model="usuario_twitter" ng-value="usuario_twitter" name="usuario_twitter" type="text" size="20" maxlength="30" id="usuario_twitter">
 											</div>
 										</div>
 									</div>
@@ -869,7 +910,7 @@
 									</div>
 								</div>
 								<div id="terminos" class="par">
-									Al hacer click en Registrarme, aceptas todos los <a href="#">Términos y Condiciones</a> y confirmas haber leído el <a href="#">Aviso de Privacidad</a> de Seis Grados
+									Al hacer click en Registrarme, aceptas todos los <span class="req"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span> y confirmas haber leído el <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span> de <span class="req">6</span>rados.
 								</div>
 								<div class="row btn-row">
 									<div class="col-sm-4 ">
@@ -895,7 +936,11 @@
 			</wizard>
 
 	<footer>
-		<div></div>
+		<div class="row">
+			<span class="req col-sm-4"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
+			<span class="req col-sm-4"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
+			<span class="req col-sm-4"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
+		</div>
 	</footer>
 		
 		
