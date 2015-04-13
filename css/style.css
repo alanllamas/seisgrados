@@ -137,10 +137,10 @@ select{
  background-color: #555;
 }
 .steps-indicator li.done a:before {
-  background-color: #fff;
+  background-color: #C9302C;
 }
 .steps-indicator li.editing a:before {
-  background-color: #C9302C;
+  background-color: #fff;
 }
 .welcome{
 	background: rgba(0,0,0,.9);
