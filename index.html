@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="UTF-8">
-	<title>HEXAGRADOS</title>
+	<title>6 GRADOS</title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700,500' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="public/lib/jquery-ui/themes/smoothness/jquery-ui.min.css">
 	<link rel="stylesheet" href="public/lib/angular-wizard/dist/angular-wizard.css">
@@ -613,7 +613,8 @@
 
 										<div>
 
-										<select name="ciudad" ng-model="ciudad" ng-value="ciudad"  class="input" placeholder="Ciudad" id="ciudad" required>
+										<select name="ciudad" ng-model="ciudad" ng-value="ciudad"  class="input"  id="ciudad" required>
+											<option selected  value="">Selecciona una ciudad</option>
 											<option ng-selected="k === ciudad" value="{{k}}" ng-repeat="(k , v) in mun[estado -1]" >{{v}} </option>
 										</select>
 											
