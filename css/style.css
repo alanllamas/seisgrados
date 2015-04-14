@@ -89,7 +89,7 @@ select{
 }
 .btn-row{
 	 position: fixed;
-    bottom: 5%;
+    bottom: 6.3%;
     width: 101.2%;
     background: rgba(0,0,0,.9);
     left: 0
@@ -112,10 +112,10 @@ select{
 }
 .steps-indicator {
   right: 0;
-  bottom: 3%;
+  bottom: 6.3%;
   left: 0;
   height: 30px;
-  padding: 40px;
+  padding: 30px;
   margin: 0 0 74px 0;
   list-style: none;
   position: fixed;
@@ -165,7 +165,7 @@ footer{
 	bottom: 0;
 	width: 110%;
 	
-	padding: 1.8% 20%;
+	padding: 1.6% 20%;
 
 	font-weight: bolder;
 	background: rgba(0,0,0,.9);
