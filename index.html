@@ -8,6 +8,12 @@
 	<link rel="stylesheet" href="public/lib/angular-wizard/dist/angular-wizard.css">
 	<link rel="stylesheet" href="public/lib/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- css combobox -->
+	 <link rel="stylesheet" type="text/css" href="FlexBox/css/jquery.felxbox.css" />
+   
+   <!-- termina css combobox -->
+
 </head>
 <body ng-controller="MainCtrl as main" ng-app="myApp" 
 	style=" 
@@ -16,6 +22,7 @@
 			-o-background-size: cover;
 			background-size: cover;
 " >
+
 	
 			<div class="preloader">
 				<img src="img/grados_back_1.png" alt="">
@@ -42,6 +49,7 @@
 						
 							<span class="req">6</span> rados. Encuentros Inteligentes.
 					</h2>
+
 					<div class="row btn-row">
 						<div class=" col-sm-6 col-sm-offset-3">
 				    			
@@ -52,6 +60,7 @@
 						
 			    		</div>
 					</div>
+
 			</section>
 			<wizard name="wizard" ng-show="welcome"  on-finish="end()" class="wizard"> 
 			
@@ -548,61 +557,24 @@
 										<h3>Resido en<span class="req" >*</span></h3>
 
 										<div>
-											<select ng-model="estado" ng-value="estado" name="estado" size="1" required>
-												<option  value="">Selecciona...</option>
-												<option value="Aguascalientes">Aguascalientes</option>
-												<option value="Baja California">Baja California </option>
-												<option value="Baja California Sur">Baja California Sur </option>
-												<option value="Campeche">Campeche </option>
-												<option value="Chiapas">Chiapas </option>
-												<option value="Chihuahua">Chihuahua </option>
-												<option value="Coahuila">Coahuila </option>
-												<option value="Colima">Colima </option>
-												<option value="Distrito Federal">Distrito Federal</option>
-												<option value="Durango">Durango </option>
-												<option value="Estado de México">Estado de México </option>
-												<option value="Guanajuato">Guanajuato </option>
-												<option value="Guerrero">Guerrero </option>
-												<option value="Hidalgo">Hidalgo </option>
-												<option value="Jalisco">Jalisco </option>
-												<option value="Michoacán">Michoacán </option>
-												<option value="Morelos">Morelos </option>
-												<option value="Nayarit">Nayarit </option>
-												<option value="Nuevo León">Nuevo León </option>
-												<option value="Oaxaca">Oaxaca </option>
-												<option value="Puebla">Puebla </option>
-												<option value="Querétaro">Querétaro </option>
-												<option value="Quintana Roo">Quintana Roo </option>
-												<option value="San Luis Potosí">San Luis Potosí </option>
-												<option value="Sinaloa">Sinaloa </option>
-												<option value="Sonora">Sonora </option>
-												<option value="Tabasco">Tabasco </option>
-												<option value="Tamaulipas">Tamaulipas </option>
-												<option value="Tlaxcala">Tlaxcala </option>
-												<option value="Veracruz">Veracruz </option>
-												<option value="Yucatán">Yucatán </option>
-												<option value="Zacatecas">Zacatecas</option>
-											</select>
 
-										<!--
-											<select id="estado" ng-model="estado" ng-value="estado"
-size="1" required class="form-control A" name="estado">
+											<select id="estado" required  ng-change="pass()" ng-model="estado" ng-value="estado" size="1" required class="form-control input A" name="estado">
 												<option value="">Estado...</option>
 												<option value="1">Aguascalientes</option>
 												<option value="2">Baja California</option>
 												<option value="3">Baja California Sur</option>
 												<option value="4">Campeche</option>
-												<option value="7">Chiapas</option>
-												<option value="8">Chihuahua</option>
-												<option value="5">Coahuila</option>
-												<option value="6">Colima</option>
+												<option value="5">Chiapas</option>
+												<option value="6">Chihuahua</option>
+												<option value="7">Coahuila</option>
+												<option value="8">Colima</option>
 												<option value="9">Distrito Federal</option>
 												<option value="10">Durango</option>
-												<option value="15">Estado de México</option>
-												<option value="11">Guanajuato</option>
-												<option value="12">Guerrero</option>
-												<option value="13">Hidalgo</option>
-												<option value="14">Jalisco</option>
+												<option value="11">Estado de México</option>
+												<option value="12">Guanajuato</option>
+												<option value="13">Guerrero</option>
+												<option value="14">Hidalgo</option>
+												<option value="15">Jalisco</option>
 												<option value="16">Michoacán</option>
 												<option value="17">Morelos</option>
 												<option value="18">Nayarit</option>
@@ -621,7 +593,9 @@ size="1" required class="form-control A" name="estado">
 												<option value="31">Yucatán</option>
 												<option value="32">Zacatecas</option>
 											</select> 
-										-->
+											            
+
+										
 											
 										</div>
 									</div>
@@ -638,7 +612,10 @@ size="1" required class="form-control A" name="estado">
 										<h3>Ciudad<span class="req" >*</span></h3>
 
 										<div>
-											<input class="input form-control" ng-model="ciudad" ng-value="ciudad" name="ciudad" placeholder="(requerido)" type="text" id="ciudad" size="20" required />
+
+										<select name="ciudad" ng-model="ciudad" ng-value="ciudad"  class="input" placeholder="Ciudad" id="ciudad" required>
+											<option ng-selected="k === ciudad" value="{{k}}" ng-repeat="(k , v) in mun[estado -1]" >{{v}} </option>
+										</select>
 											
 										</div>
 									</div>
@@ -958,6 +935,6 @@ size="1" required class="form-control A" name="estado">
 	<script src="public/lib/angular-wizard/dist/angular-wizard.min.js" ></script>
 	<script src="public/lib/lodash/dist/lodash.compat.min.js" ></script>
 	<script src="public/lib/store.js/store.min.js" ></script>
-
+	
 </body>
 </html>
