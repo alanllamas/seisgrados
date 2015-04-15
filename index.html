@@ -553,12 +553,22 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-sm-3 ">
-										<h3>Resido en<span class="req" >*</span></h3>
+								
+								</div>
+							</fieldset>
+
+
+								
+								
+							<fieldset>
+								<div class="row">
+
+									<div class="col-sm-6 ">
+										<h3>Estado<span class="req" >*</span></h3>
 
 										<div>
-
-											<select id="estado" required  ng-change="pass()" ng-model="estado" ng-value="estado" size="1" required class="form-control input A" name="estado">
+											
+											<select id="estado" required   ng-model="estado" ng-value="estado" size="1" required class="form-control input A" name="estado">
 												<option value="">Estado...</option>
 												<option value="1">Aguascalientes</option>
 												<option value="2">Baja California</option>
@@ -593,40 +603,18 @@
 												<option value="31">Yucatán</option>
 												<option value="32">Zacatecas</option>
 											</select> 
-											            
-
-										
-											
-										</div>
-									</div>
-								</div>
-							</fieldset>
-
-
-								
-								
-							<fieldset>
-								<div class="row">
-
-									<div class="col-sm-6 ">
-										<h3>Ciudad<span class="req" >*</span></h3>
-
-										<div>
-
-										<select name="ciudad" ng-model="ciudad" ng-value="ciudad"  class="input"  id="ciudad" required>
-											<option selected  value="">Selecciona una ciudad</option>
-											<option ng-selected="k === ciudad" value="{{k}}" ng-repeat="(k , v) in mun[estado -1]" >{{v}} </option>
-										</select>
-											
 										</div>
 									</div>
 									
 									<div class="col-sm-6 ">
-										<h3>Delegación o Municipio</h3>
+										<h3>Delegación o Municipio<span class="req" >*</span></h3>
 
-										<div>
-											<input class="input form-control" ng-model="cp" ng-value="cp" placeholder="(opcional)" name="cp" type="text" id="cp" size="20" />
-										</div>
+
+										<select name="ciudad" ng-model="ciudad" ng-value="ciudad"  class="input form-control"  id="ciudad" required>
+											<option selected  value="">Selecciona </option>
+											<option ng-selected="k === ciudad" value="{{k}}" ng-repeat="(k , v) in mun[estado -1]" >{{v}} </option>
+										</select>
+										
 									</div>
 								</div>	
 								<div class="row">
