@@ -34,8 +34,8 @@
 
  	}
  	.btn{
-		font-size: 1em;
-		height: 50px;
+		font-size: 1.6em;
+		height: 110px;
  	}
  	.steps-indicator li a {
      	font-size: 0;
@@ -43,6 +43,12 @@
 	.steps-indicator li a:before {
 		width: 50px;
 		height: 50px;
+	}
+	.btn-row{
+		bottom: 8%;
+	}
+	.steps-indicator {
+		bottom: 8%;
 	}
 
 }
@@ -55,8 +61,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
-	color: black;
+	background: #333;
 }
 .placeholder{
 	font-weight: bolder;
@@ -68,9 +73,6 @@
 .ng-touched.ng-invalid-validator{
 	box-shadow: 0 0 4px 1px red;
 }
-.btn{
-	margin: 20px 0;
-}
 .par{
 	font-size: 1.3em;
 	padding: 1%;
@@ -81,7 +83,6 @@
 }
 .steps-indicator {
   right: 0;
-  bottom: 6.3%;
   left: 0;
   height: 100px;
   padding: 0;
@@ -194,7 +195,6 @@ footer{
 	}
 	.btn-row{
 		position: fixed;
-	    bottom: 7%;
 	    width: 101.2%;
 	    background: transparent;
 	    left: 0;
@@ -203,11 +203,11 @@ footer{
 	.btn{
 		background: none;
 		border-radius: 0;
-		border: none;
-	    border: 2px solid #C9302C;
+	    border: 3px solid #C9302C;
 	    color: #C9302C;
 	    font-weight: bolder;
 	    padding: 2px;
+		margin: 20px 3px;
 	}
 
 
@@ -257,5 +257,11 @@ footer{
 		position: fixed;
 		background: transparent;
 		z-index: 1;
+	}
+	.btn-row{
+		bottom: 7%;
+	}
+	.steps-indicator {
+		bottom: 6.3%;
 	}
 }
