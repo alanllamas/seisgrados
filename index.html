@@ -9,13 +9,10 @@
 	<link rel="stylesheet" href="public/lib/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- css combobox -->
-	 <link rel="stylesheet" type="text/css" href="FlexBox/css/jquery.felxbox.css" />
-   
-   <!-- termina css combobox -->
+	
 
 </head>
-<body ng-controller="MainCtrl as main" ng-app="myApp" 
+<body  ng-controller="MainCtrl as main" ng-app="myApp" 
 	style=" 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
@@ -31,7 +28,7 @@
 				<img src="img/grados_back_4.png" alt="">
 			
 			</div>
-			<header>
+			<header class="hidden-sm hidden-xs" >
 				<div class="nav navbar text-center">
 					<img src="img/6-grados_logo.png" alt="seis grados">
 				</div>
@@ -51,7 +48,7 @@
 					</h2>
 
 					<div class="row btn-row">
-						<div class=" col-sm-6 col-sm-offset-3">
+						<div class=" col-md-6 col-md-offset-3 col-xs-12">
 				    			
 				    			<button ng-model="welcome" ng-click="welcome = true;" class="btn btn-danger form-control">
 				    				Comenzar
@@ -228,7 +225,7 @@
 							</div>
 							
 					       	<div class="row btn-row">
-				    		<div class=" col-sm-6 col-sm-offset-3">
+				    		<div class=" col-md-6 col-md-offset-3 col-sm-12">
 				    			<input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!buscas.$valid" value="Siguiente" />
 				    			
 				    		
@@ -607,9 +604,8 @@
 									</div>
 									
 									<div class="col-sm-6 ">
+
 										<h3>Delegación o Municipio<span class="req" >*</span></h3>
-
-
 										<select name="ciudad" ng-model="ciudad" ng-value="ciudad"  class="input form-control"  id="ciudad" required>
 											<option selected  value="">Selecciona </option>
 											<option ng-selected="k === ciudad" value="{{k}}" ng-repeat="(k , v) in mun[estado -1]" >{{v}} </option>
@@ -901,11 +897,12 @@
 			    </wz-step>
 			</wizard>
 
-	<footer>
+	<footer class="row">
+		
 		<div class="row">
-			<span class="req col-sm-4"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-			<span class="req col-sm-4"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-			<span class="req col-sm-4"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
+			<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
+			<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
+			<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
 		</div>
 	</footer>
 		
