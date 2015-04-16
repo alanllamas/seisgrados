@@ -22,15 +22,15 @@
 
 	
 			<div class="preloader">
-				<img src="img/grados_back_1.png" alt="">
-				<img src="img/grados_back_2.png" alt="">
-				<img src="img/grados_back_3.png" alt="">
-				<img src="img/grados_back_4.png" alt="">
+				<img src="img/grados_back_1.png" class="img-responsive" alt="">
+				<img src="img/grados_back_2.png" class="img-responsive" alt="">
+				<img src="img/grados_back_3.png" class="img-responsive" alt="">
+				<img src="img/grados_back_4.png" class="img-responsive" alt="">
 			
 			</div>
-			<header class="hidden-sm hidden-xs" >
+			<header class="block-center" >
 				<div class="nav navbar text-center">
-					<img src="img/6-grados_logo.png" alt="seis grados">
+					<img src="img/6-grados_logo.png" class="img-responsive" alt="seis grados">
 				</div>
 			</header>
 			
@@ -69,7 +69,7 @@
 							<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
 							<div class="row">
 
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-12 ">
 
 										<h3>Soy<span class="req" >*</span></h3>
 
@@ -84,10 +84,10 @@
 									</div>
 
 
-								<div class="col-sm-12 ">
+								<div class="col-xs-12 ">
 									<h3 >Busco alguien entre<span class="req" >*</span></h3>
 
-										<select class="col-sm-1" required ng-model="edad1" ng-value="edad1" value="Edad..." name="edad1" id="edad1" >
+										<select class="col-md-1 col-xs-3" required ng-model="edad1" ng-value="edad1" value="Edad..." name="edad1" id="edad1" >
 											<option value="" >Edad...</option>
 											<option value="25">25</option>
 											<option value="26">26</option>
@@ -136,10 +136,10 @@
 											<option value="69">69</option>
 											<option value="70">70</option>
 										</select>
-										<p class="col-sm-1" >y</p>
+										<p class="col-md-1 col-xs-3" >y</p>
 							
 										
-										<select class="col-sm-1" required value="Edad..." ng-model="edad2" ng-value="edad2" name="edad2" id="edad2" >
+										<select class="col-md-1 col-xs-3" required value="Edad..." ng-model="edad2" ng-value="edad2" name="edad2" id="edad2" >
 											<option value="">Edad...</option>
 											<option value="25">25</option>
 											<option value="26">26</option>
@@ -197,13 +197,13 @@
 							</div>
 
 							<div class="row">
-								<div class="col-sm-12 ">
+								<div class="col-xs-12 ">
 									
 									<h3>Quisiera conocer <span class="req">*</span></h3>
 									<div>
 										<p>
-											<label for="radio60" class="col-sm-2"><input type="radio" name="quisiera_conocer" id="radio60" ng-model="main.busco"  value="Hombre" required/>Hombre</label>
-											<label for="radio61" class="col-sm-2"><input type="radio" name="quisiera_conocer" id="radio61" ng-model="main.busco"  value="Mujer" required/>Mujer</label> 
+											<label for="radio60"  class="col-md-2 col-xs-5"><input  type="radio" name="quisiera_conocer" id="radio60" ng-model="main.busco"  value="Hombre" required/>Hombre</label>
+											<label for="radio61" class="col-md-2 col-xs-5"><input type="radio" name="quisiera_conocer" id="radio61" ng-model="main.busco"  value="Mujer" required/>Mujer</label> 
 											
 										</p>
 									</div> 
@@ -246,16 +246,16 @@
 							<div class="row">
 								
 								
-								<h3 class="col-sm-12 " >Nombres<span class="req" >*</span></h3>
+								<h3 class="col-md-12 " >Nombres<span class="req" >*</span></h3>
 									
 							
-								<div class="col-sm-6 ">
+								<div class="col-md-6 col-xs-12 ">
 									
 									<input class="input form-control placeholder" required name="firstname" type="text" size="20" placeholder="Nombre (requerido)" id="firstname" ng-model="firstname" ng-value="firstname" ng-value="firstname" >
 									
 								</div> 
-
-								<div class="col-sm-6">
+								
+								<div class="col-md-6 col-xs-12">
 									
 								<input class="input form-control placeholder" placeholder="Otros Nombres (opcional)"  name="secondname" type="text" size="20" id="secondname" ng-model="secondname" ng-value="secondname" >
 								</div>
@@ -263,13 +263,13 @@
 							</div>
 							<div class="row">
 								
-								<h3 class="col-sm-12 ">Apellido(s) <span class="req" >*</span></h3>
+								<h3 class="col-md-12 ">Apellido(s) <span class="req" >*</span></h3>
 
-									<div class="col-sm-6 ">
+									<div class="col-md-6 col-xs-12 ">
 										
 									<input class="input form-control placeholder" placeholder="Paterno (requerido)" required name="lastname1"  type="text" size="20" id="lastname1" ng-model="lastname1" ng-value="lastname1" >
 									</div>
-									<div class="col-sm-6">
+									<div class="col-md-6 col-xs-12">
 										
 									<input class="input form-control placeholder" placeholder="Materno (opcional)"name="lastname2"  type="text" size="20" id="lastname2" ng-model="lastname2" ng-value="lastname2" >
 									</div>
@@ -277,20 +277,20 @@
 						
 							</div>
 							<div class="row">
-								<h3 class="col-sm-12 ">Correo Electrónico<span class="req" >*</span></h3>
-								<div class="col-sm-6 ">
+								<h3 class="col-md-12 ">Correo Electrónico<span class="req" >*</span></h3>
+								<div class="col-md-6 col-xs-12 ">
 									
 									<input class="input form-control placeholder" required name="email" type="email" placeholder="Correo Electronico (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
 									
 								</div>
-								<div class="col-sm-6 ">
+								<div class="col-md-6 col-xs-12 ">
 									
 									<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Confirma tu correo (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col-sm-5 ">
+								<div class="col-md-5 col-xs-12 ">
 								<h3>¿Cómo nos encontraste?<span class="req" >*</span></h3>
 									
 									<select ng-model="found" ng-value="found" required name="found" id="found" >
@@ -342,15 +342,15 @@
 				    
 				    	<div class="row btn-row">
 									
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-4 ">
 										
 										<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
 									</div>
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-4 ">
 										
 							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
 									</div>
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-4 ">
 										
 							      	  <input class="btn form-control btn-danger" type="submit" wz-next  ng-disabled="!cuenta.$valid" value="Siguiente" />
 									</div>
@@ -363,12 +363,12 @@
 								
 							<h2>Datos Personales</h2>
 							<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
-							<div class="col-sm-12">
+							<div class="col-md-12">
 								
 							<fieldset>
 								<div class="row">
 
-									<div class="col-sm-6 ">
+									<div class="col-md-6 col-xs-12 ">
 										<h3>Fecha de Nacimiento<span class="req" >*</span></h3>
 
 										<div>
@@ -380,7 +380,7 @@
 								</div>
 								<div class="row">
 								
-									<div class="col-sm-3 ">
+									<div class="col-md-3 col-xs-6 ">
 										<h3>Estatura<span class="req" >*</span></h3>
 
 										<div>
@@ -445,7 +445,7 @@
 
 								
 								
-									<div class="col-sm-2 col-sm-offset-2">	
+									<div class="col-md-2 col-md-offset-2 col-xs-6">	
 										<h3>Peso<span class="req" >*</span></h3>
 
 										<div>
@@ -524,7 +524,7 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-6 ">
 										<h3>Mi Estado civil</h3>
 
 										<div>
@@ -539,7 +539,7 @@
 										</div>
 									</div>
 									
-									<div class="col-sm-4 col-sm-offset-1" >
+									<div class="col-md-4 col-md-offset-1 col-xs-6" >
 										<h3 >¿Tienes hijos?</h3>
 
 										<div>
@@ -560,7 +560,7 @@
 							<fieldset>
 								<div class="row">
 
-									<div class="col-sm-6 ">
+									<div class="col-md-6 ">
 										<h3>Estado<span class="req" >*</span></h3>
 
 										<div>
@@ -603,7 +603,7 @@
 										</div>
 									</div>
 									
-									<div class="col-sm-6 ">
+									<div class="col-md-6 ">
 
 										<h3>Delegación o Municipio<span class="req" >*</span></h3>
 										<select name="ciudad" ng-model="ciudad" ng-value="ciudad"  class="input form-control"  id="ciudad" required>
@@ -615,11 +615,11 @@
 								</div>	
 								<div class="row">
 									
-									<div class="col-sm-6">
+									<div class="col-md-6  col-xs-12">
 										<h3 >Teléfono<span class="req" >*</span></h3>
 
 										<div>
-											<select ng-model="tel1_tipo" ng-value="tel1_tipo" class="tel1 col-sm-2 col-sm-offset-1" name="tel1_tipo" id="tel1_tipo" required>
+											<select ng-model="tel1_tipo" ng-value="tel1_tipo" class="tel1 col-md-2 col-md-offset-1 col-xs-2 " name="tel1_tipo" id="tel1_tipo" required>
 												<option value="" selected>tipo...</option>
 												<option value="casa">casa</option>
 												<option value="trabajo">trabajo</option>
@@ -627,16 +627,16 @@
 												<option value="nextel">nextel</option>
 											</select>
 
-											<input ng-pattern="/^[0-9]*$/" id="lada"  placeholder="LADA" class="input tel1 col-sm-2 col-sm-offset-1" ng-model="lada" ng-value="lada" name="lada" type="tel" size="2" maxlength="3" minlength="2" required>
+											<input ng-pattern="/^[0-9]*$/" id="lada"  placeholder="LADA" class="input tel1 col-md-2 col-md-offset-1 col-xs-3 " ng-model="lada" ng-value="lada" name="lada" type="tel" size="2" maxlength="3" minlength="2" required>
 											
-											<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Teléfono (requerido)" class="input tel1 col-sm-3 col-sm-offset-1" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
+											<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Teléfono (requerido)" class="input tel1 col-md-3 col-md-offset-1 col-xs-6" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
 										</div>
 									</div>
-										<div class="col-sm-6">
+										<div class="col-md-6 col-xs-12">
 										<h3>Teléfono Adicional</h3>
 
 											<div>
-												<select ng-model="tel2_tipo" ng-value="tel2_tipo" class="tel2 col-sm-2 col-sm-offset-1" name="tel2_tipo" id="tel2_tipo">
+												<select ng-model="tel2_tipo" ng-value="tel2_tipo" class="tel2 col-md-2 col-md-offset-1 col-xs-2" name="tel2_tipo" id="tel2_tipo">
 													<option value="" selected>tipo...</option>
 													<option value="casa">casa</option>
 													<option value="trabajo">trabajo</option>
@@ -644,19 +644,19 @@
 													<option value="nextel">nextel</option>
 												</select>
 											
-												<input ng-pattern="/^[0-9]*$/" ng-model="lada2" ng-value="lada2" id="lada2" class="input tel2 col-sm-2 col-sm-offset-1" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2">
+												<input ng-pattern="/^[0-9]*$/" ng-model="lada2" ng-value="lada2" id="lada2" class="input tel2 col-md-2 col-md-offset-1 col-xs-3" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2">
 
-												<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2 col-sm-3 col-sm-offset-1" placeholder="Teléfono (opcional)" value="" name="phone2" type="tel" size="9" maxlength="8" minlength="7" autocomplete="off"    ui-validate="'!$value || $value != phone'" ui-validate="'phone'" >
+												<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2 col-md-3 col-md-offset-1 col-xs-6" placeholder="Teléfono (opcional)" value="" name="phone2" type="tel" size="9" maxlength="8" minlength="7" autocomplete="off"    ui-validate="'!$value || $value != phone'" ui-validate="'phone'" >
 												
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-sm-12 ">
+									<div class="col-md-12 ">
 										
-										<h3 class=" col-sm-12" >Correo Electrónico Adicional</h3>
-										<div class="col-sm-6 ">
+										<h3 class=" col-md-12" >Correo Electrónico Adicional</h3>
+										<div class="col-md-6 ">
 
 											<div>
 												<input class="input form-control" ng-model="email2" placeholder="(opcional)" ng-value="email2" name="email2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
@@ -664,7 +664,7 @@
 											</div>
 										</div>
 										
-										<div class="col-sm-6">
+										<div class="col-md-6">
 
 											<div >
 												<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo (opcional)" name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  ui-validate="'$value === email2'" ui-validate="'email2'" >
@@ -674,9 +674,9 @@
 								</div>
 								<div class="row">
 									
-									<div class="col-sm-12">
+									<div class="col-md-12">
 										
-										<div class="col-sm-6 ">
+										<div class="col-md-6 ">
 											<h3>Usuario de Facebook</h3>
 											
 											<div>
@@ -684,7 +684,7 @@
 											</div>
 										</div>
 
-										<div class="col-sm-6 ">
+										<div class="col-md-6">
 											<h3>Usuario de Twitter</h3>
 
 											<div>
@@ -695,15 +695,15 @@
 								</div>
 								<div class="row btn-row">
 									
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-4">
 										
 										<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
 									</div>
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-4">
 										
 							      	  <input class="btn form-control btn-warning" type="submit"  value="Volver a comenzar" ng-click="reset()" />
 									</div>
-									<div class="col-sm-4 ">
+									<div class="col-md-4 col-xs-4">
 										
 							      	  <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" value="Siguiente" />
 									</div>
@@ -721,7 +721,7 @@
 							<h2>Estudios y trabajo</h2>
 							<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
 
-							<div class="col-sm-12 " >
+							<div class="col-md-12 " >
 
 								<h3>Máximo título académico<span class="req" >*</span></h3>
 

@@ -2,6 +2,33 @@
  	body{
 		font-size: 3em;	
  	}
+ 	.wizard{
+ 		margin: 20% 0;
+ 		width: 100%;
+ 	}
+ 	label{
+ 		font-size: 1.6em;
+ 	}
+ 	input[type="checkbox"], input[type="radio"]{
+ 		height: 50px;
+ 		width: 50px;
+ 		
+ 	}
+ 	.input{
+ 		height: 80px;
+ 		font-size: 1.5em;
+ 		margin: 10px;
+ 	}
+ 	select{
+ 		height: 80px;
+ 		font-size: 1em;
+ 		margin: 10px;
+ 	}
+ 	
+
+ 	 h1, h2,h3,h4{
+ 		font-size: 2em;	
+ 	}
  	footer{
  		padding: 300px 50px 0px 50px;
 
@@ -20,7 +47,7 @@
 
 }
 
-
+/* css general*/
 .placeholder{
 	font-weight: bolder;
 	color: #fff;
@@ -176,8 +203,7 @@ footer{
 
 	.wizard{
 		background: rgba(0,0,0,.7);
-		margin: 2px auto;
-		max-width: 88%;
+		
 		padding: 3%;
 	}
 	.input{
@@ -205,6 +231,10 @@ footer{
 		
 		padding: 13% 26% .5% 25%;
 
+	}
+	.wizard{
+		margin: 2px auto;
+		max-width: 88%;
 	}
 	.steps-indicator {
 		right: 0;
