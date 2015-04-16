@@ -1,15 +1,26 @@
-.preloader{
-		left: -9999px;
-		top:  -9999px;
-	position: absolute;
+@media (max-device-width: 800px) {
+ 	body{
+		font-size: 3em;	
+ 	}
+ 	footer{
+ 		padding: 300px 50px 0px 50px;
+
+ 	}
+ 	.btn{
+		font-size: 1em;
+		height: 50px;
+ 	}
+ 	.steps-indicator li a {
+     	font-size: 0;
+	}
+	.steps-indicator li a:before {
+		width: 50px;
+		height: 50px;
+	}
+
 }
-.preloader img {
-	display: block;
-}
-.preloader,.preloader img {
-		display: none;
-	visibility: hidden;
-}
+
+
 .placeholder{
 	font-weight: bolder;
 	color: #fff;
@@ -31,68 +42,35 @@
 	color: #C9302C;
 	font-weight: bolder;
 }
-#terminos{
-	margin: 5% 0;
-	padding: 1.5%;
+.steps-indicator {
+  right: 0;
+  bottom: 6.3%;
+  left: 0;
+  height: 100px;
+  padding: 0;
+  margin: 0 0 100px 0;
+  list-style: none;
+  position: fixed;
+  background: transparent;
+  z-index: 1;
 }
-header{
-	background: rgba(0,0,0,.5);
+
+
+
+.preloader{
+	left: -9999px;
+	top:  -9999px;
+	position: absolute;
 }
-body {
-	background: url(grados_back_1.png) fixed;
-	color: white;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	padding-bottom: 16%;
-	font-family: 'Dosis', sans-serif;
+.preloader img {
+	display: block;
 }
-.wizard{
-	background: rgba(0,0,0,.7);
-	margin: 2px auto;
-	max-width: 88%;
-	padding: 3%;
+.preloader,.preloader img {
+	display: none;
+	visibility: hidden;
 }
 .container{
-	background: rgba(255,255,255,.0);
-}
-.input{
-	background: rgba(255,255,255,.75);
-	border-radius: 0;
-	border: none;
-	color: black;
-}
-select{
-	background: rgba(255,255,255,.75);
-	border-radius: 0;
-	border: none;
-	color: black;
-}
-.btn{
-	background: none;
-	border-radius: 0;
-	border: none;
-    border: 2px solid #C9302C;
-    color: #C9302C;
-    font-weight: bolder;
-    padding: 2px;
-}
-.btn-warning{
-	background: none;
-	border-radius: 0;
-	border: none;
-    border: 2px solid #EC971F;
-    color: #EC971F;
-    font-weight: bolder;
-    padding: 2px;
-}
-.btn-row{
-	 position: fixed;
-    bottom: 6.3%;
-    width: 101.2%;
-    background: rgba(0,0,0,.9);
-    left: 0
+	background: transparent;
 }
 .ui-datepicker{
 	border-radius: 0;
@@ -109,17 +87,6 @@ select{
 .ui-datepicker-current-day{
 	background:  #C9302C;
 	color: white;
-}
-.steps-indicator {
-  right: 0;
-  bottom: 6.3%;
-  left: 0;
-  height: 30px;
-  padding: 30px;
-  margin: 0 0 74px 0;
-  list-style: none;
-  position: fixed;
-  background: rgba(0,0,0,.9);
 }
 .steps-indicator li a {
      color: #fff;
@@ -160,15 +127,95 @@ select{
 .req a:hover{
 	color: #9E221B;
 }
+body {
+	background: url(../img/grados_back_1.png) fixed;
+	color: white;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-bottom: 23%;
+	font-family: 'Dosis', sans-serif;
+}
 footer{
 	position: fixed;
 	bottom: 0;
 	width: 110%;
-	
-	padding: 1.6% 20%;
-
+	min-height: 23%;
+	z-index: 0;
 	font-weight: bolder;
 	background: rgba(0,0,0,.9);
-
 }
+	.btn-warning{
+		background: none;
+		border-radius: 0;
+		border: none;
+	    border: 2px solid #EC971F;
+	    color: #EC971F;
+	    font-weight: bolder;
+	    padding: 2px;
+	}
+	.btn-row{
+		position: fixed;
+	    bottom: 7%;
+	    width: 101.2%;
+	    background: transparent;
+	    left: 0;
+	    z-index: 1;
+	}
+	.btn{
+		background: none;
+		border-radius: 0;
+		border: none;
+	    border: 2px solid #C9302C;
+	    color: #C9302C;
+	    font-weight: bolder;
+	    padding: 2px;
+	}
 
+
+	.wizard{
+		background: rgba(0,0,0,.7);
+		margin: 2px auto;
+		max-width: 88%;
+		padding: 3%;
+	}
+	.input{
+		background: rgba(255,255,255,.75);
+		border-radius: 0;
+		border: none;
+		color: black;
+	}
+	select{
+		background: rgba(255,255,255,.75);
+		border-radius: 0;
+		border: none;
+		color: black;
+	}
+@media (min-device-width: 801px) {
+	#terminos{
+		margin: 5% 0;
+		padding: 1.5%;
+	}
+	header{
+		background: rgba(0,0,0,.5);
+	}
+	
+	footer{
+		
+		padding: 13% 26% .5% 25%;
+
+	}
+	.steps-indicator {
+		right: 0;
+		bottom: 6.3%;
+		left: 0;
+		height: 30px;
+		padding: 30px;
+		margin: 0 0 74px 0;
+		list-style: none;
+		position: fixed;
+		background: transparent;
+		z-index: 1;
+	}
+}
