@@ -44,6 +44,11 @@
 		width: 50px;
 		height: 50px;
 	}
+	.loader img{
+		position: absolute;
+		left: 37%;
+		top: 42.5%;
+	}
 	.btn-row{
 		bottom: 8%;
 	}
@@ -62,6 +67,7 @@
 	height: 100%;
 	z-index: 9999;
 	background: #333;
+
 }
 .placeholder{
 	font-weight: bolder;
@@ -211,6 +217,8 @@ footer{
 	}
 
 
+
+
 	.wizard{
 		background: rgba(0,0,0,.7);
 		
@@ -246,6 +254,11 @@ footer{
 		margin: 2px auto;
 		max-width: 88%;
 	}
+.loader img{
+	position: absolute;
+	left: 42.5%;
+	top: 42.5%;
+}
 	.steps-indicator {
 		right: 0;
 		bottom: 6.3%;
