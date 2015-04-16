@@ -218,13 +218,13 @@ footer{
 		border: none;
 		color: black;
 	}
+	header{
+		background: rgba(0,0,0,.5);
+	}
 @media (min-device-width: 801px) {
 	#terminos{
 		margin: 5% 0;
 		padding: 1.5%;
-	}
-	header{
-		background: rgba(0,0,0,.5);
 	}
 	
 	footer{
