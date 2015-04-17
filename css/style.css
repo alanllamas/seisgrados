@@ -55,6 +55,13 @@
 	.steps-indicator {
 		bottom: 8%;
 	}
+	.ui-datepicker {
+		
+		font-size: 2em;
+	}
+	p{
+		font-size: 1.5em;
+	}
 
 }
 
