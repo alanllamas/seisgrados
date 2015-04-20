@@ -1,17 +1,49 @@
 <?php
-	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
+	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){	
 
-		$data = json_decode(file_get_contents("php://input"));
 
-		if($data){
 
-			print($data);
+		echo "<pre>";
 
-		} else{
+			$data = json_decode($_POST['info']);
 
-			echo "1";
+			var_dump($data[0]);
+
+			// var_dump(json_decode($_POST['info']));
+			print_r($_FILES);
+
+		echo "</pre>";
+
+		// $data_array = array(
+		// 	':edad_busca_1' => 
+		// )
+
+		try {
+
+		    $gbd = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
+
+		    $sql  = "INSERT INTO contactos_joomla (";
+		    $sql .= "	edad_busca_1, edad_busca_2, quiere_conocer, genero,";
+		    $sql .= "	busco_tipo, confirma_email, email, primer_nombre, como_encontraste,";
+		    $sql .= "	apellido_paterno, apellido_materno, segundo_nombre, fecha_nacimiento,";
+		    $sql .= "	ciudad, estado_civil, confirma_email_2, email_2, estado, estatura,";
+		    $sql .= "	lada, lada_2, peso, telefono, telefono_2, tipo_telefono, tipo_telefono_2";
+		    $sql .= "	tiene_hijos, usuario_facebook, usuario_twitter, titulo_academico";
+		    $sql .= "	profesion, sector, contrasena, promocode, fotografia";
+		    $sql .= ") VALUES (";
+		    $sql .= "	";
+		    
+
+		    $gbd = null;
+
+		} catch (PDOException $e) {
+
+		    print "¡Error!: " . $e->getMessage() . "<br/>";
+
+		    die();
 
 		}
+
 
 	} else {
 ?>
