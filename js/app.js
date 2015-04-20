@@ -65,9 +65,8 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				$scope.main.sexo = getinfo[0]['sexo'];
 				$scope.edad1 = getinfo[0]['edad1'];
 				$scope.edad2 = getinfo[0]['edad2'];
-				$scope.main.busco = getinfo[0]['quisiera_conocer'];
-				
-					$scope.busco_tipo = getinfo[0]['busco_tipo'];
+				$scope.busco = getinfo[0]['quisiera_conocer'];
+				$scope.busco_tipo = getinfo[0]['busco_tipo'];
 				
 
 
@@ -83,14 +82,14 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			$scope.found = getinfo[1]['found'];
 			
 			//se obtienen datos del tercer objeto/forma
-			$scope.date = getinfo[2]['datepicker'];
+			$scope.date = getinfo[2]['birthdate'];
 			$scope.estatura = getinfo[2]['estatura'];
 			$scope.peso = getinfo[2]['peso'];
 			$scope.estado = getinfo[2]['estado'];
 			$scope.ciudad = getinfo[2]['ciudad'];
 			$scope.cp = getinfo[2]['cp'];
-			$scope.estadi_civil = getinfo[2]['estadi_civil'];
-			$scope.hijos = getinfo[2]['posesion_hijos'];
+			$scope.estadi_civil = getinfo[2]['civil'];
+			$scope.hijos = getinfo[2]['tiene_hijos'];
 			$scope.tel1_tipo = getinfo[2]['tel1_tipo'];
 			$scope.lada = getinfo[2]['lada'];
 			$scope.phone = getinfo[2]['phone'];
@@ -98,14 +97,14 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			$scope.lada2 = getinfo[2]['lada2'];
 			$scope.phone2 = getinfo[2]['phone2'];
 			$scope.email2 = getinfo[2]['email2'];
-			$scope.email2confirma = getinfo[2]['email2'];
+			$scope.email2confirma = getinfo[2]['confirm2'];
 			$scope.usuario_fb = getinfo[2]['usuario_fb'];
 			$scope.usuario_twitter = getinfo[2]['usuario_twitter'];
 			
 			
 			//se obtienen datos del cuarto objeto/forma
 		
-			$scope.max_tit_academico = getinfo[3]['max_tit_academico'];
+			$scope.max_tit_academico = getinfo[3]['academics'];
 			$scope.profesion = getinfo[3]['profesion'];
 			$scope.sector = getinfo[3]['sector'];
 
@@ -146,49 +145,23 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 
 						if (f[i].type === 'radio') {
 							r = angular.element(f[i]).hasClass('ng-valid-parse');
+							n = f[i].name;
 							if (r) {
 								v =	f[i].value;
-								n = f[i].name;
 								info[C][n]= v ;
 								
+							}else{
+								info[C][n]= '' ;
 							};
 						};
-						if (f[i].type === 'checkbox') {
-
-							g = angular.element(f[i]).hasClass('gay');
-							if (f[i].name == 'quisiera_conocer') {
-								
-							};
-							if (g) {
-								 
-								v =	f[i].value;
-								n = f[i].name;
-								info[C][n]= f[i].checked ;
-							};
-						};
-						if (angular.element(f[i]).hasClass('tel1')) {
-							v = f[i].value;
-							n = f[i].name;
-							info[C][n] = v;
-
-						};
-						if (angular.element(f[i]).hasClass('tel2')) {
-							v = f[i].value;
-							n = f[i].name;
-							info[C][n] = v;
-						};
-
-						
-						if (f[i].type != 'submit' && f[i].type != 'radio' && f[i].type != 'checkbox' && !angular.element(f[i]).hasClass('tel1') && !angular.element(f[i]).hasClass('tel2') ) {
+											
+						if (f[i].type != 'submit' && f[i].type != 'radio' ) {
 							
 								
 								v =	f[i].value;
 								n = f[i].name;
-								
-							if (v != "") {
 								info[C][n]= v ;
-
-							};
+							
 						};
 				};
 			};
