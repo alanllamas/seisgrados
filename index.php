@@ -676,7 +676,7 @@
 
 											<input ng-pattern="/^[0-9]*$/" id="lada"  placeholder="LADA" class="input tel1 col-md-2 col-md-offset-1 col-xs-3 " ng-model="lada" ng-value="lada" name="lada" type="tel" size="2" maxlength="3" minlength="2" required>
 											
-											<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Teléfono (requerido)" class="input tel1 col-md-3 col-md-offset-1 col-xs-6" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
+											<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Numero valido" class="input tel1 col-md-3 col-md-offset-1 col-xs-6" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
 										</div>
 									</div>
 										<div class="col-md-6 col-xs-12">
