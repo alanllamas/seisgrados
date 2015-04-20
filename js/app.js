@@ -219,17 +219,15 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 
 			var formData = new FormData();
 
+			Info = JSON.stringify(info);
 			formData.append('foto', foto[0].files[0]);
-			formData.append('info', info)
+			formData.append('info', Info)
 
 	        $.ajax({
 	            url: "/",
 	            type: "POST",
 	            data: formData,
 	            async: false,
-	            success: function (msg) {
-	                alert(msg)
-	            },
 	            cache: false,
 	            contentType: false,
 	            processData: false
@@ -237,7 +235,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 	        	console.log(data)
 	        });
 
-			//Info = JSON.stringify(info);
 			//console.log(Info)
 		/*	$.ajax({
 				
