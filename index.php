@@ -76,7 +76,7 @@
 			<wizard name="wizard" ng-show="welcome" edit-mode="true"  on-finish="end()" class="wizard"> 
 			
 				<wz-step title="¿A Quien Buscas?" canexit="pass">
-		        	<form novalidate class="form"  id="buscas" name="buscas">
+		        	<form  novalidate class="form"  id="buscas" name="buscas">
 				        <div class="row">
 
 							<h2>¿A quién buscas?</h2>
@@ -847,7 +847,7 @@
 			    
 			  
 			    <wz-step title="Fotografia" canexit="pass">
-		        	<form novalidate class="form"  id="foto" name="foto">
+		        	<form enctype="multipart/form-data" novalidate class="form"  id="foto" name="foto">
 				        <div class="row">
 				        	<div class="col-sm-12 ">
 					        	<div class="row">
