@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSanitize']);
 
-	app.controller('MainCtrl', ['$scope','WizardHandler','$log', function ($scope, WizardHandler, $log) {
+	app.controller('MainCtrl', ['$scope','WizardHandler','$log','$http', function ($scope, WizardHandler,$http, $log) {
 		this.sexo;
 		this.busco;
 		info = [{},{},{},{},{}];
@@ -46,16 +46,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 
 
 
-        $.getJSON('municipios.json', function(json, textStatus) {
-        		muni = $.parseJSON(json);
-        		alert(muni)
-        		
-        		$.each(json, function(index, val) {
-	        		$log.log(val)
-        		});
-
-        		return muni;
-        });
+        
 		this.store = function  () {
 			if (!store.enabled) {
 				alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
@@ -135,8 +126,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		
 		$scope.pass = function () {
 
-	
-
 			form =$('form');
 			C = WizardHandler.wizard('wizard').currentStepNumber()-1;
 			f = form[C];
@@ -186,9 +175,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 								n = f[i].name;
 								info[C][n]= f[i].checked ;
 							};
-
-							
-							
 						};
 						if (angular.element(f[i]).hasClass('tel1')) {
 							tel = [f['tel1_tipo'].value,f['lada'].value,f['phone'].value];
@@ -229,8 +215,27 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		$scope.end = function () {
 			foto = $('#photo');
 			ff = foto[0].files[0];
+			
+			Info = JSON.stringify(info);
+			console.log(Info)
+			$.ajax({
+				
+				url: '/',
+				type: 'POST',
+				dataType: 'json',
+				data: Info
+				
+			})
+			.done(function(success) {
+				console.log(success)
+				console.log("success");
+			})
+			
+			
 
-			$http.post("/", info).then(function(success) {
+				/*
+			$http('GET').success(console.log('success'))
+			$http.post("/", info).success(function(success) {
 				if (success.data === "0") {
 					
 					store.clear()
@@ -243,7 +248,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				};
 			
 			});
-				/*if (ff) {
+				if (ff) {
 					foto.removeClass('ng-invalid');
 					foto.removeClass('ng-touched');
 					$('.wizard').empty();
@@ -253,8 +258,9 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 					alert('necesitas ingresar una foto');
 					foto.addClass('ng-invalid');
 					foto.addClass('ng-touched');
-				}; */
+				};
 				get = store.get('info');		
+				 */
 		};
 
 	}]);
