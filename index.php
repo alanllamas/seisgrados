@@ -74,6 +74,7 @@
 
 			</section>
 			<wizard name="wizard" ng-show="welcome" edit-mode="true"  on-finish="end()" class="wizard"> 
+			{{info | json}}
 			
 				<wz-step title="¿A Quien Buscas?" canexit="pass">
 		        	<form  novalidate class="form"  id="buscas" name="buscas">
@@ -216,23 +217,23 @@
 									<h3>Quisiera conocer <span class="req">*</span></h3>
 									<div>
 										<p>
-											<label for="radio60"  class="col-md-2 col-xs-5"><input  type="radio" name="quisiera_conocer" id="radio60" ng-model="main.busco"  value="Hombre" required/>Hombre</label>
-											<label for="radio61" class="col-md-2 col-xs-5"><input type="radio" name="quisiera_conocer" id="radio61" ng-model="main.busco"  value="Mujer" required/>Mujer</label> 
+											<label for="radio60"  class="col-md-2 col-xs-5"><input  type="radio" name="quisiera_conocer" id="radio60"  ng-model="quisiera_conocer"  value="Hombre" required/>Hombre</label>
+											<label for="radio61" class="col-md-2 col-xs-5"><input type="radio" name="quisiera_conocer" id="radio61"  ng-model="quisiera_conocer"  value="Mujer" required/>Mujer</label> 
 											
 										</p>
 									</div> 
 								</div>
 							</div>
-							<div class="row" ng-if="main.busco === 'Hombre' && main.sexo == 'masculino'">
+							<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'masculino'">
 								<div class="col-sm-12  ">
 								
 									<h3 id="etiqueta_gay_2">Busco</h3>
 									<div id="campo_gay_2 ">
 										<p>
 											
-											<label for="busco_gay_activo"><input class="gay " type="radio"  name="busco_tipo" id="busco_gay_activo" ng-model="busco_tipo"  ng-checked="activo || gay1" value="Activo" />Activo</label>
-											<label  for="busco_gay_pasivo"><input class="gay " type="radio"  name="busco_tipo" ng-checked="pasivo || gay2" id="busco_gay_pasivo" ng-model="busco_tipo" value="Pasivo"  />Pasivo</label>
-											<label  for="busco_gay_versatil"><input class="gay " type="radio"  name="busco_tipo" ng-checked="versatil || gay3" id="busco_gay_versatil" ng-model="busco_tipo"  value="Versátil"  />Versátil</label> 
+											<label for="busco_gay_activo"><input class="gay " type="radio"  name="busco_tipo" id="busco_gay_activo" ng-model="busco_tipo"   value="Activo" />Activo</label>
+											<label  for="busco_gay_pasivo"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_pasivo" ng-model="busco_tipo" value="Pasivo"  />Pasivo</label>
+											<label  for="busco_gay_versatil"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_versatil" ng-model="busco_tipo"  value="Versátil"  />Versátil</label> 
 										</p>
 									</div>
 								</div>
@@ -294,12 +295,12 @@
 								<h3 class="col-md-12 ">Correo Electrónico<span class="req" >*</span></h3>
 								<div class="col-md-6 col-xs-12 ">
 									
-									<input class="input form-control placeholder" required name="email" type="email" placeholder="Correo Electronico (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
+									<input class="input form-control placeholder" required name="email" type="email" placeholder="Ejemplo@ejemplo.com" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
 									
 								</div>
 								<div class="col-md-6 col-xs-12 ">
 									
-									<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Confirma tu correo (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
+									<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Ejemplo@ejemplo.com" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 								</div>
 							</div>
 
