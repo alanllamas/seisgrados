@@ -56,7 +56,7 @@
 					</div>
 
 			</section>
-			<wizard name="wizard" ng-show="welcome"  on-finish="end()" class="wizard"> 
+			<wizard name="wizard" ng-show="welcome" edit-mode="true"  on-finish="end()" class="wizard"> 
 			
 				<wz-step title="¿A Quien Buscas?" canexit="pass">
 		        	<form novalidate class="form"  id="buscas" name="buscas">
