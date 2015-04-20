@@ -9,14 +9,30 @@
 
 			var_dump($data[0]);
 
+			echo "<hr>";
+
+			var_dump($data[1]);
+
+			echo "<hr>";
+
+			var_dump($data[2]);
+
+			echo "<hr>";
+
+			var_dump($data[3]);
+
+			echo "<hr>";
+
 			// var_dump(json_decode($_POST['info']));
 			print_r($_FILES);
 
 		echo "</pre>";
 
+
 		// $data_array = array(
-		// 	':edad_busca_1' => 
+		// 	':edad_busca_1' => $data[0]
 		// )
+
 
 		try {
 
