@@ -65,7 +65,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				$scope.main.sexo = getinfo[0]['sexo'];
 				$scope.edad1 = getinfo[0]['edad1'];
 				$scope.edad2 = getinfo[0]['edad2'];
-				$scope.busco = getinfo[0]['quisiera_conocer'];
+				$scope.quisiera_conocer = getinfo[0]['quisiera_conocer'];
 				$scope.busco_tipo = getinfo[0]['busco_tipo'];
 				
 
@@ -150,7 +150,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 								v =	f[i].value;
 								info[C][n]= v ;
 								
-							}else{
+							}else {
 								info[C][n]= '' ;
 							};
 						};
