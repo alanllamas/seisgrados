@@ -1,54 +1,80 @@
 <?php
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){	
 
+		$data_array = array(
+
+			// Datos Forma 1
+			':genero'           => $data[0]->sexo,
+			':edad_busca_1'     => $data[0]->edad1,
+			':edad_busca_2'     => $data[0]->edad2,
+			':quiere_conocer'   => $data[0]->quisiera_conocer,
+			':busco_tipo'       => $data[0]->busco_tipo,
+
+			// Datos Forma 2
+			':primer_nombre'    => $data[1]->firstname,
+			':segundo_nombre'   => $data[1]->secondname,
+			':apellido_paterno' => $data[1]->lastname1,
+			':apellido_materno' => $data[1]->lastname2,
+			':email'            => $data[1]->email,
+			':confirma_email'   => $data[1]->confirm,
+			':como_encontraste' => $data[1]->found,
+
+			// Datos Forma 3
+			':fecha_nacimiento' => $data[2]->birthdate,
+			':estatura'         => $data[2]->estatura,
+			':peso'             => $data[2]->peso,
+			':estado_civil'     => $data[2]->civil,
+			':tiene_hijos'      => $data[2]->tiene_hijos,
+			':estado'           => $data[2]->estado,
+			':ciudad'           => $data[2]->ciudad,
+			':tipo_telefono'    => $data[2]->tel1_tipo,
+			':lada'             => $data[2]->lada,
+			':telefono'         => $data[2]->phone,
+			':tipo_telefono_2'  => $data[2]->tel2_tipo,
+			':lada_2'           => $data[2]->lada2,
+			':telefono_2'       => $data[2]->phone2,
+			':email_2'          => $data[2]->email2,
+			':confirma_email_2' => $data[2]->confirm2,
+			':usuario_facebook' => $data[2]->usuario_fg,
+			':usuario_twitter'  => $data[2]->usuario_twitter,
+
+			// Datos Forma 4
+			':titulo_academico' => $data[3]->academics,
+			':profesion'        => $data[3]->profesion,
+			':sector'           => $data[3]->sector,
 
 
-		echo "<pre>";
-
-			$data = json_decode($_POST['info']);
-
-			var_dump($data[0]);
-
-			echo "<hr>";
-
-			var_dump($data[1]);
-
-			echo "<hr>";
-
-			var_dump($data[2]);
-
-			echo "<hr>";
-
-			var_dump($data[3]);
-
-			echo "<hr>";
-
-			// var_dump(json_decode($_POST['info']));
-			print_r($_FILES);
-
-		echo "</pre>";
-
-
-		// $data_array = array(
-		// 	':edad_busca_1' => $data[0]
-		// )
+		);
 
 
 		try {
 
-		    $gbd = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
+		    $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
 
 		    $sql  = "INSERT INTO contactos_joomla (";
-		    $sql .= "	edad_busca_1, edad_busca_2, quiere_conocer, genero,";
-		    $sql .= "	busco_tipo, confirma_email, email, primer_nombre, como_encontraste,";
-		    $sql .= "	apellido_paterno, apellido_materno, segundo_nombre, fecha_nacimiento,";
-		    $sql .= "	ciudad, estado_civil, confirma_email_2, email_2, estado, estatura,";
-		    $sql .= "	lada, lada_2, peso, telefono, telefono_2, tipo_telefono, tipo_telefono_2";
-		    $sql .= "	tiene_hijos, usuario_facebook, usuario_twitter, titulo_academico";
-		    $sql .= "	profesion, sector, contrasena, promocode, fotografia";
+
+		    $sql .= "	genero, edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo,";
+		    $sql .= "	primer_nombre, segundo_nombre, apellido_paterno, apellido_materno,";
+		    $sql .= "	email, confirma_email, como_encontraste, fecha_nacimiento, estatura,";
+		    $sql .= "	peso, estado_civil, tiene_hijos, estado, ciudad, tipo_telefono, lada,";
+		    $sql .= "	telefono, tipo_telefono_2, lada2, telefono_2, email_2, confirma_email_2,";
+		    $sql .= "	usuario_facebook, usuario_twitter, titulo_academico, profesion, sector, fotografia";
+
 		    $sql .= ") VALUES (";
-		    $sql .= "	";
-		    
+
+		    $sql .= "	:genero, :edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo,";
+		    $sql .= "	:primer_nombre, :segundo_nombre, :apellido_paterno, apellido_materno,";
+		    $sql .= "	:email, :confirma_email, :como_encontraste, :fecha_nacimiento, :estatura";
+		    $sql .= "	:peso, :estado_civil, :tiene_hijos, :estado, :ciudad, :tipo_telefono, :lada,";
+		    $sql .= "	:telefono, :tipo_telefono_2, :lada2, :telefono_2, :email_2, :confirma_email_2,";
+		    $sql .= "	:usuario_facebook, :usuario_twitter, :titulo_academico, :profesion, :sector, :fotografia";
+
+		    $sql .= ")";
+
+			$q = $gdb->prepare($sql);
+			$q->execute($data_array);
+
+			echo $sql;
 
 		    $gbd = null;
 

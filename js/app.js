@@ -164,8 +164,8 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			};
 				store.set('info', info);
 				get = store.get('info');
-				console.log(info)
-				console.log(get)
+				// console.log(info)
+				// console.log(get)
 			
 		
 			return	true;
