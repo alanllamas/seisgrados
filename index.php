@@ -1,18 +1,30 @@
 <?php
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){	
 
-		// echo "<pre>";
-		// 	var_dump($_POST['info']);
-		// 	print_r($_FILES);
-		// echo "</pre>";
+		echo "<pre>";
+			var_dump(json_decode($_POST['info'][0]));
+			print_r($_FILES);
+		echo "</pre>";
+
+		// $data_array = array(
+		// 	':'
+		// )
 
 		try {
 
-		    $gbd = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'secret');
+		    $gbd = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
 
-		    // foreach($gbd->query('SELECT * from FOO') as $fila) {
-		    //     print_r($fila);
-		    // }
+		    $sql  = "INSERT INTO contactos_joomla (";
+		    $sql .= "	edad_busca_1, edad_busca_2, quiere_conocer, genero,";
+		    $sql .= "	busco_tipo, confirma_email, email, primer_nombre, como_encontraste,";
+		    $sql .= "	apellido_paterno, apellido_materno, segundo_nombre, fecha_nacimiento,";
+		    $sql .= "	ciudad, estado_civil, confirma_email_2, email_2, estado, estatura,";
+		    $sql .= "	lada, lada_2, peso, telefono, telefono_2, tipo_telefono, tipo_telefono_2";
+		    $sql .= "	tiene_hijos, usuario_facebook, usuario_twitter, titulo_academico";
+		    $sql .= "	profesion, sector, contrasena, promocode, fotografia";
+		    $sql .= ") VALUES (";
+		    $sql .= "	";
+		    
 
 		    $gbd = null;
 
@@ -242,9 +254,9 @@
 									<div id="campo_gay_2 ">
 										<p>
 											
-											<label for="busco_gay_activo"><input class="gay " type="checkbox"  name="busco_gay_activo" id="busco_gay_activo" ng-model="activo"  ng-checked="activo || gay1" value="Activo" />Activo</label>
-											<label  for="busco_gay_pasivo"><input class="gay " type="checkbox"  name="busco_gay_pasivo" ng-checked="pasivo || gay2" id="busco_gay_pasivo" ng-model="pasivo" value="Pasivo"  />Pasivo</label>
-											<label  for="busco_gay_versatil"><input class="gay " type="checkbox"  name="busco_gay_versatil" ng-checked="versatil || gay3" id="busco_gay_versatil" ng-model="versatil"  value="Versátil"  />Versátil</label> 
+											<label for="busco_gay_activo"><input class="gay " type="radio"  name="busco_tipo" id="busco_gay_activo" ng-model="busco_tipo"  ng-checked="activo || gay1" value="Activo" />Activo</label>
+											<label  for="busco_gay_pasivo"><input class="gay " type="radio"  name="busco_tipo" ng-checked="pasivo || gay2" id="busco_gay_pasivo" ng-model="busco_tipo" value="Pasivo"  />Pasivo</label>
+											<label  for="busco_gay_versatil"><input class="gay " type="radio"  name="busco_tipo" ng-checked="versatil || gay3" id="busco_gay_versatil" ng-model="busco_tipo"  value="Versátil"  />Versátil</label> 
 										</p>
 									</div>
 								</div>
@@ -399,7 +411,7 @@
 
 										<div>
 
-											<input  type="text" class="input datepicker form-control" readonly placeholder="selecciona tu fecha (requerido)" ng-model="date" ng-value="date" name="datepicker" required />	
+											<input  type="text" class="input datepicker form-control" readonly placeholder="selecciona tu fecha (requerido)" ng-model="date" ng-value="date" name="birthdate" required />	
 											
 										</div>
 									</div>
@@ -554,7 +566,7 @@
 										<h3>Mi Estado civil</h3>
 
 										<div>
-											<select ng-model="estadi_civil" ng-value="estadi_civil" name="estadi_civil" id="estadi_civil">
+											<select ng-model="estadi_civil" ng-value="estadi_civil" name="civil" id="estadi_civil">
 												<option value="" selected>Selecciona..</option>
 												<option value="Soltero (a)">Soltero (a)</option>
 												<option value="Divorciado (a)">Divorciado (a)</option>
@@ -569,7 +581,7 @@
 										<h3 >¿Tienes hijos?</h3>
 
 										<div>
-											<select name="posesion_hijos" ng-model="hijos" ng-value="hijos" id="pos_hijos">
+											<select name="tiene_hijos" ng-model="hijos" ng-value="hijos" id="pos_hijos">
 												<option value="">Hijos...</option>
 												<option value="si">Sì</option>
 												<option value="no">No</option>
@@ -693,7 +705,7 @@
 										<div class="col-md-6">
 
 											<div >
-												<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo (opcional)" name="confirm" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  ui-validate="'$value === email2'" ui-validate="'email2'" >
+												<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo (opcional)" name="confirm2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  ui-validate="'$value === email2'" ui-validate="'email2'" >
 											</div>
 										</div>
 									</div>
@@ -752,7 +764,7 @@
 								<h3>Máximo título académico<span class="req" >*</span></h3>
 
 								<div>
-									<select required ng-model="max_tit_academico" ng-value="max_tit_academico"  name="max_tit_academico" id="max_tit_academico" >
+									<select required ng-model="max_tit_academico" ng-value="max_tit_academico"  name="academics" id="max_tit_academico" >
 										<option value="">Selecciona...</option>
 										<option value="Estudios de doctorado">Estudios de doctorado</option>
 										<option value="Estudios de maestría">Estudios de maestría</option>
