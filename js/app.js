@@ -149,9 +149,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 							if (r) {
 								v =	f[i].value;
 								info[C][n]= v ;
-								
-							}else {
-								info[C][n]= '' ;
 							};
 						};
 											
@@ -194,7 +191,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				formData.append('info', Info)
 
 		        $.ajax({
-		            url: "/seisgrados/",
+		            url: "/",
 		            type: "POST",
 		            data: formData,
 		            async: false,
