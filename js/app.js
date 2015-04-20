@@ -220,10 +220,30 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		
 			return	true;
 		};
+		$scope.reset = function () {
+			if (confirm('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')) {
+				store.clear();
+				window.location.reload(true)
+			};
+		}
 		$scope.end = function () {
 			foto = $('#photo');
 			ff = foto[0].files[0];
-				if (ff) {
+
+			$http.post("/", info).then(function(success) {
+				if (success.data === "0") {
+					
+					store.clear()
+					$('.wizard').empty();
+					$('.wizard').append("<h1>Your tour is looking good! We'll get back to you in less than 24 hours</h1>");
+					
+				}else{
+					$('.pname').empty();
+					$('.pname').append("Something went wrong try to send your tour later");
+				};
+			
+			});
+				/*if (ff) {
 					foto.removeClass('ng-invalid');
 					foto.removeClass('ng-touched');
 					$('.wizard').empty();
@@ -233,18 +253,9 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 					alert('necesitas ingresar una foto');
 					foto.addClass('ng-invalid');
 					foto.addClass('ng-touched');
-				};
+				}; */
 				get = store.get('info');		
 		};
-		$scope.reset = function () {
-			if (confirm('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')) {
-				store.clear();
-				window.location.reload(true)
-			};
-		}
-
-
-
 
 	}]);
 				
