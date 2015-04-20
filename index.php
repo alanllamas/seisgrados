@@ -1,3 +1,20 @@
+<?php
+	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
+
+		$data = json_decode(file_get_contents("php://input"));
+
+		if($data){
+
+			print($data);
+
+		} else{
+
+			echo "1";
+
+		}
+
+	} else {
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -47,9 +64,9 @@
 					<div class="row btn-row">
 						<div class=" col-md-6 col-md-offset-3 col-xs-12">
 				    			
-				    			<button ng-model="welcome" ng-click="welcome = true;" class="btn btn-danger form-control">
-				    				Comenzar
-				    			</button>
+			    			<button ng-model=	"welcome" ng-click="welcome = true;" class="btn btn-danger form-control">
+			    				Comenzar
+			    			</button>
 				    		
 						
 			    		</div>
@@ -922,3 +939,6 @@
 	
 </body>
 </html>
+<?php
+	}
+?>
