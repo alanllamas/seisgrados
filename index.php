@@ -1,13 +1,21 @@
 <?php
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){	
 
+
+
 		echo "<pre>";
-			var_dump(json_decode($_POST['info'][0]));
+
+			$data = json_decode($_POST['info']);
+
+			var_dump($data[0]);
+
+			// var_dump(json_decode($_POST['info']));
 			print_r($_FILES);
+
 		echo "</pre>";
 
 		// $data_array = array(
-		// 	':'
+		// 	':edad_busca_1' => 
 		// )
 
 		try {
