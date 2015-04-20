@@ -223,7 +223,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			formData.append('info', info)
 
 	        $.ajax({
-	            url: "/",
+	            url: "/seisgrados/",
 	            type: "POST",
 	            data: formData,
 	            async: false,
