@@ -3,7 +3,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 	app.controller('MainCtrl', ['$scope','WizardHandler','$log','$http', function ($scope, WizardHandler,$http, $log) {
 		this.sexo;
 		this.busco;
-		info = [{},{},{},{},{}];
+		info = [{},{},{},{}];
 		this.info =  info;
 		body = document.body;
 		body.setAttribute('style', 'background:gray url(img/grados_back_1.png)fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; '
@@ -65,16 +65,10 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				$scope.main.sexo = getinfo[0]['sexo'];
 				$scope.edad1 = getinfo[0]['edad1'];
 				$scope.edad2 = getinfo[0]['edad2'];
-				$scope.main.busco = getinfo[0]['quisiera_conocer']
-				if ( getinfo[0]['busco_gay_activo']) {
-				$scope.gay1 = getinfo[0]['busco_gay_activo'];
-				};
-				if ( getinfo[0]['busco_gay_pasivo']) {
-					$scope.gay2 = getinfo[0]['busco_gay_pasivo'];
-				};
-				if ( getinfo[0]['busco_gay_versatil']) {
-					$scope.gay3 = getinfo[0]['busco_gay_versatil'];
-				};
+				$scope.main.busco = getinfo[0]['quisiera_conocer'];
+				
+					$scope.busco_tipo = getinfo[0]['busco_tipo'];
+				
 
 
 			//se obtienen datos del segundo objeto/forma
@@ -85,7 +79,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			$scope.lastname1 = getinfo[1]['lastname1'];
 			$scope.lastname2 = getinfo[1]['lastname2'];
 			$scope.email = getinfo[1]['email'];
-			$scope.confirmEmail = getinfo[1]['email'];
+			$scope.confirmEmail = getinfo[1]['confirm'];
 			$scope.found = getinfo[1]['found'];
 			
 			//se obtienen datos del tercer objeto/forma
@@ -97,16 +91,12 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			$scope.cp = getinfo[2]['cp'];
 			$scope.estadi_civil = getinfo[2]['estadi_civil'];
 			$scope.hijos = getinfo[2]['posesion_hijos'];
-			if (getinfo[2]['tel']) {
-				$scope.tel1_tipo = getinfo[2]['tel'][0];
-				$scope.lada = getinfo[2]['tel'][1];
-				$scope.phone = getinfo[2]['tel'][2];
-			};
-			if ( getinfo[2]['tel2']) {
-				$scope.tel2_tipo = getinfo[2]['tel2'][0];
-				$scope.lada2 = getinfo[2]['tel2'][1];
-				$scope.phone2 = getinfo[2]['tel2'][2];
-			};
+			$scope.tel1_tipo = getinfo[2]['tel1_tipo'];
+			$scope.lada = getinfo[2]['lada'];
+			$scope.phone = getinfo[2]['phone'];
+			$scope.tel2_tipo = getinfo[2]['tel2_tipo'];
+			$scope.lada2 = getinfo[2]['lada2'];
+			$scope.phone2 = getinfo[2]['phone2'];
 			$scope.email2 = getinfo[2]['email2'];
 			$scope.email2confirma = getinfo[2]['email2'];
 			$scope.usuario_fb = getinfo[2]['usuario_fb'];
@@ -177,17 +167,19 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 							};
 						};
 						if (angular.element(f[i]).hasClass('tel1')) {
-							tel = [f['tel1_tipo'].value,f['lada'].value,f['phone'].value];
-							info[C]['tel'] = tel;
+							v = f[i].value;
+							n = f[i].name;
+							info[C][n] = v;
 
 						};
-						if (angular.element(f[i]).hasClass('tel1')) {
-							tel = [f['tel2_tipo'].value,f['lada2'].value,f['phone2'].value];
-							info[C]['tel2'] = tel;
+						if (angular.element(f[i]).hasClass('tel2')) {
+							v = f[i].value;
+							n = f[i].name;
+							info[C][n] = v;
 						};
 
 						
-						if (f[i].name != 'confirm' && f[i].type != 'submit' && f[i].type != 'radio' && f[i].type != 'checkbox' && !angular.element(f[i]).hasClass('tel1') && !angular.element(f[i]).hasClass('tel2') ) {
+						if (f[i].type != 'submit' && f[i].type != 'radio' && f[i].type != 'checkbox' && !angular.element(f[i]).hasClass('tel1') && !angular.element(f[i]).hasClass('tel2') ) {
 							
 								
 								v =	f[i].value;
@@ -202,6 +194,8 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			};
 				store.set('info', info);
 				get = store.get('info');
+				console.log(info)
+				console.log(get)
 			
 		
 			return	true;
@@ -215,70 +209,48 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		$scope.end = function () {
 			foto = $('#photo');
 			ff = foto[0].files[0];
+			if (ff) {
+				foto.removeClass('ng-invalid');
+				foto.removeClass('ng-touched');
 			
 
-			var formData = new FormData();
+				var formData = new FormData();
 
-			Info = JSON.stringify(info);
-			formData.append('foto', foto[0].files[0]);
-			formData.append('info', Info)
+				Info = JSON.stringify(info);
+				formData.append('foto', foto[0].files[0]);
+				formData.append('info', Info)
 
-	        $.ajax({
-	            url: "/",
-	            type: "POST",
-	            data: formData,
-	            async: false,
-	            cache: false,
-	            contentType: false,
-	            processData: false
-	        }).done(function (data) {
-	        	console.log(data)
-	        });
-
-			//console.log(Info)
-		/*	$.ajax({
-				
-				url: '/',
-				type: 'POST',
-				dataType: 'json',
-				data: Info
-				
-			})
-			.done(function(success) {
-				console.log(success)
-				console.log("success");
-			}); */
-			
-			
-
-				/*
-			$http('GET').success(console.log('success'))
-			$http.post("/", info).success(function(success) {
-				if (success.data === "0") {
-					
+		        $.ajax({
+		            url: "/",
+		            type: "POST",
+		            data: formData,
+		            async: false,
+		            cache: false,
+		            contentType: false,
+		            processData: false
+		        }).done(function (data) {
+		        	console.log(data)
+				if (true) {
+						
 					store.clear()
 					$('.wizard').empty();
-					$('.wizard').append("<h1>Your tour is looking good! We'll get back to you in less than 24 hours</h1>");
-					
-				}else{
-					$('.pname').empty();
-					$('.pname').append("Something went wrong try to send your tour later");
-				};
-			
-			});
-				if (ff) {
-					foto.removeClass('ng-invalid');
-					foto.removeClass('ng-touched');
-					$('.wizard').empty();
 					$('.wizard').append("<h1 class='text-center' >Gracias por tu información.</h1> <h3 class='text-center'>En las próximas 48 hrs uno de nuestros head hunters sociales se comunicará contigo para que comiences a vivir la experiencia <span class='req'>6</span> rados.</h3> <br /> <h2 class='text-center'><span class='req'>6</span> rados. Encuentros Inteligentes.</h2>");
+						
+					}else{
+						$('.pname').empty();
+						$('.pname').append("Ha ocurrido algo inesperado reinicia la pagina y vuelve a enviar tu forma.");
+					};
+		        });
 
-				}else{
-					alert('necesitas ingresar una foto');
-					foto.addClass('ng-invalid');
-					foto.addClass('ng-touched');
-				};
-				get = store.get('info');		
-				 */
+			}else{
+				alert('necesitas ingresar una foto');
+				foto.addClass('ng-invalid');
+				foto.addClass('ng-touched');
+			};
+
+				
+			
+
 		};
 
 	}]);
