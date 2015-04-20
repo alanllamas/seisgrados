@@ -1,17 +1,29 @@
 <?php
-	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
+	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){	
 
-		$data = json_decode(file_get_contents("php://input"));
+		// echo "<pre>";
+		// 	var_dump($_POST['info']);
+		// 	print_r($_FILES);
+		// echo "</pre>";
 
-		if($data){
+		try {
 
-			print($data);
+		    $gbd = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'secret');
 
-		} else{
+		    // foreach($gbd->query('SELECT * from FOO') as $fila) {
+		    //     print_r($fila);
+		    // }
 
-			echo "1";
+		    $gbd = null;
+
+		} catch (PDOException $e) {
+
+		    print "¡Error!: " . $e->getMessage() . "<br/>";
+
+		    die();
 
 		}
+
 
 	} else {
 ?>
