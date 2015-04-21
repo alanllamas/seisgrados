@@ -191,7 +191,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				formData.append('info', Info)
 
 		        $.ajax({
-		            url: "/",
+		            url: "/seisgrados/",
 		            type: "POST",
 		            data: formData,
 		            async: false,
@@ -199,16 +199,15 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 		            contentType: false,
 		            processData: false
 		        }).done(function (data) {
-		        	console.log(data)
-				if (true) {
+					if (data == "0") {
+							
+						store.clear()
+						$('.wizard').empty();
+						$('.wizard').append("<h1 class='text-center' >Gracias por tu información.</h1> <h3 class='text-center'>En las próximas 48 hrs uno de nuestros head hunters sociales se comunicará contigo para que comiences a vivir la experiencia <span class='req'>6</span> rados.</h3> <br /> <h2 class='text-center'><span class='req'>6</span> rados. Encuentros Inteligentes.</h2>");
 						
-					// store.clear()
-					$('.wizard').empty();
-					$('.wizard').append("<h1 class='text-center' >Gracias por tu información.</h1> <h3 class='text-center'>En las próximas 48 hrs uno de nuestros head hunters sociales se comunicará contigo para que comiences a vivir la experiencia <span class='req'>6</span> rados.</h3> <br /> <h2 class='text-center'><span class='req'>6</span> rados. Encuentros Inteligentes.</h2>");
-						
-					}else{
-						$('.pname').empty();
-						$('.pname').append("Ha ocurrido algo inesperado reinicia la pagina y vuelve a enviar tu forma.");
+					}else if(data == "1"){
+						$('.wizard').empty();
+						$('.wizard').append("<h1 class='text-center' >Ha ocurrido algo inesperado reinicia la pagina y vuelve a enviar tu forma.</h1>");
 					};
 		        });
 
