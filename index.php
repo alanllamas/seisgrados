@@ -122,9 +122,9 @@
 				<img src="img/grados_back_4.png" class="img-responsive" alt="">
 			
 			</div>
-			<header class="block-center" >
+			<header >
 				<div class="nav navbar text-center">
-					<img src="img/6-grados_logo.png" class="img-responsive" alt="seis grados">
+					<img src="img/6-grados_logo.png" class="img-responsive text-center" alt="seis grados">
 				</div>
 			</header>
 			
