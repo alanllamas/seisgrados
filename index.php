@@ -1,80 +1,86 @@
 <?php
-	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){	
+	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
 
-		$data_array = array(
-
-			// Datos Forma 1
-			':genero'           => $data[0]->sexo,
-			':edad_busca_1'     => $data[0]->edad1,
-			':edad_busca_2'     => $data[0]->edad2,
-			':quiere_conocer'   => $data[0]->quisiera_conocer,
-			':busco_tipo'       => $data[0]->busco_tipo,
-
-			// Datos Forma 2
-			':primer_nombre'    => $data[1]->firstname,
-			':segundo_nombre'   => $data[1]->secondname,
-			':apellido_paterno' => $data[1]->lastname1,
-			':apellido_materno' => $data[1]->lastname2,
-			':email'            => $data[1]->email,
-			':confirma_email'   => $data[1]->confirm,
-			':como_encontraste' => $data[1]->found,
-
-			// Datos Forma 3
-			':fecha_nacimiento' => $data[2]->birthdate,
-			':estatura'         => $data[2]->estatura,
-			':peso'             => $data[2]->peso,
-			':estado_civil'     => $data[2]->civil,
-			':tiene_hijos'      => $data[2]->tiene_hijos,
-			':estado'           => $data[2]->estado,
-			':ciudad'           => $data[2]->ciudad,
-			':tipo_telefono'    => $data[2]->tel1_tipo,
-			':lada'             => $data[2]->lada,
-			':telefono'         => $data[2]->phone,
-			':tipo_telefono_2'  => $data[2]->tel2_tipo,
-			':lada_2'           => $data[2]->lada2,
-			':telefono_2'       => $data[2]->phone2,
-			':email_2'          => $data[2]->email2,
-			':confirma_email_2' => $data[2]->confirm2,
-			':usuario_facebook' => $data[2]->usuario_fg,
-			':usuario_twitter'  => $data[2]->usuario_twitter,
-
-			// Datos Forma 4
-			':titulo_academico' => $data[3]->academics,
-			':profesion'        => $data[3]->profesion,
-			':sector'           => $data[3]->sector,
-
-
-		);
-
+		$data = json_decode($_POST['info']);
 
 		try {
 
 		    $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
 
-		    $sql  = "INSERT INTO contactos_joomla (";
+		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		    $sql .= "	genero, edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo,";
-		    $sql .= "	primer_nombre, segundo_nombre, apellido_paterno, apellido_materno,";
-		    $sql .= "	email, confirma_email, como_encontraste, fecha_nacimiento, estatura,";
-		    $sql .= "	peso, estado_civil, tiene_hijos, estado, ciudad, tipo_telefono, lada,";
-		    $sql .= "	telefono, tipo_telefono_2, lada2, telefono_2, email_2, confirma_email_2,";
-		    $sql .= "	usuario_facebook, usuario_twitter, titulo_academico, profesion, sector, fotografia";
-
-		    $sql .= ") VALUES (";
-
-		    $sql .= "	:genero, :edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo,";
-		    $sql .= "	:primer_nombre, :segundo_nombre, :apellido_paterno, apellido_materno,";
-		    $sql .= "	:email, :confirma_email, :como_encontraste, :fecha_nacimiento, :estatura";
-		    $sql .= "	:peso, :estado_civil, :tiene_hijos, :estado, :ciudad, :tipo_telefono, :lada,";
-		    $sql .= "	:telefono, :tipo_telefono_2, :lada2, :telefono_2, :email_2, :confirma_email_2,";
-		    $sql .= "	:usuario_facebook, :usuario_twitter, :titulo_academico, :profesion, :sector, :fotografia";
-
-		    $sql .= ")";
+		    $sql  = "INSERT INTO contactos_joomla (genero, edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo, primer_nombre, segundo_nombre, apellido_paterno, apellido_materno, email, confirma_email, como_encontraste, fecha_nacimiento, estatura, peso, estado_civil, tiene_hijos, estado, ciudad, tipo_telefono, lada, telefono, tipo_telefono_2, lada_2, telefono_2, email_2, confirma_email_2, usuario_facebook, usuario_twitter, titulo_academico, profesion, sector, fotografia) VALUES (:genero, :edad_busca_1, :edad_busca_2, :quiere_conocer, :busco_tipo, :primer_nombre, :segundo_nombre, :apellido_paterno, :apellido_materno, :email, :confirma_email, :como_encontraste, :fecha_nacimiento, :estatura, :peso, :estado_civil, :tiene_hijos, :estado, :ciudad, :tipo_telefono, :lada, :telefono, :tipo_telefono_2, :lada_2, :telefono_2, :email_2, :confirma_email_2, :usuario_facebook, :usuario_twitter, :titulo_academico, :profesion, :sector, :fotografia)";
 
 			$q = $gdb->prepare($sql);
-			$q->execute($data_array);
+			$q->execute(
+				array(
 
-			echo $sql;
+					':genero'           => mysql_real_escape_string ($data[0]->sexo),
+					':edad_busca_1'     => mysql_real_escape_string ($data[0]->edad1),
+					':edad_busca_2'     => mysql_real_escape_string ($data[0]->edad2),
+					':quiere_conocer'   => mysql_real_escape_string ($data[0]->quisiera_conocer),
+					':busco_tipo'       => mysql_real_escape_string ($data[0]->busco_tipo),
+
+					':primer_nombre'    => mysql_real_escape_string ($data[1]->firstname),
+					':segundo_nombre'   => mysql_real_escape_string ($data[1]->secondname),
+					':apellido_paterno' => mysql_real_escape_string ($data[1]->lastname1),
+					':apellido_materno' => mysql_real_escape_string ($data[1]->lastname2),
+					':email'            => mysql_real_escape_string ($data[1]->email),
+					':confirma_email'   => mysql_real_escape_string ($data[1]->confirm),
+					':como_encontraste' => mysql_real_escape_string ($data[1]->found),
+
+					':fecha_nacimiento' => mysql_real_escape_string ($data[2]->birthdate),
+					':estatura'         => mysql_real_escape_string ($data[2]->estatura),
+					':peso'             => mysql_real_escape_string ($data[2]->peso),
+					':estado_civil'     => mysql_real_escape_string ($data[2]->civil),
+					':tiene_hijos'      => mysql_real_escape_string ($data[2]->tiene_hijos),
+					':estado'           => mysql_real_escape_string ($data[2]->estado),
+					':ciudad'           => mysql_real_escape_string ($data[2]->ciudad),
+					':tipo_telefono'    => mysql_real_escape_string ($data[2]->tel1_tipo),
+					':lada'             => mysql_real_escape_string ($data[2]->lada),
+					':telefono'         => mysql_real_escape_string ($data[2]->phone),
+					':tipo_telefono_2'  => mysql_real_escape_string ($data[2]->tel2_tipo),
+					':lada_2'           => mysql_real_escape_string ($data[2]->lada2),
+					':telefono_2'       => mysql_real_escape_string ($data[2]->phone2),
+					':email_2'          => mysql_real_escape_string ($data[2]->email2),
+					':confirma_email_2' => mysql_real_escape_string ($data[2]->confirm2),
+					':usuario_facebook' => mysql_real_escape_string ($data[2]->usuario_fb),
+					':usuario_twitter'  => mysql_real_escape_string ($data[2]->usuario_twitter),
+
+					':titulo_academico' => mysql_real_escape_string ($data[3]->academics),
+					':profesion'        => mysql_real_escape_string ($data[3]->profesion),
+					':sector'           => mysql_real_escape_string ($data[3]->sector),
+					':fotografia'       => mysql_real_escape_string ('')
+				)
+			);
+
+			$last_insert = $gdb->lastInsertId();
+
+			$dir = "uploads/" . $last_insert . "/";
+
+			if(mkdir($dir, 0755)){
+
+				if(move_uploaded_file( $_FILES["foto"]['tmp_name'], "$dir" . $_FILES['foto']['name'])){
+
+					$sql = "UPDATE contactos_joomla SET fotografia=? WHERE contacto_joomla_id=?";
+
+	        		$q2 = $gdb->prepare($sql);
+					$q2->execute(array("$dir" . $_FILES['foto']['name'], $last_insert));
+
+					echo "0";
+
+				} else{
+
+					echo "1";
+
+				}
+
+			} else{
+
+				echo "1";
+
+			}
+			
 
 		    $gbd = null;
 
@@ -116,9 +122,11 @@
 				<img src="img/grados_back_4.png" class="img-responsive" alt="">
 			
 			</div>
+
 			<header>
 				<div class="nav navbar">
 					<img src="img/6-grados_logo.png" class="img-responsive col-sm-12 block-center" alt="seis grados">
+
 				</div>
 			</header>
 			

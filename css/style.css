@@ -208,7 +208,7 @@ footer{
 	}
 	.btn-row{
 		position: fixed;
-	    width: 101.2%;
+	    width: 100%;
 	    background: transparent;
 	    left: 0;
 	    z-index: 1;
@@ -222,10 +222,6 @@ footer{
 	    padding: 2px;
 		margin: 20px 3px;
 	}
-
-
-
-
 	.wizard{
 		background: rgba(0,0,0,.7);
 		
@@ -254,7 +250,7 @@ footer{
 	
 	footer{
 		
-		padding: 13% 26% .5% 25%;
+		padding: 13% 24.5% .5% 25%;
 
 	}
 	.wizard{
@@ -280,6 +276,7 @@ footer{
 	}
 	.btn-row{
 		bottom: 7%;
+
 	}
 	.steps-indicator {
 		bottom: 6.3%;
