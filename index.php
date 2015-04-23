@@ -116,9 +116,9 @@
 				<img src="img/grados_back_4.png" class="img-responsive" alt="">
 			
 			</div>
-			<header class="block-center" >
-				<div class="nav navbar text-center">
-					<img src="img/6-grados_logo.png" class="img-responsive" alt="seis grados">
+			<header>
+				<div class="nav navbar">
+					<img src="img/6-grados_logo.png" class="img-responsive col-sm-12 block-center" alt="seis grados">
 				</div>
 			</header>
 			
@@ -988,11 +988,13 @@
 
 	<footer class="row">
 		
-		<div class="row">
-			<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-			<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-			<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-		</div>
+		
+			<div>
+				<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
+				<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
+				<span class="req col-md-4 col-xs-4"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
+			</div>
+		
 	</footer>
 		
 		
