@@ -5,7 +5,8 @@
 
 		try {
 
-		    $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
+		    $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_prueba', 'seisgrad_crmuser', '2015crm62015');
+		    // $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -15,42 +16,42 @@
 			$q->execute(
 				array(
 
-					':genero'           => mysql_real_escape_string ($data[0]->sexo),
-					':edad_busca_1'     => mysql_real_escape_string ($data[0]->edad1),
-					':edad_busca_2'     => mysql_real_escape_string ($data[0]->edad2),
-					':quiere_conocer'   => mysql_real_escape_string ($data[0]->quisiera_conocer),
-					':busco_tipo'       => mysql_real_escape_string ($data[0]->busco_tipo),
+					':genero'           => $data[0]->sexo,
+					':edad_busca_1'     => $data[0]->edad1,
+					':edad_busca_2'     => $data[0]->edad2,
+					':quiere_conocer'   => $data[0]->quisiera_conocer,
+					':busco_tipo'       => $data[0]->busco_tipo,
 
-					':primer_nombre'    => mysql_real_escape_string ($data[1]->firstname),
-					':segundo_nombre'   => mysql_real_escape_string ($data[1]->secondname),
-					':apellido_paterno' => mysql_real_escape_string ($data[1]->lastname1),
-					':apellido_materno' => mysql_real_escape_string ($data[1]->lastname2),
-					':email'            => mysql_real_escape_string ($data[1]->email),
-					':confirma_email'   => mysql_real_escape_string ($data[1]->confirm),
-					':como_encontraste' => mysql_real_escape_string ($data[1]->found),
+					':primer_nombre'    => $data[1]->firstname,
+					':segundo_nombre'   => $data[1]->secondname,
+					':apellido_paterno' => $data[1]->lastname1,
+					':apellido_materno' => $data[1]->lastname2,
+					':email'            => $data[1]->email,
+					':confirma_email'   => $data[1]->confirm,
+					':como_encontraste' => $data[1]->found,
 
-					':fecha_nacimiento' => mysql_real_escape_string ($data[2]->birthdate),
-					':estatura'         => mysql_real_escape_string ($data[2]->estatura),
-					':peso'             => mysql_real_escape_string ($data[2]->peso),
-					':estado_civil'     => mysql_real_escape_string ($data[2]->civil),
-					':tiene_hijos'      => mysql_real_escape_string ($data[2]->tiene_hijos),
-					':estado'           => mysql_real_escape_string ($data[2]->estado),
-					':ciudad'           => mysql_real_escape_string ($data[2]->ciudad),
-					':tipo_telefono'    => mysql_real_escape_string ($data[2]->tel1_tipo),
-					':lada'             => mysql_real_escape_string ($data[2]->lada),
-					':telefono'         => mysql_real_escape_string ($data[2]->phone),
-					':tipo_telefono_2'  => mysql_real_escape_string ($data[2]->tel2_tipo),
-					':lada_2'           => mysql_real_escape_string ($data[2]->lada2),
-					':telefono_2'       => mysql_real_escape_string ($data[2]->phone2),
-					':email_2'          => mysql_real_escape_string ($data[2]->email2),
-					':confirma_email_2' => mysql_real_escape_string ($data[2]->confirm2),
-					':usuario_facebook' => mysql_real_escape_string ($data[2]->usuario_fb),
-					':usuario_twitter'  => mysql_real_escape_string ($data[2]->usuario_twitter),
+					':fecha_nacimiento' => $data[2]->birthdate,
+					':estatura'         => $data[2]->estatura,
+					':peso'             => $data[2]->peso,
+					':estado_civil'     => $data[2]->civil,
+					':tiene_hijos'      => $data[2]->tiene_hijos,
+					':estado'           => $data[2]->estado,
+					':ciudad'           => $data[2]->ciudad,
+					':tipo_telefono'    => $data[2]->tel1_tipo,
+					':lada'             => $data[2]->lada,
+					':telefono'         => $data[2]->phone,
+					':tipo_telefono_2'  => $data[2]->tel2_tipo,
+					':lada_2'           => $data[2]->lada2,
+					':telefono_2'       => $data[2]->phone2,
+					':email_2'          => $data[2]->email2,
+					':confirma_email_2' => $data[2]->confirm2,
+					':usuario_facebook' => $data[2]->usuario_fb,
+					':usuario_twitter'  => $data[2]->usuario_twitter,
 
-					':titulo_academico' => mysql_real_escape_string ($data[3]->academics),
-					':profesion'        => mysql_real_escape_string ($data[3]->profesion),
-					':sector'           => mysql_real_escape_string ($data[3]->sector),
-					':fotografia'       => mysql_real_escape_string ('')
+					':titulo_academico' => $data[3]->academics,
+					':profesion'        => $data[3]->profesion,
+					':sector'           => $data[3]->sector,
+					':fotografia'       => ''
 				)
 			);
 
