@@ -148,10 +148,10 @@
 	
 	<section class="welcome" ng-hide="welcome" >
 		
-			<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en <span class="req">6</span>grados. </h1>
+			<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en <span class="req">6</span>rados. </h1>
 			<h3 class="text-center">
 				<p>
-					<span class="req">6</span> rados desarrolla experiencias personalizadas pensadas en ti. Al pagar una <span class="req"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">membresía</a></span> anual, podrás  gozar de sus beneficios. Por favor completa los siguientes <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">datos personales</a></span> para poder contactarte.
+					<span class="req">6</span>rados desarrolla experiencias personalizadas pensadas en ti. Al pagar una <span class="req"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">membresía</a></span> anual, podrás  gozar de sus beneficios. Por favor completa los siguientes <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">datos personales</a></span> para poder contactarte.
 				</p>
 			</h3>
 			<h2 class="text-center">
