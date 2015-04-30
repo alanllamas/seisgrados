@@ -194,8 +194,8 @@
 								<div>
 									<select ng-model="main.sexo" ng-value="main.sexo"  name="sexo" ng-value="sexo" id="sexo" required>
 										<option value="" selected>Género...</option>
-										<option value="femenino">Mujer</option>
-										<option value="masculino">Hombre</option>
+										<option value="Femenino">Mujer</option>
+										<option value="Masculino">Hombre</option>
 									</select>
 									
 								</div>
