@@ -139,7 +139,9 @@
 
 	<header>
 		<div class="nav navbar">
-			<img src="img/6-grados_logo.png" class="img-responsive col-sm-12 block-center" alt="seis grados">
+			<a href="/">
+				<img src="img/6-grados_logo.png" class="sg-logo img-responsive block-center" alt="seis grados">
+			</a>
 
 		</div>
 	</header>
