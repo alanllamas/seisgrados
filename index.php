@@ -17,8 +17,8 @@
 
 		try {
 
-		    $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
-		    // $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
+		    // $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
+		    $gdb = new PDO('mysql:host=localhost;dbname=prueba', 'root', 'secret');
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -160,14 +160,21 @@
 			</h2>
 
 			<div class="row btn-row">
-				<div class=" col-md-6 col-md-offset-3 col-xs-12">
-		    			
-	    			<button ng-model=	"welcome" ng-click="welcome = true;" class="btn btn-danger form-control">
+				<div class="col-xs-4">
+		    		<button class="btn btn-danger form-control col-xs-4">
+	    				Chat
+	    			</button>	
+	    		</div>
+				<div class="col-xs-4">
+	    			<button ng-model="welcome" ng-click="welcome = true;" class="col-xs-4 btn btn-danger form-control">
 	    				Comenzar
 	    			</button>
-		    		
-				
 	    		</div>
+	    		<div class="col-xs-4">
+		    		<button class="btn btn-danger form-control col-xs-4 col-md-4">
+	    				Teléfono
+	    			</button>
+				</div>
 	    		<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
 	    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
 		    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
@@ -182,12 +189,12 @@
         	<form  novalidate class="form"  id="buscas" name="buscas">
 		        <div class="row">
 
-					<h2>¿A quién buscas?</h2>
+					<h2>Felicidades, estás a menos de 6rados de conocer la persona para ti...</h2>
 					<h4>Todos los campos marcados con 
 						<span class="req" >*</span> son obligatorios. </h4>
 					<div class="row">
 
-							<div class="col-md-4 col-xs-12 ">
+							<div class="col-md-4 col-md-offset-3 col-xs-12 ">
 
 								<h3>Soy<span class="req" >*</span></h3>
 
@@ -201,121 +208,7 @@
 								</div>
 							</div>
 
-
-						<div class="col-xs-12 ">
-							<h3 >Busco alguien entre<span class="req" >*</span></h3>
-
-								<select class="col-md-1 col-xs-3" required ng-model="edad1" ng-value="edad1" value="Edad..." name="edad1" id="edad1" >
-									<option value="" >Edad...</option>
-									<option value="25">25</option>
-									<option value="26">26</option>
-									<option value="27">27</option>
-									<option value="28">28</option>
-									<option value="29">29</option>
-									<option value="30">30</option>
-									<option value="31">31</option>
-									<option value="32">32</option>
-									<option value="33">33</option>
-									<option value="34">34</option>
-									<option value="35">35</option>
-									<option value="36">36</option>
-									<option value="37">37</option>
-									<option value="38">38</option>
-									<option value="39">39</option>
-									<option value="40">40</option>
-									<option value="41">41</option>
-									<option value="42">42</option>
-									<option value="43">43</option>
-									<option value="44">44</option>
-									<option value="45">45</option>
-									<option value="46">46</option>
-									<option value="47">47</option>
-									<option value="48">48</option>
-									<option value="49">49</option>
-									<option value="50">50</option>
-									<option value="51">51</option>
-									<option value="52">52</option>
-									<option value="53">53</option>
-									<option value="54">54</option>
-									<option value="55">55</option>
-									<option value="56">56</option>
-									<option value="57">57</option>
-									<option value="58">58</option>
-									<option value="59">59</option>
-									<option value="60">60</option>
-									<option value="61">61</option>
-									<option value="62">62</option>
-									<option value="63">63</option>
-									<option value="64">64</option>
-									<option value="65">65</option>
-									<option value="66">66</option>
-									<option value="67">67</option>
-									<option value="68">68</option>
-									<option value="69">69</option>
-									<option value="70">70</option>
-								</select>
-								<p class="col-md-1 col-xs-3" >y</p>
-					
-								
-								<select class="col-md-1 col-xs-3" required value="Edad..." ng-model="edad2" ng-value="edad2" name="edad2" id="edad2" >
-									<option value="">Edad...</option>
-									<option value="25">25</option>
-									<option value="26">26</option>
-									<option value="27">27</option>
-									<option value="28">28</option>
-									<option value="29">29</option>
-									<option value="30">30</option>
-									<option value="31">31</option>
-									<option value="32">32</option>
-									<option value="33">33</option>
-									<option value="34">34</option>
-									<option value="35">35</option>
-									<option value="36">36</option>
-									<option value="37">37</option>
-									<option value="38">38</option>
-									<option value="39">39</option>
-									<option value="40">40</option>
-									<option value="41">41</option>
-									<option value="42">42</option>
-									<option value="43">43</option>
-									<option value="44">44</option>
-									<option value="45">45</option>
-									<option value="46">46</option>
-									<option value="47">47</option>
-									<option value="48">48</option>
-									<option value="49">49</option>
-									<option value="50">50</option>
-									<option value="51">51</option>
-									<option value="52">52</option>
-									<option value="53">53</option>
-									<option value="54">54</option>
-									<option value="55">55</option>
-									<option value="56">56</option>
-									<option value="57">57</option>
-									<option value="58">58</option>
-									<option value="59">59</option>
-									<option value="60">60</option>
-									<option value="61">61</option>
-									<option value="62">62</option>
-									<option value="63">63</option>
-									<option value="64">64</option>
-									<option value="65">65</option>
-									<option value="66">66</option>
-									<option value="67">67</option>
-									<option value="68">68</option>
-									<option value="69">69</option>
-									<option value="70">70</option>
-								</select>
-
-								
-							
-							
-						</div>
-
-					</div>
-
-					<div class="row">
-						<div class="col-xs-12 ">
+						<div class="col-md-5 col-xs-12 ">
 							
 							<h3>Quisiera conocer <span class="req">*</span></h3>
 							<div>
@@ -327,6 +220,7 @@
 							</div> 
 						</div>
 					</div>
+				
 					<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'Masculino'">
 						<div class="col-sm-12  ">
 						
@@ -400,54 +294,19 @@
 				
 					</div>
 					<div class="row">
-						<h3 class="col-md-12 ">Correo Electrónico<span class="req" >*</span></h3>
 						<div class="col-md-6 col-xs-12 ">
+						<h3>Correo Electrónico de Contacto<span class="req" >*</span></h3>
 							
 							<input class="input form-control placeholder" required name="email" type="email" placeholder="Ejemplo@ejemplo.com (requerido) " ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
 							
 						</div>
+						<h3 class="col-md-6 ">Confirma tu Correo Electrónico<span class="req" >*</span></h3>
 						<div class="col-md-6 col-xs-12 ">
 							
 							<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Ejemplo@ejemplo.com (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-md-5 col-xs-12 ">
-						<h3>¿Cómo nos encontraste?<span class="req" >*</span></h3>
-							
-							<select ng-model="found" ng-value="found" required name="found" id="found" >
-								
-								<option value="" selected>Selecciona...</option>
-
-								<option value="Participante de la Revista Moi">Participante de la Revista Moi</option>
-								<option value="Alto Nivel">Alto Nivel</option>
-								<option value="CNN Expansión">CNN Expansión</option>
-								<option value="El Financiero">El Financiero</option>
-								<option value="Email">Email</option>
-								<option value="Estilo DF">Estilo DF</option>
-								<option value="Facebook">Facebook</option>
-								<option value="Forbes">Forbes</option>
-								<option value="GQ">GQ</option>
-								<option value="Google">Google</option>
-								<option value="Linked In">Linked In</option>
-								<option value="Martha Debayle">Martha Debayle</option>
-								<option value="Mojoe">Mojoe</option>
-								<option value="Netas Divinas">Netas Divinas</option>
-								<option value="Recomendacion de un amigo">Recomendacion de un amigo</option>
-								<option value="Recomendacion de un socio">Recomendacion de un socio</option>
-								<option value="S1ngular">S1ngular</option>
-								<option value="Moi">Revista Moi</option>
-								<option value="Twitter">Twitter</option>
-								<option value="Otros">OTROS</option>
-
-							</select>
-
-							
-						</div>
-
-
-					</div>
 				</div>
 		    
 		    	<div class="row btn-row">
@@ -483,197 +342,7 @@
 					<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
 					<div class="col-md-12">
 						
-					<fieldset>
-						<div class="row">
-
-							<div class="col-md-6 col-xs-12 ">
-								<h3>Fecha de Nacimiento<span class="req" >*</span></h3>
-
-								<div>
-
-									<input  type="text" class="input datepicker form-control" readonly placeholder="selecciona tu fecha (requerido)" ng-model="date" ng-value="date" name="birthdate" required />	
-									
-								</div>
-							</div>
-						</div>
-						<div class="row">
-						
-							<div class="col-md-3 col-xs-6 ">
-								<h3>Estatura<span class="req" >*</span></h3>
-
-								<div>
-									<select ng-model="estatura" ng-value="estatura"  name="estatura" required>
-										<option selected value="">Estatura...</option>
-										<option value="1.50 o menos">1.50 o menos</option>
-										<option value="1.51">1.51</option>
-										<option value="1.52">1.52</option>
-										<option value="1.53">1.53</option>
-										<option value="1.54">1.54</option>
-										<option value="1.55">1.55</option>
-										<option value="1.56">1.56</option>
-										<option value="1.57">1.57</option>
-										<option value="1.58">1.58</option>
-										<option value="1.59">1.59</option>
-										<option value="1.60">1.60</option>
-										<option value="1.61">1.61</option>
-										<option value="1.62">1.62</option>
-										<option value="1.63">1.63</option>
-										<option value="1.64">1.64</option>
-										<option value="1.65">1.65</option>
-										<option value="1.66">1.66</option>
-										<option value="1.67">1.67</option>
-										<option value="1.68">1.68</option>
-										<option value="1.69">1.69</option>
-										<option value="1.70">1.70</option>
-										<option value="1.71">1.71</option>
-										<option value="1.72">1.72</option>
-										<option value="1.73">1.73</option>
-										<option value="1.74">1.74</option>
-										<option value="1.75">1.75</option>
-										<option value="1.76">1.76</option>
-										<option value="1.77">1.77</option>
-										<option value="1.78">1.78</option>
-										<option value="1.79">1.79</option>
-										<option value="1.80">1.80</option>
-										<option value="1.81">1.81</option>
-										<option value="1.82">1.82</option>
-										<option value="1.83">1.83</option>
-										<option value="1.84">1.84</option>
-										<option value="1.85">1.85</option>
-										<option value="1.86">1.86</option>
-										<option value="1.87">1.87</option>
-										<option value="1.88">1.88</option>
-										<option value="1.89">1.89</option>
-										<option value="1.90">1.90</option>
-										<option value="1.91">1.91</option>
-										<option value="1.92">1.92</option>
-										<option value="1.93">1.93</option>
-										<option value="1.94">1.94</option>
-										<option value="1.95">1.95</option>
-										<option value="1.96">1.96</option>
-										<option value="1.97">1.97</option>
-										<option value="1.98">1.98</option>
-										<option value="1.99">1.99</option>
-										<option value="2.00">2.00</option>
-										<option value="2.01">2.01 o más</option>
-									</select>
-									
-								</div>
-							</div>
-
-						
-						
-							<div class="col-md-2 col-md-offset-2 col-xs-6">	
-								<h3>Peso<span class="req" >*</span></h3>
-
-								<div>
-
-									<select ng-model="peso" ng-value="peso" name="peso" required>
-										<option selected value="">Peso...</option>
-										<option value="35 o menos">35 o menos</option>
-										<option value="36">36</option>
-										<option value="37">37</option>
-										<option value="38">38</option>
-										<option value="39">39</option>
-										<option value="40">40</option>
-										<option value="41">41</option>
-										<option value="42">42</option>
-										<option value="43">43</option>
-										<option value="44">44</option>
-										<option value="45">45</option>
-										<option value="46">46</option>
-										<option value="47">47</option>
-										<option value="48">48</option>
-										<option value="49">49</option>
-										<option value="50">50</option>
-										<option value="51">51</option>
-										<option value="52">52</option>
-										<option value="53">53</option>
-										<option value="54">54</option>
-										<option value="55">55</option>
-										<option value="56">56</option>
-										<option value="57">57</option>
-										<option value="58">58</option>
-										<option value="59">59</option>
-										<option value="60">60</option>
-										<option value="61">61</option>
-										<option value="62">62</option>
-										<option value="63">63</option>
-										<option value="64">64</option>
-										<option value="65">65</option>
-										<option value="66">66</option>
-										<option value="67">67</option>
-										<option value="68">68</option>
-										<option value="69">69</option>
-										<option value="70">70</option>
-										<option value="71">71</option>
-										<option value="72">72</option>
-										<option value="73">73</option>
-										<option value="74">74</option>
-										<option value="75">75</option>
-										<option value="76">76</option>
-										<option value="77">77</option>
-										<option value="78">78</option>
-										<option value="79">79</option>
-										<option value="80">80</option>
-										<option value="81">81</option>
-										<option value="82">82</option>
-										<option value="83">83</option>
-										<option value="84">84</option>
-										<option value="85">85</option>
-										<option value="86">86</option>
-										<option value="87">87</option>
-										<option value="88">88</option>
-										<option value="89">89</option>
-										<option value="90">90</option>
-										<option value="91">91</option>
-										<option value="92">92</option>
-										<option value="93">93</option>
-										<option value="94">94</option>
-										<option value="95">95</option>
-										<option value="96">96</option>
-										<option value="97">97</option>
-										<option value="98">98</option>
-										<option value="99">99</option>
-										<option value="100 o más">100 o más</option>
-									</select>
-									
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-xs-6 ">
-								<h3>Mi Estado civil</h3>
-
-								<div>
-									<select ng-model="estadi_civil" ng-value="estadi_civil" name="civil" id="estadi_civil">
-										<option value="" selected>Selecciona..</option>
-										<option value="Soltero (a)">Soltero (a)</option>
-										<option value="Divorciado (a)">Divorciado (a)</option>
-										<option value="En proceso de divorcio">En proceso de divorcio</option>
-										<option value="Separado (a)">Separado (a)</option>
-										<option value="Viudo (a)">Viudo (a)</option>
-									</select>
-								</div>
-							</div>
-							
-							<div class="col-md-4 col-md-offset-1 col-xs-6" >
-								<h3 >¿Tienes hijos?</h3>
-
-								<div>
-									<select name="tiene_hijos" ng-model="hijos" ng-value="hijos" id="pos_hijos">
-										<option value="">Hijos...</option>
-										<option value="si">Sì</option>
-										<option value="no">No</option>
-									</select>
-								</div>
-							</div>
-						
-						</div>
-					</fieldset>
-
-
-						
+			
 						
 					<fieldset>
 						<div class="row">
@@ -734,7 +403,7 @@
 						<div class="row">
 							
 							<div class="col-md-6  col-xs-12">
-								<h3 >Teléfono<span class="req" >*</span></h3>
+								<h3 >Teléfono de Contacto<span class="req" >*</span></h3>
 
 								<div>
 									<select ng-model="tel1_tipo" ng-value="tel1_tipo" class="tel1 col-md-2 col-md-offset-1 col-xs-2 " name="tel1_tipo" id="tel1_tipo" required>
@@ -769,65 +438,28 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 ">
-								
-								<h3 class=" col-md-12" >Correo Electrónico Adicional</h3>
-								<div class="col-md-6 ">
-
-									<div>
-										<input class="input form-control" ng-model="email2" placeholder="(opcional)" ng-value="email2" name="email2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="email2"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off">
-										
-									</div>
-								</div>
-								
-								<div class="col-md-6">
-
-									<div >
-										<input class="input form-control" ng-model="email2confirma" ng-value="email2confirma" placeholder="Confirma tu correo (opcional)" name="confirm2" type="email" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off"  ui-validate="'$value === email2'" ui-validate="'email2'" >
-									</div>
-								</div>
+							<div id="terminos" class="par">
+								Al hacer click en Registrarme, aceptas todos los <span class="req"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span> y confirmas haber leído el <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span> de <span class="req">6</span>rados.
 							</div>
 						</div>
-						<div class="row">
-							
-							<div class="col-md-12">
-								
-								<div class="col-md-6 ">
-									<h3>Usuario de Facebook</h3>
-									
-									<div>
-										<input class="input form-control" placeholder="(opcional)" ng-model="usuario_fb" ng-value="usuario_fb" name="usuario_fb" type="text" size="20" maxlength="30" id="usuario_fb">
-									</div>
-								</div>
 
-								<div class="col-md-6">
-									<h3>Usuario de Twitter</h3>
-
-									<div>
-										<input class="input form-control" placeholder="(opcional)" ng-model="usuario_twitter" ng-value="usuario_twitter" name="usuario_twitter" type="text" size="20" maxlength="30" id="usuario_twitter">
-									</div>
-								</div>
-							</div>
-						</div>
 						<div class="row btn-row">
+							
 							<div class="col-xs-12 col-md-12">
-								
-								<div class="col-md-4 col-xs-4">
-									
+								<div class="col-sm-4 col-xs-4 ">
+											
 									<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
 								</div>
-								<div class="col-md-4 col-xs-4">
+						       	<div class="col-sm-4 col-xs-4 ">
 									
 						      	  <input class="btn form-control btn-warning" type="submit"  value="Reiniciar" ng-click="reset()" />
 								</div>
-								<div class="col-md-4 col-xs-4">
+								<div class="col-sm-4 col-xs-4 ">
+										
+							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" id="end" value="Registrarme" />
 									
-						      	  <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" value="Siguiente" />
-								</div>
+						       	</div>
 							</div>
-
 							<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
 				    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
 					    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
@@ -840,201 +472,11 @@
     		</form>
 	        	
 	    </wz-step>
-	    <wz-step title="Estudios" canexit="pass">
-        	<form novalidate class="form"  id="estudios" name="estudios">
-		        <div class="row">
-
-					<h2>Estudios y trabajo</h2>
-					<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
-
-					<div class="col-md-12 " >
-
-						<h3>Máximo título académico<span class="req" >*</span></h3>
-
-						<div>
-							<select required ng-model="max_tit_academico" ng-value="max_tit_academico"  name="academics" id="max_tit_academico" >
-								<option value="">Selecciona...</option>
-								<option value="Estudios de doctorado">Estudios de doctorado</option>
-								<option value="Estudios de maestría">Estudios de maestría</option>
-								<option value="Estudios de postgrado">Estudios de postgrado</option>
-								<option value="Estudios universitarios">Estudios universitarios</option>
-								<option value="Bachillerato general">Bachillerato general</option>
-								<option value="Profesional técnico">Profesional técnico</option>
-							</select>
-							
-						</div>
-
-					
-					</div>
-
-
-					<div class="col-sm-12 ">
-						<h3>Profesión<span class="req" >*</span></h3>
-						<div>
-							<select required ng-model="profesion" ng-value="profesion" name="profesion" id="profesion"  >
-								<option value="">Selecciona...</option>
-								<option value="Empleado (a)">Empleado (a)</option>
-								<option value="Empresario (a)">Empresario (a)</option>
-								<option value="Independiente">Independiente</option>
-								<option value="Burócrata">Burócrata</option>
-								<option value="Pensionado (a)">Pensionado (a)</option>
-								<option value="Desempleado (a)">Desempleado (a)</option>
-								<option value="Ejecutivo (a)">Ejecutivo (a)</option>
-								<option value="Gerente">Gerente</option>
-								<option value="Director (a)">Director (a)</option>
-								<option value="otra">Otra...</option>
-							</select>
-						</div>
-					</div>
-
-
-					
-
-					<div class="col-sm-12 ">
-							
-						<h3>Sector<span class="req" >*</span></h3>
-						<div>
-							<select required ng-model="sector" ng-value="sector"  name="sector" id="sector" >
-								<option value="">Selecciona...</option>
-								<option value="Agricultura/Pesca/Servicios forestales/Cuidado de animales">Agricultura/Pesca/Servicios forestales/Cuidado de animales</option>
-								<option value="Alta dirección">Alta dirección</option>
-								<option value="Arte / Diseño / Entretenimiento">Arte / Diseño / Entretenimiento </option>
-								<option value="Automóviles / Partes automotrices">Automóviles / Partes automotrices </option>
-								<option value="Bienes raíces">Bienes raíces </option>
-								<option value="Biotecnología / Farmacéutica">Biotecnología / Farmacéutica </option>
-								<option value="Ciencias e investigación">Ciencias e investigación </option>
-								<option value="Comercio / Ventas">Comercio / Ventas </option>
-								<option value="Comunidad/Servicios sociales/Religión/Proyectos no lucrativos">Comunidad/Servicios sociales/Religión/Proyectos no lucrativos </option>
-								<option value="Construcción / Minería / Obreros especializados">Construcción / Minería / Obreros especializados </option>
-								<option value="Control de calidad y seguridad">Control de calidad y seguridad </option>
-								<option value="Diseño gráfico / Interiores / Modas">Diseño gráfico / Interiores / Modas </option>
-								<option value="Educación, cuidado infantil / Librerías">Educación, cuidado infantil / Librerías </option>
-								<option value="Finanzas / Contabilidad / Seguros">Finanzas / Contabilidad / Seguros </option>
-								<option value="Gobierno">Gobierno </option>
-								<option value="Hotelería / Turismo">Hotelería / Turismo </option>
-								<option value="Industria manufacturera">Industria manufacturera </option>
-								<option value="Ingeniería/arquitectura">Ingeniería/arquitectura </option>
-								<option value="Instalación, mantenimiento y reparaciones">Instalación, mantenimiento y reparaciones </option>
-								<option value="Joyería">Joyería </option>
-								<option value="Labores administrativas y de oficina">Labores administrativas y de oficina </option>
-								<option value="Labores generales">Labores generales </option>
-								<option value="Legal">Legal </option>
-								<option value="Medios / periodismo / impresión / Servicios editoriales">Medios / periodismo / impresión / Servicios editoriales </option>
-								<option value="Mercadotecnia / publicidad / RP / Desarrollo de negocios">Mercadotecnia / publicidad / RP / Desarrollo de negocios </option>
-								<option value="Operación / logística / Almacenaje">Operación / logística / Almacenaje </option>
-								<option value="Recreación / deportes">Recreación / deportes </option>
-								<option value="Recursos humanos">Recursos humanos </option>
-								<option value="Restaurantes / Gastronomía">Restaurantes / Gastronomía </option>
-								<option value="Servicio a clientes">Servicio a clientes </option>
-								<option value="Servicios arreglo personal / Seguridad / Esparcimiento">Servicios arreglo personal / Seguridad / Esparcimiento </option>
-								<option value="Servicios de protección / Seguridad">Servicios de protección / Seguridad </option>
-								<option value="Servicios de salud / medicina">Servicios de salud / medicina </option>
-								<option value="Software / sistemas de información / Desarrollo de hardware">Software / sistemas de información / Desarrollo de hardware </option>
-								<option value="Tecnología de la información">Tecnología de la información </option>
-								<option value="Transportes / Mudanzas de materiales">Transportes / Mudanzas de materiales </option>
-								<option value="Ventas / Servicio a clientes">Ventas / Servicio a clientes </option>
-							</select>
-						</div>
-					</div>
-					<div class="row btn-row">
-						
-			       		<div class="col-xs-12 col-md-12">
-							<div class="col-sm-4 col-xs-4 ">
-									
-							<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
-							</div>
-				       		<div class="col-sm-4 col-xs-4 ">
-									
-						      	  <input class="btn form-control btn-warning" type="submit"  value="Reiniciar" ng-click="reset()" />
-							</div>
-							<div class="col-sm-4 col-xs-4 ">
-								
-					        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!estudios.$valid" value="Siguiente" />
-							
-				       		</div>	
-						</div>	
-						<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
-			    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-				    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-				    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-		    			</div>
-					</div>
-				</div>
-    		</form>
-	        	
-	    </wz-step>
 	    
 	  
-	    <wz-step title="Fotografia" canexit="pass">
-        	<form enctype="multipart/form-data" novalidate class="form"  id="foto" name="foto">
-		        <div class="row">
-		        	<div class="col-sm-12 ">
-			        	<div class="row">
-				        		
-							<h3>Fotografía</h3>
-							<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
-							<div>
-								<h4>Seleccione...</h4>
-								<div>
-									<input  ng-model="photo" ng-value="photo" id="photo" type="file" container_id="0" name="photo" accept="image/*" />
-									<p>Se acepta formato JPG o PNG</p>
-						
-									<p>
-										<strong>
-											<span class="req">El tamaño no debe ser mayor a 5Mb</span>
-										</strong>
-									</p>
-									<p>
-									Te recordamos que tu información e imagen son exclusivamente de uso interno de Seis Grados y ten la tranquilidad que ninguno de los usuarios tendrá acceso a nuestro banco de imágenes, las cuales únicamente le ayudan a tu Head Hunter Social a reconocerte el día de tu entrevista.
-									</p>
-								</div>
-							</div>
-			        	</div>
-						<div class="row">
-							
-							<div class="col-md-6 col-xs-12">
-								<p>Buenas fotos</p>
-								<div class="col-md-6 col-xs-6"><img src="img/fotoOK1.jpg" /></div>
-								<div class="col-md-6 col-xs-6"><img src="img/fotoOK2.jpg" /></div>
-							</div>
-							<div class="col-md-6">
-								<p>Se rechazarán las siguientes fotos</p>
-								<div class="col-xs-4" ><img src="img/fotoMala1.jpg" /></div>
-								<div class="col-xs-4" ><img src="img/fotoMala2.jpg" /></div>
-								<div class="col-xs-4" ><img src="img/fotoMala3.jpg" /></div>
-							</div>
-						</div>
-						<div id="terminos" class="par">
-							Al hacer click en Registrarme, aceptas todos los <span class="req"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span> y confirmas haber leído el <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span> de <span class="req">6</span>rados.
-						</div>
-						<div class="row btn-row">
-					       	<div class="col-xs-12 col-md-12">
-								<div class="col-sm-4 col-xs-4 ">
-											
-									<input type="submit" class="btn form-control btn-danger" wz-previous value="Anterior" />
-								</div>
-						       	<div class="col-sm-4 col-xs-4 ">
-									
-						      	  <input class="btn form-control btn-warning" type="submit"  value="Reiniciar" ng-click="reset()" />
-								</div>
-								<div class="col-sm-4 col-xs-4 ">
-										
-							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!foto.$valid" id="end" value="Registrarme" />
-									
-						       	</div>
-							</div>
-							<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
-				    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-					    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-					    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-			    			</div>
-						</div>
-					</div>
-				</div>
-		     
-    		</form>
-	        	
-	    </wz-step>
+<!--
+				
+-->
 	</wizard>
 
 	<footer >
