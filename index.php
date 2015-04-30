@@ -327,7 +327,7 @@
 							</div> 
 						</div>
 					</div>
-					<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'masculino'">
+					<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'Masculino'">
 						<div class="col-sm-12  ">
 						
 							<h3 id="etiqueta_gay_2">Busco</h3>
