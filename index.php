@@ -1,11 +1,24 @@
 <?php
+
+	function convertToLatin1($string){
+		/*
+			si el string es UTF-8 lo convierte en latin1.
+		*/
+		
+		    $latin1 = utf8_decode($string);
+
+		    return $latin1;
+
+	}
+
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
 
 		$data = json_decode($_POST['info']);
 
 		try {
 
-		    $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
+		    $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
+		    // $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -15,42 +28,42 @@
 			$q->execute(
 				array(
 
-					':genero'           => mysql_real_escape_string ($data[0]->sexo),
-					':edad_busca_1'     => mysql_real_escape_string ($data[0]->edad1),
-					':edad_busca_2'     => mysql_real_escape_string ($data[0]->edad2),
-					':quiere_conocer'   => mysql_real_escape_string ($data[0]->quisiera_conocer),
-					':busco_tipo'       => mysql_real_escape_string ($data[0]->busco_tipo),
+					':genero'           => convertToLatin1($data[0]->sexo),
+					':edad_busca_1'     => convertToLatin1($data[0]->edad1),
+					':edad_busca_2'     => convertToLatin1($data[0]->edad2),
+					':quiere_conocer'   => convertToLatin1($data[0]->quisiera_conocer),
+					':busco_tipo'       => convertToLatin1($data[0]->busco_tipo),
 
-					':primer_nombre'    => mysql_real_escape_string ($data[1]->firstname),
-					':segundo_nombre'   => mysql_real_escape_string ($data[1]->secondname),
-					':apellido_paterno' => mysql_real_escape_string ($data[1]->lastname1),
-					':apellido_materno' => mysql_real_escape_string ($data[1]->lastname2),
-					':email'            => mysql_real_escape_string ($data[1]->email),
-					':confirma_email'   => mysql_real_escape_string ($data[1]->confirm),
-					':como_encontraste' => mysql_real_escape_string ($data[1]->found),
+					':primer_nombre'    => convertToLatin1($data[1]->firstname),
+					':segundo_nombre'   => convertToLatin1($data[1]->secondname),
+					':apellido_paterno' => convertToLatin1($data[1]->lastname1),
+					':apellido_materno' => convertToLatin1($data[1]->lastname2),
+					':email'            => convertToLatin1($data[1]->email),
+					':confirma_email'   => convertToLatin1($data[1]->confirm),
+					':como_encontraste' => convertToLatin1($data[1]->found),
 
-					':fecha_nacimiento' => mysql_real_escape_string ($data[2]->birthdate),
-					':estatura'         => mysql_real_escape_string ($data[2]->estatura),
-					':peso'             => mysql_real_escape_string ($data[2]->peso),
-					':estado_civil'     => mysql_real_escape_string ($data[2]->civil),
-					':tiene_hijos'      => mysql_real_escape_string ($data[2]->tiene_hijos),
-					':estado'           => mysql_real_escape_string ($data[2]->estado),
-					':ciudad'           => mysql_real_escape_string ($data[2]->ciudad),
-					':tipo_telefono'    => mysql_real_escape_string ($data[2]->tel1_tipo),
-					':lada'             => mysql_real_escape_string ($data[2]->lada),
-					':telefono'         => mysql_real_escape_string ($data[2]->phone),
-					':tipo_telefono_2'  => mysql_real_escape_string ($data[2]->tel2_tipo),
-					':lada_2'           => mysql_real_escape_string ($data[2]->lada2),
-					':telefono_2'       => mysql_real_escape_string ($data[2]->phone2),
-					':email_2'          => mysql_real_escape_string ($data[2]->email2),
-					':confirma_email_2' => mysql_real_escape_string ($data[2]->confirm2),
-					':usuario_facebook' => mysql_real_escape_string ($data[2]->usuario_fb),
-					':usuario_twitter'  => mysql_real_escape_string ($data[2]->usuario_twitter),
+					':fecha_nacimiento' => convertToLatin1($data[2]->birthdate),
+					':estatura'         => convertToLatin1($data[2]->estatura),
+					':peso'             => convertToLatin1($data[2]->peso),
+					':estado_civil'     => convertToLatin1($data[2]->civil),
+					':tiene_hijos'      => convertToLatin1($data[2]->tiene_hijos),
+					':estado'           => convertToLatin1($data[2]->estado),
+					':ciudad'           => convertToLatin1($data[2]->ciudad),
+					':tipo_telefono'    => convertToLatin1($data[2]->tel1_tipo),
+					':lada'             => convertToLatin1($data[2]->lada),
+					':telefono'         => convertToLatin1($data[2]->phone),
+					':tipo_telefono_2'  => convertToLatin1($data[2]->tel2_tipo),
+					':lada_2'           => convertToLatin1($data[2]->lada2),
+					':telefono_2'       => convertToLatin1($data[2]->phone2),
+					':email_2'          => convertToLatin1($data[2]->email2),
+					':confirma_email_2' => convertToLatin1($data[2]->confirm2),
+					':usuario_facebook' => convertToLatin1($data[2]->usuario_fb),
+					':usuario_twitter'  => convertToLatin1($data[2]->usuario_twitter),
 
-					':titulo_academico' => mysql_real_escape_string ($data[3]->academics),
-					':profesion'        => mysql_real_escape_string ($data[3]->profesion),
-					':sector'           => mysql_real_escape_string ($data[3]->sector),
-					':fotografia'       => mysql_real_escape_string ('')
+					':titulo_academico' => convertToLatin1($data[3]->academics),
+					':profesion'        => convertToLatin1($data[3]->profesion),
+					':sector'           => convertToLatin1($data[3]->sector),
+					':fotografia'       => ''
 				)
 			);
 
@@ -117,26 +130,28 @@
 	</div>
 
 	<div class="preloader">
-		<img src="img/grados_back_1.png" class="img-responsive" alt="">
-		<img src="img/grados_back_2.png" class="img-responsive" alt="">
-		<img src="img/grados_back_3.png" class="img-responsive" alt="">
-		<img src="img/grados_back_4.png" class="img-responsive" alt="">
+		<img src="img/grados_back_1.jpg" class="img-responsive" alt="">
+		<img src="img/grados_back_2.jpg" class="img-responsive" alt="">
+		<img src="img/grados_back_3.jpg" class="img-responsive" alt="">
+		<img src="img/grados_back_4.jpg" class="img-responsive" alt="">
 	
 	</div>
 
 	<header>
 		<div class="nav navbar">
-			<img src="img/6-grados_logo.png" class="img-responsive col-sm-12 block-center" alt="seis grados">
+			<a href="/">
+				<img src="img/6-grados_logo.png" class="sg-logo img-responsive block-center" alt="seis grados">
+			</a>
 
 		</div>
 	</header>
 	
 	<section class="welcome" ng-hide="welcome" >
 		
-			<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en <span class="req">6</span>grados. </h1>
+			<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en <span class="req">6</span>rados. </h1>
 			<h3 class="text-center">
 				<p>
-					<span class="req">6</span> rados desarrolla experiencias personalizadas pensadas en ti. Al pagar una <span class="req"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">membresía</a></span> anual, podrás  gozar de sus beneficios. Por favor completa los siguientes <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">datos personales</a></span> para poder contactarte.
+					<span class="req">6</span>rados desarrolla experiencias personalizadas pensadas en ti. Al pagar una <span class="req"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">membresía</a></span> anual, podrás  gozar de sus beneficios. Por favor completa los siguientes <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">datos personales</a></span> para poder contactarte.
 				</p>
 			</h3>
 			<h2 class="text-center">
@@ -179,8 +194,8 @@
 								<div>
 									<select ng-model="main.sexo" ng-value="main.sexo"  name="sexo" ng-value="sexo" id="sexo" required>
 										<option value="" selected>Género...</option>
-										<option value="femenino">Mujer</option>
-										<option value="masculino">Hombre</option>
+										<option value="Femenino">Mujer</option>
+										<option value="Masculino">Hombre</option>
 									</select>
 									
 								</div>
@@ -312,7 +327,7 @@
 							</div> 
 						</div>
 					</div>
-					<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'masculino'">
+					<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'Masculino'">
 						<div class="col-sm-12  ">
 						
 							<h3 id="etiqueta_gay_2">Busco</h3>
@@ -404,38 +419,25 @@
 							<select ng-model="found" ng-value="found" required name="found" id="found" >
 								
 								<option value="" selected>Selecciona...</option>
+
 								<option value="Participante de la Revista Moi">Participante de la Revista Moi</option>
-								<option value="Actitud FEM">Actitud FEM</option>
-								<option value="Airport Style">Airport Style</option>
 								<option value="Alto Nivel">Alto Nivel</option>
-								<option value="El Efecto Leopi">El Efecto Leopi</option>
+								<option value="CNN Expansión">CNN Expansión</option>
 								<option value="El Financiero">El Financiero</option>
-								<option value="El Respetable">El Respetable</option>
 								<option value="Email">Email</option>
 								<option value="Estilo DF">Estilo DF</option>
 								<option value="Facebook">Facebook</option>
 								<option value="Forbes">Forbes</option>
 								<option value="GQ">GQ</option>
 								<option value="Google">Google</option>
-								<option value="Intrend Magazine">Intrend Magazine</option>
 								<option value="Linked In">Linked In</option>
 								<option value="Martha Debayle">Martha Debayle</option>
-								<option value="Milenio">Milenio</option>
 								<option value="Mojoe">Mojoe</option>
-								<option value="Moi">Moi</option>
 								<option value="Netas Divinas">Netas Divinas</option>
-								<option value="Networking Nights">Networking Nights</option>
-								<option value="Radio">Radio</option>
 								<option value="Recomendacion de un amigo">Recomendacion de un amigo</option>
 								<option value="Recomendacion de un socio">Recomendacion de un socio</option>
 								<option value="S1ngular">S1ngular</option>
-								<option value="Smartbox">Smartbox</option>
-								<option value="Soho">Soho</option>
-								<option value="Soltera pero No Sola">Soltera pero No Sola</option>
-								<option value="Solteros Club">Solteros Club</option>
-								<option value="The Box Club">The Box Club</option>
-								
-								<option value="Televisión">Televisión</option>
+								<option value="Moi">Revista Moi</option>
 								<option value="Twitter">Twitter</option>
 								<option value="Otros">OTROS</option>
 
@@ -1057,7 +1059,47 @@
 	<script src="public/lib/angular-wizard/dist/angular-wizard.js" ></script>
 	<script src="public/lib/lodash/dist/lodash.compat.min.js" ></script>
 	<script src="public/lib/store.js/store.min.js" ></script>
-	
+
+	<!-- Facebook Conversion Code for Conversiones Abril 2015 -->
+
+	<script>(function() {
+
+	  var _fbq = window._fbq || (window._fbq = []);
+
+	  if (!_fbq.loaded) {
+
+	    var fbds = document.createElement('script');
+
+	    fbds.async = true;
+
+	    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+
+	    var s = document.getElementsByTagName('script')[0];
+
+	    s.parentNode.insertBefore(fbds, s);
+
+	    _fbq.loaded = true;
+
+	  }
+
+	})();
+
+	window._fbq = window._fbq || [];
+
+	window._fbq.push(['track', '6025219573159', {'value':'0.01','currency':'EUR'}]);
+
+	</script>
+
+	<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6025219573159&amp;cd[value]=0.01&amp;cd[currency]=EUR&amp;noscript=1" /></noscript>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-34706835-2', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>
 <?php

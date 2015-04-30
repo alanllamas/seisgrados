@@ -121,7 +121,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			$('.datepicker').datepicker({
 				changeMonth: true,
 				changeYear: true,
-				dateFormat: 'yy/mm/dd',
+				dateFormat: 'dd-mm-yy',
 				dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
 				yearRange: "1930:1990",
 				monthNamesShort: [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" ],
