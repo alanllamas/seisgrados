@@ -1059,7 +1059,47 @@
 	<script src="public/lib/angular-wizard/dist/angular-wizard.js" ></script>
 	<script src="public/lib/lodash/dist/lodash.compat.min.js" ></script>
 	<script src="public/lib/store.js/store.min.js" ></script>
-	
+
+	<!-- Facebook Conversion Code for Conversiones Abril 2015 -->
+
+	<script>(function() {
+
+	  var _fbq = window._fbq || (window._fbq = []);
+
+	  if (!_fbq.loaded) {
+
+	    var fbds = document.createElement('script');
+
+	    fbds.async = true;
+
+	    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+
+	    var s = document.getElementsByTagName('script')[0];
+
+	    s.parentNode.insertBefore(fbds, s);
+
+	    _fbq.loaded = true;
+
+	  }
+
+	})();
+
+	window._fbq = window._fbq || [];
+
+	window._fbq.push(['track', '6025219573159', {'value':'0.01','currency':'EUR'}]);
+
+	</script>
+
+	<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6025219573159&amp;cd[value]=0.01&amp;cd[currency]=EUR&amp;noscript=1" /></noscript>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-34706835-2', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>
 <?php
