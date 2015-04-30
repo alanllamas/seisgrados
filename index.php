@@ -17,7 +17,7 @@
 
 		try {
 
-		    $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_prueba', 'seisgrad_crmuser', '2015crm62015');
+		    $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
 		    // $gdb = new PDO('mysql:host=localhost;dbname=seisgrad_prueba', 'root', 'root');
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
