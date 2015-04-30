@@ -1,4 +1,16 @@
 <?php
+
+	function convertToLatin1($string){
+		/*
+			si el string es UTF-8 lo convierte en latin1.
+		*/
+		
+		    $latin1 = utf8_decode($string);
+
+		    return $latin1;
+
+	}
+
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
 
 		$data = json_decode($_POST['info']);
