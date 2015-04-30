@@ -419,38 +419,25 @@
 							<select ng-model="found" ng-value="found" required name="found" id="found" >
 								
 								<option value="" selected>Selecciona...</option>
+
 								<option value="Participante de la Revista Moi">Participante de la Revista Moi</option>
-								<option value="Actitud FEM">Actitud FEM</option>
-								<option value="Airport Style">Airport Style</option>
 								<option value="Alto Nivel">Alto Nivel</option>
-								<option value="El Efecto Leopi">El Efecto Leopi</option>
+								<option value="CNN Expansión">CNN Expansión</option>
 								<option value="El Financiero">El Financiero</option>
-								<option value="El Respetable">El Respetable</option>
 								<option value="Email">Email</option>
 								<option value="Estilo DF">Estilo DF</option>
 								<option value="Facebook">Facebook</option>
 								<option value="Forbes">Forbes</option>
 								<option value="GQ">GQ</option>
 								<option value="Google">Google</option>
-								<option value="Intrend Magazine">Intrend Magazine</option>
 								<option value="Linked In">Linked In</option>
 								<option value="Martha Debayle">Martha Debayle</option>
-								<option value="Milenio">Milenio</option>
 								<option value="Mojoe">Mojoe</option>
-								<option value="Moi">Moi</option>
 								<option value="Netas Divinas">Netas Divinas</option>
-								<option value="Networking Nights">Networking Nights</option>
-								<option value="Radio">Radio</option>
 								<option value="Recomendacion de un amigo">Recomendacion de un amigo</option>
 								<option value="Recomendacion de un socio">Recomendacion de un socio</option>
 								<option value="S1ngular">S1ngular</option>
-								<option value="Smartbox">Smartbox</option>
-								<option value="Soho">Soho</option>
-								<option value="Soltera pero No Sola">Soltera pero No Sola</option>
-								<option value="Solteros Club">Solteros Club</option>
-								<option value="The Box Club">The Box Club</option>
-								
-								<option value="Televisión">Televisión</option>
+								<option value="Moi">Revista Moi</option>
 								<option value="Twitter">Twitter</option>
 								<option value="Otros">OTROS</option>
 
