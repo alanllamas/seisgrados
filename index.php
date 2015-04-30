@@ -130,10 +130,10 @@
 	</div>
 
 	<div class="preloader">
-		<img src="img/grados_back_1.png" class="img-responsive" alt="">
-		<img src="img/grados_back_2.png" class="img-responsive" alt="">
-		<img src="img/grados_back_3.png" class="img-responsive" alt="">
-		<img src="img/grados_back_4.png" class="img-responsive" alt="">
+		<img src="img/grados_back_1.jpg" class="img-responsive" alt="">
+		<img src="img/grados_back_2.jpg" class="img-responsive" alt="">
+		<img src="img/grados_back_3.jpg" class="img-responsive" alt="">
+		<img src="img/grados_back_4.jpg" class="img-responsive" alt="">
 	
 	</div>
 
