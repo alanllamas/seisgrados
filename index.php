@@ -22,15 +22,16 @@
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		    $sql  = "INSERT INTO contactos_joomla (genero, edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo, primer_nombre, segundo_nombre, apellido_paterno, apellido_materno, email, confirma_email, como_encontraste, fecha_nacimiento, estatura, peso, estado_civil, tiene_hijos, estado, ciudad, tipo_telefono, lada, telefono, tipo_telefono_2, lada_2, telefono_2, email_2, confirma_email_2, usuario_facebook, usuario_twitter, titulo_academico, profesion, sector, fotografia) VALUES (:genero, :edad_busca_1, :edad_busca_2, :quiere_conocer, :busco_tipo, :primer_nombre, :segundo_nombre, :apellido_paterno, :apellido_materno, :email, :confirma_email, :como_encontraste, :fecha_nacimiento, :estatura, :peso, :estado_civil, :tiene_hijos, :estado, :ciudad, :tipo_telefono, :lada, :telefono, :tipo_telefono_2, :lada_2, :telefono_2, :email_2, :confirma_email_2, :usuario_facebook, :usuario_twitter, :titulo_academico, :profesion, :sector, :fotografia)";
+		    // $sql  = "INSERT INTO contactos_joomla (genero, edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo, primer_nombre, segundo_nombre, apellido_paterno, apellido_materno, email, confirma_email, como_encontraste, fecha_nacimiento, estatura, peso, estado_civil, tiene_hijos, estado, ciudad, tipo_telefono, lada, telefono, tipo_telefono_2, lada_2, telefono_2, email_2, confirma_email_2, usuario_facebook, usuario_twitter, titulo_academico, profesion, sector, fotografia) VALUES (:genero, :edad_busca_1, :edad_busca_2, :quiere_conocer, :busco_tipo, :primer_nombre, :segundo_nombre, :apellido_paterno, :apellido_materno, :email, :confirma_email, :como_encontraste, :fecha_nacimiento, :estatura, :peso, :estado_civil, :tiene_hijos, :estado, :ciudad, :tipo_telefono, :lada, :telefono, :tipo_telefono_2, :lada_2, :telefono_2, :email_2, :confirma_email_2, :usuario_facebook, :usuario_twitter, :titulo_academico, :profesion, :sector, :fotografia)";
+		     $sql  = "INSERT INTO contactos_joomla (genero, quiere_conocer, busco_tipo, primer_nombre, segundo_nombre, apellido_paterno, apellido_materno, email, confirma_email, estado, ciudad, tipo_telefono, lada, telefono, tipo_telefono_2, lada_2, telefono_2) VALUES (:genero, :quiere_conocer, :busco_tipo, :primer_nombre, :segundo_nombre, :apellido_paterno, :apellido_materno, :email, :confirma_email, :estado, :ciudad, :tipo_telefono, :lada, :telefono, :tipo_telefono_2, :lada_2, :telefono_2)";
 
 			$q = $gdb->prepare($sql);
 			$q->execute(
 				array(
 
 					':genero'           => convertToLatin1($data[0]->sexo),
-					':edad_busca_1'     => convertToLatin1($data[0]->edad1),
-					':edad_busca_2'     => convertToLatin1($data[0]->edad2),
+					// ':edad_busca_1'     => convertToLatin1($data[0]->edad1),
+					// ':edad_busca_2'     => convertToLatin1($data[0]->edad2),
 					':quiere_conocer'   => convertToLatin1($data[0]->quisiera_conocer),
 					':busco_tipo'       => convertToLatin1($data[0]->busco_tipo),
 
@@ -40,13 +41,13 @@
 					':apellido_materno' => convertToLatin1($data[1]->lastname2),
 					':email'            => convertToLatin1($data[1]->email),
 					':confirma_email'   => convertToLatin1($data[1]->confirm),
-					':como_encontraste' => convertToLatin1($data[1]->found),
+					// ':como_encontraste' => convertToLatin1($data[1]->found),
 
-					':fecha_nacimiento' => convertToLatin1($data[2]->birthdate),
-					':estatura'         => convertToLatin1($data[2]->estatura),
-					':peso'             => convertToLatin1($data[2]->peso),
-					':estado_civil'     => convertToLatin1($data[2]->civil),
-					':tiene_hijos'      => convertToLatin1($data[2]->tiene_hijos),
+					// ':fecha_nacimiento' => convertToLatin1($data[2]->birthdate),
+					// ':estatura'         => convertToLatin1($data[2]->estatura),
+					// ':peso'             => convertToLatin1($data[2]->peso),
+					// ':estado_civil'     => convertToLatin1($data[2]->civil),
+					// ':tiene_hijos'      => convertToLatin1($data[2]->tiene_hijos),
 					':estado'           => convertToLatin1($data[2]->estado),
 					':ciudad'           => convertToLatin1($data[2]->ciudad),
 					':tipo_telefono'    => convertToLatin1($data[2]->tel1_tipo),
@@ -55,53 +56,56 @@
 					':tipo_telefono_2'  => convertToLatin1($data[2]->tel2_tipo),
 					':lada_2'           => convertToLatin1($data[2]->lada2),
 					':telefono_2'       => convertToLatin1($data[2]->phone2),
-					':email_2'          => convertToLatin1($data[2]->email2),
-					':confirma_email_2' => convertToLatin1($data[2]->confirm2),
-					':usuario_facebook' => convertToLatin1($data[2]->usuario_fb),
-					':usuario_twitter'  => convertToLatin1($data[2]->usuario_twitter),
+					// ':email_2'          => convertToLatin1($data[2]->email2),
+					// ':confirma_email_2' => convertToLatin1($data[2]->confirm2),
+					// ':usuario_facebook' => convertToLatin1($data[2]->usuario_fb),
+					// ':usuario_twitter'  => convertToLatin1($data[2]->usuario_twitter),
 
-					':titulo_academico' => convertToLatin1($data[3]->academics),
-					':profesion'        => convertToLatin1($data[3]->profesion),
-					':sector'           => convertToLatin1($data[3]->sector),
-					':fotografia'       => ''
+					// ':titulo_academico' => convertToLatin1($data[3]->academics),
+					// ':profesion'        => convertToLatin1($data[3]->profesion),
+					// ':sector'           => convertToLatin1($data[3]->sector),
+					// ':fotografia'       => ''
 				)
 			);
 
-			$last_insert = $gdb->lastInsertId();
+			echo "0";
 
-			$dir = "uploads/" . $last_insert . "/";
+			// $last_insert = $gdb->lastInsertId();
 
-			if(mkdir($dir, 0755)){
+			// $dir = "uploads/" . $last_insert . "/";
 
-				if(move_uploaded_file( $_FILES["foto"]['tmp_name'], "$dir" . $_FILES['foto']['name'])){
+			// if(mkdir($dir, 0755)){
 
-					$sql = "UPDATE contactos_joomla SET fotografia=? WHERE contacto_joomla_id=?";
+			// 	if(move_uploaded_file( $_FILES["foto"]['tmp_name'], "$dir" . $_FILES['foto']['name'])){
 
-	        		$q2 = $gdb->prepare($sql);
-					$q2->execute(array("$dir" . $_FILES['foto']['name'], $last_insert));
+			// 		$sql = "UPDATE contactos_joomla SET fotografia=? WHERE contacto_joomla_id=?";
 
-					echo "0";
+	  //       		$q2 = $gdb->prepare($sql);
+			// 		$q2->execute(array("$dir" . $_FILES['foto']['name'], $last_insert));
 
-				} else{
+			// 		echo "0";
+
+			// 	} else{
 
 					
-					echo "1";
+			// 		echo "1";
 
-				}
+			// 	}
 
-			} else{
+			// } else{
 
 				
-					echo "1";
+			// 		echo "1";
 
-			}
+			// }
 			
 
 		    $gbd = null;
 
 		} catch (PDOException $e) {
 
-		    print "¡Error!: " . $e->getMessage() . "<br/>";
+		    // print "¡Error!: " . $e->getMessage() . "<br/>";
+		    echo "1";
 
 		    die();
 
@@ -190,7 +194,7 @@
 			</div>
 
 	</section>
-	<wizard name="wizard" ng-show="welcome" on-finish="end()" class="wizard"> 
+	<wizard name="wizard" ng-show="welcome" on-finish="pass()" class="wizard"> 
 	
 		<wz-step title="¿A Quien Buscas?" canexit="pass">
         	<form  novalidate class="form"  id="buscas" name="buscas">
@@ -464,7 +468,7 @@
 								</div>
 								<div class="col-sm-4 col-xs-4 ">
 										
-							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" id="end" value="Registrarme" />
+							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid" ng-click=  value="Registrarme" />
 									
 						       	</div>
 							</div>

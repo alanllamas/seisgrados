@@ -3,7 +3,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 	app.controller('MainCtrl', ['$scope','WizardHandler','$log','$http', function ($scope, WizardHandler,$http, $log) {
 		this.sexo;
 		this.busco;
-		info = [{},{},{},{}];
+		info = [{},{},{}];
 		this.info =  info;
 		body = document.body;
 		body.setAttribute('style', 'background:gray url(img/grados_back_1.png)fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; '
@@ -137,7 +137,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			};
 
 			
-			if (f.name != "foto") {
 
 				for (var i = 0; i < f.length; i++) {
 				
@@ -160,30 +159,8 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 							
 						};
 				};
-			};
-				store.set('info', info);
-				get = store.get('info');
-				// console.log(info)
-				// console.log(get)
+			if (f.name == "pers") {
 			
-		
-			return	true;
-		};
-		
-		$scope.reset = function () {
-			if (confirm('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')) {
-				store.clear();
-				window.location.reload(true)
-			};
-		}
-		$scope.end = function () {
-			// foto = $('#photo');
-			// ff = foto[0].files[0];
-			// if (ff) {
-			// 	foto.removeClass('ng-invalid');
-			// 	foto.removeClass('ng-touched');
-			
-
 				var formData = new FormData();
 
 				Info = JSON.stringify(info);
@@ -212,6 +189,31 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 						$('.wizard').append("<h1 class='text-center' >Ha ocurrido algo inesperado reinicia la pagina y vuelve a enviar tu forma.</h1>");
 					};
 		        });
+				
+			};
+				store.set('info', info);
+				get = store.get('info');
+				// console.log(info)
+				// console.log(get)
+			
+		
+			return	true;
+		};
+		
+		$scope.reset = function () {
+			if (confirm('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')) {
+				store.clear();
+				window.location.reload(true)
+			};
+		}
+		// $scope.end = function () {
+			// foto = $('#photo');
+			// ff = foto[0].files[0];
+			// if (ff) {
+			// 	foto.removeClass('ng-invalid');
+			// 	foto.removeClass('ng-touched');
+			
+
 
 			// }else{
 			// 	alert('necesitas ingresar una foto');
@@ -219,10 +221,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 			// 	foto.addClass('ng-touched');
 			// };
 
-				
-			
-
-		};
+		// };
 
 	}]);
 				
