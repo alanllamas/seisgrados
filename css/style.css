@@ -102,6 +102,7 @@
 		background: rgba(0,0,0,.9);
 		margin: 3%;
 		padding: 3%;
+
 	}
 
 	.req{
@@ -239,9 +240,25 @@
 	p{
 		font-size: 1.5em;
 	}
+	.welcome a{
+		height: 80px;
+		vertical-align: center;
+		padding-top: 2%;
+		padding-bottom: 2%;
+		font-size: .5em;	
+	}
+
+
 
 }
 @media (max-width: 767px){
+	.welcome a{
+		height: 80px;
+		vertical-align: center;
+		padding-top: 2%;
+		padding-bottom: 2%;
+		font-size: 1em;	
+	}
 	body{
 		font-size: 1.6em;
 		padding-bottom: 40%;
@@ -314,6 +331,7 @@
 
 
 @media (min-device-width: 768px) {
+	
 	#terminos{
 		margin: 5% 0;
 		padding: 1.5%;

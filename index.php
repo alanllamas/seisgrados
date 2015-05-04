@@ -168,30 +168,30 @@
 			</h2> 
 
 			<div class="row ">
-				<div class="col-xs-4">
-		    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger form-control col-xs-4">
+				<div class="col-xs-12 col-md-4">
+		    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger form-control">
 	    				<p>Chatea &nbsp <i class="fa fa-comments"></i></p>
 	    			</a>	
 	    			<p class='text-center'>Chatea con nosotros.</p>
 	    		</div>
-				<div class="col-xs-4">
-	    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class="col-xs-4 btn btn-danger form-control">
+				<div class="col-xs-12 col-md-4">
+	    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class=" btn btn-danger form-control">
 	    				<p>Regístrate &nbsp <i class="fa fa-file-text-o"></i></p>
 	    			</a>
 	    			<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
 	    		</div>
-	    		<div class="col-xs-4"><a ></a>
-		    		<a href="tel:26483265" class="btn btn-danger form-control col-xs-4 col-md-4">
+	    		<div class="col-xs-12 col-md-4 margin-bottom-15">
+		    		<a href="tel:26483265" class="btn btn-danger form-control">
 	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
 	    			</a>
 	    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
 				</div>
-	    		<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-10 col-md-offset-2">
-	    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-		    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-		    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-	    		</div>
 			</div>
+    		<!-- <div class="anchores margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-10 col-md-offset-2">
+    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
+	    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
+	    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
+    		</div> -->
 
 	</section>
 	<wizard name="wizard" ng-show="welcome" on-finish="pass()" class="wizard"> 
