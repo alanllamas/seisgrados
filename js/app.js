@@ -180,7 +180,6 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 							
 						store.clear()
 						$('.wizard').empty();
-						// falta info Santos
 						$('.wizard').append("<h1 class='text-center' >Haz completado tu primer paso y a partir de éste momento todo tu servicio será personalizado.</h1> <h3 class='text-center'>Durante las próximas 48 horas recibirás una llamada de tu Head Hunter Social, para programar tu entrevista.</h3> <br /> <h2 class='text-center'><span class='req'>6</span> rados. Encuentros Inteligentes.</h2>");
 						
 

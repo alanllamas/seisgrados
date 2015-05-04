@@ -167,7 +167,7 @@
 					<span class="req">6</span>rados. Encuentros Inteligentes.
 			</h2> 
 
-			<div class="row btn-row">
+			<div class="row ">
 				<div class="col-xs-4">
 		    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger form-control col-xs-4">
 	    				<p>Chatea &nbsp <i class="fa fa-comments"></i></p>
@@ -175,7 +175,7 @@
 	    			<p class='text-center'>Chatea con nosotros.</p>
 	    		</div>
 				<div class="col-xs-4">
-	    			<a ng-model="welcome" ng-click="welcome = true;" class="col-xs-4 btn btn-danger form-control">
+	    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class="col-xs-4 btn btn-danger form-control">
 	    				<p>Regístrate &nbsp <i class="fa fa-file-text-o"></i></p>
 	    			</a>
 	    			<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
@@ -491,7 +491,7 @@
 -->
 	</wizard>
 
-	<footer >
+	<footer ng-hide="!footer">
 		
 			
 		
