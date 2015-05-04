@@ -84,13 +84,15 @@
 
 				} else{
 
+					
 					echo "1";
 
 				}
 
 			} else{
 
-				echo "1";
+				
+					echo "1";
 
 			}
 			
@@ -118,6 +120,7 @@
 	<link rel="stylesheet" href="public/lib/jquery-ui/themes/smoothness/jquery-ui.min.css">
 	<link rel="stylesheet" href="public/lib/angular-wizard/dist/angular-wizard.css">
 	<link rel="stylesheet" href="public/lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="public/lib/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -148,34 +151,38 @@
 	
 	<section class="welcome" ng-hide="welcome" >
 		
-			<h1 class="text-center" >Bienvenido, estas por comenzar tu registro en <span class="req">6</span>rados. </h1>
-			<h3 class="text-center">
+			<h1 class="text-center" >BIENVENIDO, <span class="req">6</span>rados desarrolla experiencias personalizadas para cambiar tu vida. </h1>
+		<!-- 	<h3 class="text-center">
 				<p>
 					<span class="req">6</span>rados desarrolla experiencias personalizadas pensadas en ti. Al pagar una <span class="req"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">membresía</a></span> anual, podrás  gozar de sus beneficios. Por favor completa los siguientes <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">datos personales</a></span> para poder contactarte.
 				</p>
 			</h3>
+		-->
 			<h2 class="text-center">
 				
-					<span class="req">6</span> rados. Encuentros Inteligentes.
-			</h2>
+					<span class="req">6</span>rados. Encuentros Inteligentes.
+			</h2> 
 
 			<div class="row btn-row">
 				<div class="col-xs-4">
-		    		<button class="btn btn-danger form-control col-xs-4">
-	    				Chat
-	    			</button>	
+		    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger form-control col-xs-4">
+	    				<p>Chatea &nbsp <i class="fa fa-comments"></i></p>
+	    			</a>	
+	    			<p class='text-center'>Chatea con nosotros.</p>
 	    		</div>
 				<div class="col-xs-4">
-	    			<button ng-model="welcome" ng-click="welcome = true;" class="col-xs-4 btn btn-danger form-control">
-	    				Comenzar
-	    			</button>
+	    			<a ng-model="welcome" ng-click="welcome = true;" class="col-xs-4 btn btn-danger form-control">
+	    				<p>Regístrate &nbsp <i class="fa fa-file-text-o"></i></p>
+	    			</a>
+	    			<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
 	    		</div>
-	    		<div class="col-xs-4">
-		    		<button class="btn btn-danger form-control col-xs-4 col-md-4">
-	    				Teléfono
-	    			</button>
+	    		<div class="col-xs-4"><a ></a>
+		    		<a href="tel:26483265" class="btn btn-danger form-control col-xs-4 col-md-4">
+	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
+	    			</a>
+	    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
 				</div>
-	    		<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
+	    		<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-10 col-md-offset-2">
 	    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
 		    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
 		    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
@@ -189,7 +196,8 @@
         	<form  novalidate class="form"  id="buscas" name="buscas">
 		        <div class="row">
 
-					<h2>Felicidades, estás a menos de 6rados de conocer la persona para ti...</h2>
+					<h2>Felicidades, estás a menos de <span class="req">6</span>rados de conocer la persona para ti...</h2>
+					<h3>Por favor completa los siguientes datos personales para poder contactarte.</h3>
 					<h4>Todos los campos marcados con 
 						<span class="req" >*</span> son obligatorios. </h4>
 					<div class="row">
@@ -218,23 +226,23 @@
 									
 								</p>
 							</div> 
-						</div>
-					</div>
-				
-					<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'Masculino'">
-						<div class="col-sm-12  ">
-						
-							<h3 id="etiqueta_gay_2">Busco</h3>
-							<div id="campo_gay_2 ">
-								<p>
-									
-									<label for="busco_gay_activo"><input class="gay " type="radio"  name="busco_tipo" id="busco_gay_activo" ng-model="busco_tipo"   value="Activo" />Activo</label>
-									<label  for="busco_gay_pasivo"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_pasivo" ng-model="busco_tipo" value="Pasivo"  />Pasivo</label>
-									<label  for="busco_gay_versatil"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_versatil" ng-model="busco_tipo"  value="Versátil"  />Versátil</label> 
-								</p>
+							<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'Masculino'">
+								<div class="col-sm-12  ">
+								
+									<h3 id="etiqueta_gay_2">Busco</h3>
+									<div id="campo_gay_2 ">
+										<p>
+											
+											<label for="busco_gay_activo"><input class="gay " type="radio"  name="busco_tipo" id="busco_gay_activo" ng-model="busco_tipo"   value="Activo" />Activo</label>
+											<label  for="busco_gay_pasivo"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_pasivo" ng-model="busco_tipo" value="Pasivo"  />Pasivo</label>
+											<label  for="busco_gay_versatil"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_versatil" ng-model="busco_tipo"  value="Versátil"  />Versátil</label> 
+										</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
+				
 					
 			       	<div class="row btn-row">
 			    		<div class=" col-md-6 col-md-offset-3 col-sm-12">
@@ -297,13 +305,13 @@
 						<div class="col-md-6 col-xs-12 ">
 						<h3>Correo Electrónico de Contacto<span class="req" >*</span></h3>
 							
-							<input class="input form-control placeholder" required name="email" type="email" placeholder="Ejemplo@ejemplo.com (requerido) " ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
+							<input class="input form-control placeholder" required name="email" type="email" placeholder="Correo@valido.com (requerido) " ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
 							
 						</div>
-						<h3 class="col-md-6 ">Confirma tu Correo Electrónico<span class="req" >*</span></h3>
 						<div class="col-md-6 col-xs-12 ">
+						<h3>Confirma tu Correo Electrónico de Contacto<span class="req" >*</span></h3>
 							
-							<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Ejemplo@ejemplo.com (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
+							<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Correo@existente.com (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 						</div>
 					</div>
 
@@ -420,7 +428,7 @@
 								</div>
 							</div>
 								<div class="col-md-6 col-xs-12">
-								<h3>Teléfono Adicional</h3>
+								<h3>Teléfono Adicional de Contacto</h3>
 
 									<div>
 										<select ng-model="tel2_tipo" ng-value="tel2_tipo" class="tel2 col-md-2 col-md-offset-1 col-xs-2" name="tel2_tipo" id="tel2_tipo">
