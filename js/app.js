@@ -204,8 +204,9 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 						store.clear()
 						$('.wizard').empty();
 						// falta info Santos
-						$('.wizard').append("<h1 class='text-center' >Gracias por tu información.</h1> <h3 class='text-center'>En las próximas 48 hrs uno de nuestros head hunters sociales se comunicará contigo para que comiences a vivir la experiencia <span class='req'>6</span> rados.</h3> <br /> <h2 class='text-center'><span class='req'>6</span> rados. Encuentros Inteligentes.</h2>");
+						$('.wizard').append("<h1 class='text-center' >Haz completado tu primer paso y a partir de éste momento todo tu servicio será personalizado.</h1> <h3 class='text-center'>Durante las próximas 48 horas recibirás una llamada de tu Head Hunter Social, para programar tu entrevista.</h3> <br /> <h2 class='text-center'><span class='req'>6</span> rados. Encuentros Inteligentes.</h2>");
 						
+
 					}else {
 						$('.wizard').empty();
 						$('.wizard').append("<h1 class='text-center' >Ha ocurrido algo inesperado reinicia la pagina y vuelve a enviar tu forma.</h1>");
