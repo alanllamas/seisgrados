@@ -16,9 +16,9 @@
 		$data = json_decode($_POST['info']);
 
 		try {
-			//$gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_prueba', 'seisgrad_crmuser', '2015crm62015');
-		     $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
-		    // $gdb = new PDO('mysql:host=localhost;dbname=prueba', 'root', 'secret');
+
+		    // $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
+		    $gdb = new PDO('mysql:host=localhost;dbname=prueba', 'root', 'secret');
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -104,10 +104,8 @@
 
 		} catch (PDOException $e) {
 
-		    print "¡Error!: " . $e->getMessage() . "<br/>";
-		    // echo "1";
-
-
+		    // print "¡Error!: " . $e->getMessage() . "<br/>";
+		    echo "1";
 
 		    die();
 
@@ -170,24 +168,24 @@
 			</h2> 
 
 			<div class="row ">
-				<!--<div class="col-xs-12 col-md-4">
-				<a href="javascript:$zopim.livechat.window.show()" class="btn btn-danger form-control">
+				<div class="col-xs-12 col-md-4">
+		    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger form-control">
 	    				<p>Chatea &nbsp <i class="fa fa-comments"></i></p>
 	    			</a>	
 	    			<p class='text-center'>Chatea con nosotros.</p>
-	    		</div>-->
-	    		<div class="col-xs-12 col-md-6 margin-bottom-15">
-		    		<a href="tel:5526483265" class="btn btn-danger form-control">
-	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
-	    			</a>
-	    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
-				</div>
-				<div class="col-xs-12 col-md-6">
+	    		</div>
+				<div class="col-xs-12 col-md-4">
 	    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class=" btn btn-danger form-control">
 	    				<p>Regístrate &nbsp <i class="fa fa-file-text-o"></i></p>
 	    			</a>
 	    			<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
 	    		</div>
+	    		<div class="col-xs-12 col-md-4 margin-bottom-15">
+		    		<a href="tel:26483265" class="btn btn-danger form-control">
+	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
+	    			</a>
+	    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
+				</div>
 			</div>
     		<!-- <div class="anchores margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-10 col-md-offset-2">
     			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
@@ -556,55 +554,6 @@
 		ga('create', 'UA-34706835-2', 'auto');
 		ga('send', 'pageview');
 	</script>
-<!--		
-<script type="text/javascript">
-window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-$.src="//v2.zopim.com/?2xTJMpJw8BWjLmztqekNuCvKRI85RSKn";z.t=+new Date;$.
-type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-</script>
-
-<script>
- 
-  $zopim(function() {
-    $zopim.livechat.window.hide();
-  });
- 
-</script>
--->
-<script>
-var versaTag = {};
-versaTag.id = "2970";
-versaTag.sync = 0;
-versaTag.dispType = "js";
-versaTag.ptcl = "HTTPS";
-versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe";
-//VersaTag activity parameters include all conversion parameters including custom parameters and Predefined parameters. Syntax: "ParamName1":"ParamValue1", "ParamName2":"ParamValue2". ParamValue can be empty.
-versaTag.activityParams = {
-//Predefined parameters:
-"OrderID":"","Session":"","Value":"","productid":"","productinfo":"","Quantity":""
-//Custom parameters:
-};
-//Static retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
-versaTag.retargetParams = {};
-//Dynamic retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
-versaTag.dynamicRetargetParams = {};
-// Third party tags conditional parameters and mapping rule parameters. Syntax: "CondParam1":"ParamValue1", "CondParam2":"ParamValue2". ParamValue can be empty.
-versaTag.conditionalParams = {};
-</script>
-<script id="ebOneTagUrlId" src="https://secure-ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
-<noscript>
-<iframe src="https://bs.serving-sys.com/BurstingPipe?
-cn=ot&amp;
-onetagid=2970&amp;
-ns=1&amp;
-activityValues=$$Value=[Value]&amp;OrderID=[OrderID]&amp;Session=[Session]&amp;ProductID=[ProductID]&amp;ProductInfo=[ProductInfo]&amp;Quantity=[Quantity]$$&amp;
-retargetingValues=$$$$&amp;
-dynamicRetargetingValues=$$$$&amp;
-acp=$$$$&amp;"
-style="display:none;width:0px;height:0px"></iframe>
-</noscript>
 </body>
 </html>
 <?php
