@@ -168,7 +168,7 @@ var app = angular.module('myApp', ['mgo-angular-wizard', 'ui.validate','ngSaniti
 				formData.append('info', Info)
 
 		        $.ajax({
-		            url: "/",
+		            url: "/registro/",
 		            type: "POST",
 		            data: formData,
 		            async: false,
