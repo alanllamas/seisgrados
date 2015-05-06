@@ -16,9 +16,9 @@
 		$data = json_decode($_POST['info']);
 
 		try {
-
-		    // $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
-		    $gdb = new PDO('mysql:host=localhost;dbname=prueba', 'root', 'secret');
+			//$gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_prueba', 'seisgrad_crmuser', '2015crm62015');
+		     $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
+		    // $gdb = new PDO('mysql:host=localhost;dbname=prueba', 'root', 'secret');
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -104,8 +104,10 @@
 
 		} catch (PDOException $e) {
 
-		    // print "¡Error!: " . $e->getMessage() . "<br/>";
-		    echo "1";
+		    print "¡Error!: " . $e->getMessage() . "<br/>";
+		    // echo "1";
+
+
 
 		    die();
 
@@ -168,24 +170,24 @@
 			</h2> 
 
 			<div class="row ">
-				<div class="col-xs-12 col-md-4">
-		    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger form-control">
+				<!--<div class="col-xs-12 col-md-4">
+				<a href="javascript:$zopim.livechat.window.show()" class="btn btn-danger form-control">
 	    				<p>Chatea &nbsp <i class="fa fa-comments"></i></p>
 	    			</a>	
 	    			<p class='text-center'>Chatea con nosotros.</p>
-	    		</div>
-				<div class="col-xs-12 col-md-4">
+	    		</div>-->
+	    		<div class="col-xs-12 col-md-6 margin-bottom-15">
+		    		<a href="tel:5526483265" class="btn btn-danger form-control">
+	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
+	    			</a>
+	    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
+				</div>
+				<div class="col-xs-12 col-md-6">
 	    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class=" btn btn-danger form-control">
 	    				<p>Regístrate &nbsp <i class="fa fa-file-text-o"></i></p>
 	    			</a>
 	    			<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
 	    		</div>
-	    		<div class="col-xs-12 col-md-4 margin-bottom-15">
-		    		<a href="tel:26483265" class="btn btn-danger form-control">
-	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
-	    			</a>
-	    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
-				</div>
 			</div>
     		<!-- <div class="anchores margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-10 col-md-offset-2">
     			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
