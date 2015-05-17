@@ -1,4 +1,9 @@
 /* css general*/
+	fieldset{
+		background: rgba(0,0,0,0.5);
+		padding: 2%;
+		margin: 2%;
+	}
 	.loader {
 		position: fixed;
 		left: 0px;
@@ -27,20 +32,6 @@
 		color: #C9302C;
 		font-weight: bolder;
 	}
-	.steps-indicator {
-	  right: 0;
-	  left: 0;
-	  height: 100px;
-	  padding: 0;
-	  margin: 0 0 100px 0;
-	  list-style: none;
-	  position: fixed;
-	  background: transparent;
-	  z-index: 1;
-	}
-
-
-
 	.preloader{
 		left: -9999px;
 		top:  -9999px;
@@ -55,48 +46,6 @@
 	}
 	.container{
 		background: transparent;
-	}
-	.ui-datepicker{
-		border-radius: 0;
-	}
-	.ui-datepicker-header{
-		background: rgba(0,0,0,0.2);
-		border-radius: 0;
-	}
-	.ui-datepicker-prev,.ui-datepicker-next{
-	}
-	.ui-datepicker-calendar tr td a{
-		background: rgba(0,0,0,0.2);
-	}
-	.ui-datepicker-current-day{
-		background:  #C9302C;
-		color: white;
-	}
-	
-	.steps-indicator li a {
-	     color: #fff;
-	    
-	}
-	.steps-indicator li a:hover {
-	  color: #fff;
-	}
-	.steps-indicator li.default a:hover {
-	  color: #000;
-	}
-	.steps-indicator li.current a:before {
-	  background-color: #999999;
-	}
-	.steps-indicator:before {
-	  display: none;
-	}
-	.steps-indicator li a:before {
-	 background-color: #555;
-	}
-	.steps-indicator li.done a:before {
-	  background-color: #C9302C;
-	}
-	.steps-indicator li.editing a:before {
-	  background-color: #fff;
 	}
 	.welcome{
 		background: rgba(0,0,0,.9);
@@ -121,46 +70,24 @@
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-		padding-bottom: 23%;
 		font-family: 'Dosis', sans-serif;
-	}
-	footer{
-		position: fixed;
-		bottom: 0;
-		width: 110%;
-		min-height: 23%;
-		z-index: 0;
-		background: rgba(0,0,0,.9);
-	}
-	.btn-warning{
-		background: none;
-		border-radius: 0;
-		border: none;
-	    border: 2px solid #EC971F;
-	    color: #EC971F;
-	    font-weight: bolder;
-	    padding: 2px;
-	}
-	.btn-row{
-		position: fixed;
-	    width: 100%;
-	    background: transparent;
-	    left: 0;
-	    z-index: 1;
-	}
+	}	
 	.btn-row a{
+		font-size: 1.3em;
 		font-weight: bolder;
 	}
 	.btn{
-		background: none;
-		border-radius: 0;
-	    border: 3px solid #C9302C;
 	    color: #C9302C;
 	    font-weight: bolder;
 	    padding: 2px;
 		margin: 20px 3px;
 	}
-	.wizard{
+	.btn-danger {
+	  color: #fff;
+	  background-color: #C9302C;
+	  border-color: #C9302C;
+	}
+	.main{
 		background: rgba(0,0,0,.7);
 		
 		padding: 3%;
@@ -184,9 +111,10 @@
 @media (max-device-width: 767px) {
  	body{
 		font-size: 3em;	
+
  	}
- 	.wizard{
- 		margin: 20% 0;
+ 	.main{
+ 		margin: 5% 0;
  		width: 100%;
  	}
  	label{
@@ -215,28 +143,12 @@
 		font-size: 1.6em;
 		height: 110px;
  	}
- 	.steps-indicator li a {
-     	font-size: 0;
-	}
-	.steps-indicator li a:before {
-		width: 50px;
-		height: 50px;
-	}
 	.loader img{
 		position: absolute;
 		left: 37%;
 		top: 42.5%;
 	}
-	.btn-row{
-		bottom: 7%;
-	}
-	.steps-indicator {
-		bottom: 8%;
-	}
-	.ui-datepicker {
-		
-		font-size: 2em;
-	}
+
 	p{
 		font-size: 1.5em;
 	}
@@ -261,13 +173,13 @@
 	}
 	body{
 		font-size: 1.6em;
-		padding-bottom: 40%;
+		padding-bottom: 55%;
  	}
- 	.wizard{
- 		margin: 20%;
+ 	.main{
+ 		margin: 10% 0;
  		width: 100%;
  	}
- 	.wizard form{
+ 	.main form{
  		width: 96%;
  		margin: auto;
  	}
@@ -275,8 +187,8 @@
  		font-size: .6em;
  	}
  	input[type="checkbox"], input[type="radio"]{
- 		height: 15px;
- 		width: 15px;
+ 		height: 25px;
+ 		width: 25px;
  		
  	}
  	.input{
@@ -293,39 +205,21 @@
  		font-size: 1.6em;	
  	}
  	footer{
- 		height: 10%;
+ 		height: 35%;
  	}
  	.btn{
-		font-size: 1.6em;
+		font-size: 1em;
 		height: 40px;
  	}
- 	.steps-indicator li a {
-     	font-size: 0;
-	}
-	.steps-indicator li a:before {
-		width: 25px;
-		height: 25px;
-	}
 	.loader img{
 		position: absolute;
-		left: 37%;
-		top: 42.5%;
+		left: 33%;
+		top: 38%;
 	}
-	.btn-row{
-		bottom: 0;
-		margin: auto;
-	}
+
 	.btn-row a{
 		font-size: 1em;
 	}
-	.steps-indicator {
-		bottom: 30%;
-	}
-	.ui-datepicker {
-		
-		font-size: 1.5em;
-	}
-	
 	
 }
 
@@ -337,14 +231,13 @@
 		padding: 1.5%;
 	}
 	.welcome a{
-		height: 50px;
+		height: 60px;
 		vertical-align: center;
 		padding-top: 2%;
 		padding-bottom: 2%;
 	}
 
 	.welcome p{
-		/*font-size: 2em;*/
 		font-size: 1.5em;	
 	}
 	
@@ -353,7 +246,7 @@
 		padding: 13% 24.5% .5% 25%;
 
 	}
-	.wizard{
+	.main{
 		margin: 2px auto;
 		max-width: 88%;
 	}
@@ -362,25 +255,9 @@
 		left: 42.5%;
 		top: 42.5%;
 	}
-	.steps-indicator {
-		right: 0;
-		bottom: 6.3%;
-		left: 0;
-		height: 30px;
-		padding: 30px;
-		margin: 0 0 74px 0;
-		list-style: none;
-		position: fixed;
-		background: transparent;
-		z-index: 1;
-	}
-	.btn-row{
+	/*.btn-row{
 		bottom: 4%;
-
-	}
-	.steps-indicator {
-		bottom: 6.3%;
-	}
+	}*/
 }
 
 .sg-logo{
