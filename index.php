@@ -17,37 +17,26 @@
 
 		try {
 			//$gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_prueba', 'seisgrad_crmuser', '2015crm62015');
-		     $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
-		    // $gdb = new PDO('mysql:host=localhost;dbname=prueba', 'root', 'secret');
+		    // $gdb = new PDO('mysql:host=siteground291.com;dbname=seisgrad_crm', 'seisgrad_crmuser', '2015crm62015');
+		    $gdb = new PDO('mysql:host=localhost;dbname=prueba', 'root', 'secret');
 
 		    $gdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		    // $sql  = "INSERT INTO contactos_joomla (genero, edad_busca_1, edad_busca_2, quiere_conocer, busco_tipo, primer_nombre, segundo_nombre, apellido_paterno, apellido_materno, email, confirma_email, como_encontraste, fecha_nacimiento, estatura, peso, estado_civil, tiene_hijos, estado, ciudad, tipo_telefono, lada, telefono, tipo_telefono_2, lada_2, telefono_2, email_2, confirma_email_2, usuario_facebook, usuario_twitter, titulo_academico, profesion, sector, fotografia) VALUES (:genero, :edad_busca_1, :edad_busca_2, :quiere_conocer, :busco_tipo, :primer_nombre, :segundo_nombre, :apellido_paterno, :apellido_materno, :email, :confirma_email, :como_encontraste, :fecha_nacimiento, :estatura, :peso, :estado_civil, :tiene_hijos, :estado, :ciudad, :tipo_telefono, :lada, :telefono, :tipo_telefono_2, :lada_2, :telefono_2, :email_2, :confirma_email_2, :usuario_facebook, :usuario_twitter, :titulo_academico, :profesion, :sector, :fotografia)";
-		     $sql  = "INSERT INTO contactos_joomla (genero, quiere_conocer, busco_tipo, primer_nombre, segundo_nombre, apellido_paterno, apellido_materno, email, confirma_email, estado, ciudad, tipo_telefono, lada, telefono, tipo_telefono_2, lada_2, telefono_2) VALUES (:genero, :quiere_conocer, :busco_tipo, :primer_nombre, :segundo_nombre, :apellido_paterno, :apellido_materno, :email, :confirma_email, :estado, :ciudad, :tipo_telefono, :lada, :telefono, :tipo_telefono_2, :lada_2, :telefono_2)";
+		    $sql  = "INSERT INTO contactos_joomla (genero, quiere_conocer, busco_tipo, primer_nombre, segundo_nombre, apellido_paterno, apellido_materno, email, confirma_email, estado, ciudad, tipo_telefono, lada, telefono, tipo_telefono_2, lada_2, telefono_2) VALUES (:genero, :quiere_conocer, :busco_tipo, :primer_nombre, :segundo_nombre, :apellido_paterno, :apellido_materno, :email, :confirma_email, :estado, :ciudad, :tipo_telefono, :lada, :telefono, :tipo_telefono_2, :lada_2, :telefono_2)";
 
 			$q = $gdb->prepare($sql);
 			$q->execute(
 				array(
 
 					':genero'           => convertToLatin1($data[0]->sexo),
-					// ':edad_busca_1'     => convertToLatin1($data[0]->edad1),
-					// ':edad_busca_2'     => convertToLatin1($data[0]->edad2),
 					':quiere_conocer'   => convertToLatin1($data[0]->quisiera_conocer),
 					':busco_tipo'       => convertToLatin1($data[0]->busco_tipo),
-
 					':primer_nombre'    => convertToLatin1($data[1]->firstname),
 					':segundo_nombre'   => convertToLatin1($data[1]->secondname),
 					':apellido_paterno' => convertToLatin1($data[1]->lastname1),
 					':apellido_materno' => convertToLatin1($data[1]->lastname2),
 					':email'            => convertToLatin1($data[1]->email),
 					':confirma_email'   => convertToLatin1($data[1]->confirm),
-					// ':como_encontraste' => convertToLatin1($data[1]->found),
-
-					// ':fecha_nacimiento' => convertToLatin1($data[2]->birthdate),
-					// ':estatura'         => convertToLatin1($data[2]->estatura),
-					// ':peso'             => convertToLatin1($data[2]->peso),
-					// ':estado_civil'     => convertToLatin1($data[2]->civil),
-					// ':tiene_hijos'      => convertToLatin1($data[2]->tiene_hijos),
 					':estado'           => convertToLatin1($data[2]->estado),
 					':ciudad'           => convertToLatin1($data[2]->ciudad),
 					':tipo_telefono'    => convertToLatin1($data[2]->tel1_tipo),
@@ -56,49 +45,11 @@
 					':tipo_telefono_2'  => convertToLatin1($data[2]->tel2_tipo),
 					':lada_2'           => convertToLatin1($data[2]->lada2),
 					':telefono_2'       => convertToLatin1($data[2]->phone2),
-					// ':email_2'          => convertToLatin1($data[2]->email2),
-					// ':confirma_email_2' => convertToLatin1($data[2]->confirm2),
-					// ':usuario_facebook' => convertToLatin1($data[2]->usuario_fb),
-					// ':usuario_twitter'  => convertToLatin1($data[2]->usuario_twitter),
 
-					// ':titulo_academico' => convertToLatin1($data[3]->academics),
-					// ':profesion'        => convertToLatin1($data[3]->profesion),
-					// ':sector'           => convertToLatin1($data[3]->sector),
-					// ':fotografia'       => ''
 				)
 			);
 
 			echo "0";
-
-			// $last_insert = $gdb->lastInsertId();
-
-			// $dir = "uploads/" . $last_insert . "/";
-
-			// if(mkdir($dir, 0755)){
-
-			// 	if(move_uploaded_file( $_FILES["foto"]['tmp_name'], "$dir" . $_FILES['foto']['name'])){
-
-			// 		$sql = "UPDATE contactos_joomla SET fotografia=? WHERE contacto_joomla_id=?";
-
-	  //       		$q2 = $gdb->prepare($sql);
-			// 		$q2->execute(array("$dir" . $_FILES['foto']['name'], $last_insert));
-
-			// 		echo "0";
-
-			// 	} else{
-
-					
-			// 		echo "1";
-
-			// 	}
-
-			// } else{
-
-				
-			// 		echo "1";
-
-			// }
-			
 
 		    $gbd = null;
 
@@ -106,9 +57,6 @@
 
 		    print "¡Error!: " . $e->getMessage() . "<br/>";
 		    // echo "1";
-
-
-
 		    die();
 
 		}
@@ -124,7 +72,6 @@
 	<title>6 GRADOS</title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700,500' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="public/lib/jquery-ui/themes/smoothness/jquery-ui.min.css">
-	<link rel="stylesheet" href="public/lib/angular-wizard/dist/angular-wizard.css">
 	<link rel="stylesheet" href="public/lib/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="public/lib/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -134,22 +81,22 @@
 
 	<div class="loader">
 		
-		<img class="hidden-xs" src="img/loader-128.gif" alt="">
-		<img class="visible-xs" src="img/loader-256.gif" alt="">
+		<img class="" src="img/loader-128.gif" alt="">
+		
 	</div>
 
 	<div class="preloader">
 		<img src="img/grados_back_1.jpg" class="img-responsive" alt="">
-		<img src="img/grados_back_2.jpg" class="img-responsive" alt="">
+	<!-- 	<img src="img/grados_back_2.jpg" class="img-responsive" alt="">
 		<img src="img/grados_back_3.jpg" class="img-responsive" alt="">
-		<img src="img/grados_back_4.jpg" class="img-responsive" alt="">
+		<img src="img/grados_back_4.jpg" class="img-responsive" alt=""> -->
 	
 	</div>
 
 	<header>
 		<div class="nav navbar">
 			<a href="/">
-				<img src="img/6-grados_logo.png" class="sg-logo img-responsive block-center" alt="seis grados">
+				<img src="img/6-grados_logo.png" class="sg-logo  img-responsive block-center" alt="seis grados">
 			</a>
 
 		</div>
@@ -158,24 +105,14 @@
 	<section class="welcome" ng-hide="welcome" >
 		
 			<h1 class="text-center" >BIENVENIDO, <span class="req">6</span>rados desarrolla experiencias personalizadas para cambiar tu vida. </h1>
-		<!-- 	<h3 class="text-center">
-				<p>
-					<span class="req">6</span>rados desarrolla experiencias personalizadas pensadas en ti. Al pagar una <span class="req"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">membresía</a></span> anual, podrás  gozar de sus beneficios. Por favor completa los siguientes <span class="req"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">datos personales</a></span> para poder contactarte.
-				</p>
-			</h3>
-		-->
+		
 			<h2 class="text-center">
 				
 					<span class="req">6</span>rados. Encuentros Inteligentes.
 			</h2> 
 
 			<div class="row ">
-				<!--<div class="col-xs-12 col-md-4">
-				<a href="javascript:$zopim.livechat.window.show()" class="btn btn-danger form-control">
-	    				<p>Chatea &nbsp <i class="fa fa-comments"></i></p>
-	    			</a>	
-	    			<p class='text-center'>Chatea con nosotros.</p>
-	    		</div>-->
+				
 	    		<div class="col-xs-12 col-md-6 margin-bottom-15">
 		    		<a href="tel:5526483265" class="btn btn-danger form-control">
 	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
@@ -189,88 +126,60 @@
 	    			<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
 	    		</div>
 			</div>
-    		<!-- <div class="anchores margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-10 col-md-offset-2">
-    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-	    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-	    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-    		</div> -->
+    		
 
 	</section>
-	<wizard name="wizard" ng-show="welcome" on-finish="pass()" class="wizard"> 
+	<section class="main" ng-show="welcome">
 	
-		<wz-step title="¿A Quien Buscas?" canexit="pass">
-        	<form  novalidate class="form"  id="buscas" name="buscas">
-		        <div class="row">
+        	<form  novalidate class="form"  id="forma" name="forma">
+		        <fieldset class="row">
 
 					<h2>Felicidades, estás a menos de <span class="req">6</span>rados de conocer la persona para ti...</h2>
 					<h3>Por favor completa los siguientes datos personales para poder contactarte.</h3>
-					<h4>Todos los campos marcados con 
-						<span class="req" >*</span> son obligatorios. </h4>
+					<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
 					<div class="row">
 
-							<div class="col-md-4 col-md-offset-3 col-xs-12 ">
-
-								<h3>Soy<span class="req" >*</span></h3>
-
-								<div>
-									<select ng-model="main.sexo" ng-value="main.sexo"  name="sexo" ng-value="sexo" id="sexo" required>
-										<option value="" selected>Género...</option>
-										<option value="Femenino">Mujer</option>
-										<option value="Masculino">Hombre</option>
-									</select>
-									
-								</div>
-							</div>
-
 						<div class="col-md-5 col-xs-12 ">
+
+							<h3>Soy<span class="req" >*</span></h3>
+
+							<div>
+								<select ng-model="main.sexo" ng-value="main.sexo"  name="sexo" ng-value="sexo" id="sexo" required>
+									<option value="" selected>Género...</option>
+									<option value="Femenino">Mujer</option>
+									<option value="Masculino">Hombre</option>
+								</select>
+								
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-12 ">
 							
 							<h3>Quisiera conocer <span class="req">*</span></h3>
 							<div>
-								<p>
-									<label for="radio60"  class="col-md-3 col-xs-5"><input  type="radio" name="quisiera_conocer" id="radio60"  ng-model="quisiera_conocer"  value="Hombre" required/>Hombre</label>
-									<label for="radio61" class="col-md-3 col-xs-5"><input type="radio" name="quisiera_conocer" id="radio61"  ng-model="quisiera_conocer"  value="Mujer" required/>Mujer</label> 
+								<label for="radio60"  class="col-md-5 col-xs-5"><input  type="radio" name="quisiera_conocer" id="radio60"  ng-model="quisiera_conocer"  value="Hombre" required/>Hombre</label>
+								<label for="radio61" class="col-md-5 col-xs-5"><input type="radio" name="quisiera_conocer" id="radio61"  ng-model="quisiera_conocer"  value="Mujer" required/>Mujer</label> 
 									
-								</p>
 							</div> 
-							<div class="row" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'Masculino'">
-								<div class="col-sm-12  ">
-								
-									<h3 id="etiqueta_gay_2">Busco</h3>
-									<div id="campo_gay_2 ">
-										<p>
-											
-											<label for="busco_gay_activo"><input class="gay " type="radio"  name="busco_tipo" id="busco_gay_activo" ng-model="busco_tipo"   value="Activo" />Activo</label>
-											<label  for="busco_gay_pasivo"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_pasivo" ng-model="busco_tipo" value="Pasivo"  />Pasivo</label>
-											<label  for="busco_gay_versatil"><input class="gay " type="radio"  name="busco_tipo"  id="busco_gay_versatil" ng-model="busco_tipo"  value="Versátil"  />Versátil</label> 
-										</p>
-									</div>
-								</div>
+						</div>
+						<div class="col-md-4" ng-show="quisiera_conocer === 'Hombre' && main.sexo == 'Masculino'">
+						
+							<div id="campo_gay_2 ">
+							<h3 id="etiqueta_gay_2">Busco</h3>
+								<p>
+									
+									<label class="col-md-4 col-xs-4" for="busco_gay_activo"><input class="gay" type="radio"  name="busco_tipo" id="busco_gay_activo" ng-model="busco_tipo"   value="Activo" />Activo</label>
+									<label class="col-md-4 col-xs-4"  for="busco_gay_pasivo"><input class="gay" type="radio"  name="busco_tipo"  id="busco_gay_pasivo" ng-model="busco_tipo" value="Pasivo"  />Pasivo</label>
+									<label class="col-md-4 col-xs-4" for="busco_gay_versatil"><input class="gay" type="radio"  name="busco_tipo"  id="busco_gay_versatil" ng-model="busco_tipo"  value="Versátil"  />Versátil</label> 
+								</p>
 							</div>
 						</div>
+						
 					</div>
-				
-					
-			       	<div class="row btn-row">
-			    		<div class=" col-md-6 col-md-offset-3 col-sm-12">
-			    			<input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!buscas.$valid" value="Siguiente" />
-			    			
-			    		
-			    		</div>
-			    		<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
-			    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-				    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-				    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-			    		</div>
-			    	</div>
-		        
-				</div>
 
-    		</form>
-	        	
-	    </wz-step>
-	    <wz-step title="Cuenta" canexit="pass">
-	    	<form novalidate class="form"  id="cuenta" name="cuenta">
-				<div class="row">
+				</fieldset>
+
+				<fieldset class="row">
 					
 					<h2>Datos para tu Cuenta</h2>
 					<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
@@ -292,6 +201,7 @@
 						</div>
 
 					</div>
+
 					<div class="row">
 						
 						<h3 class="col-md-12 ">Apellido(s) <span class="req" >*</span></h3>
@@ -307,6 +217,7 @@
 							
 				
 					</div>
+
 					<div class="row">
 						<div class="col-md-6 col-xs-12 ">
 						<h3>Correo Electrónico de Contacto<span class="req" >*</span></h3>
@@ -321,36 +232,9 @@
 						</div>
 					</div>
 
-				</div>
-		    
-		    	<div class="row btn-row">
-							<div class="col-xs-12 col-md-12">
-								
-								<div class="col-md-4 col-xs-4 ">
-									
-									<input  class="btn form-control btn-danger" wz-previous value="Anterior" />
-								</div>
-								<div class="col-md-4 col-xs-4 ">
-									
-						      	  <input class="btn form-control btn-warning" value="Reiniciar" ng-click="reset()" />
-								</div>
-								<div class="col-md-4 col-xs-4 ">
-									
-						      	  <input class="btn form-control btn-danger" type="submit" wz-next  ng-disabled="!cuenta.$valid" value="Siguiente" />
-								</div>
-							</div>
-							<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
-				    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-					    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-					    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-			    			</div>
-
-				</div>
-	    	</form>
-	    </wz-step>
-	    <wz-step title="Informacion Personal" canexit="pass">
-        	<form novalidate class="form"   id="pers" name="pers">
-				<div class="row">
+				</fieldset>
+        	
+				<fieldset class="row">
 						
 					<h2>Datos Personales</h2>
 					<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
@@ -358,7 +242,6 @@
 						
 			
 						
-					<fieldset>
 						<div class="row">
 
 							<div class="col-md-6 ">
@@ -419,8 +302,8 @@
 							<div class="col-md-6  col-xs-12">
 								<h3 >Teléfono de Contacto<span class="req" >*</span></h3>
 
-								<div>
-									<select ng-model="tel1_tipo" ng-value="tel1_tipo" class="tel1 col-md-2 col-md-offset-1 col-xs-2 " name="tel1_tipo" id="tel1_tipo" required>
+								
+									<select ng-model="tel1_tipo" ng-value="tel1_tipo" class="tel1 col-md-2 col-md-offset-1 col-xs-4 " name="tel1_tipo" id="tel1_tipo" required>
 										<option value="" selected>tipo...</option>
 										<option value="casa">casa</option>
 										<option value="trabajo">trabajo</option>
@@ -428,16 +311,19 @@
 										<option value="nextel">nextel</option>
 									</select>
 
-									<input ng-pattern="/^[0-9]*$/" id="lada"  placeholder="LADA" class="input tel1 col-md-2 col-md-offset-1 col-xs-3 " ng-model="lada" ng-value="lada" name="lada" type="tel" size="2" maxlength="3" minlength="2" required>
+									<input ng-pattern="/^[0-9]*$/" id="lada"  placeholder="LADA" class="input tel1 col-md-2 col-md-offset-1 col-xs-offset-1 col-xs-6 " ng-model="lada" ng-value="lada" name="lada" type="tel" size="2" maxlength="3" minlength="2" required>
+								
+								
 									
-									<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Numero valido" class="input tel1 col-md-3 col-md-offset-1 col-xs-6" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
-								</div>
+									
+									<input ng-pattern="/^[0-9]*$/" id="phone" placeholder="Numero valido" class="input tel1 col-md-3 col-md-offset-1 col-xs-offset-1 col-xs-11" ng-model="phone" ng-value="phone" name="phone" type="tel" size="9" maxlength="8" minlength="7" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" required>
+								
 							</div>
 								<div class="col-md-6 col-xs-12">
 								<h3>Teléfono Adicional de Contacto</h3>
 
 									<div>
-										<select ng-model="tel2_tipo" ng-value="tel2_tipo" class="tel2 col-md-2 col-md-offset-1 col-xs-2" name="tel2_tipo" id="tel2_tipo">
+										<select ng-model="tel2_tipo" ng-value="tel2_tipo" class="tel2 col-md-2 col-md-offset-1 col-xs-4" name="tel2_tipo" id="tel2_tipo">
 											<option value="" selected>tipo...</option>
 											<option value="casa">casa</option>
 											<option value="trabajo">trabajo</option>
@@ -445,9 +331,9 @@
 											<option value="nextel">nextel</option>
 										</select>
 									
-										<input ng-pattern="/^[0-9]*$/" ng-model="lada2" ng-value="lada2" id="lada2" class="input tel2 col-md-2 col-md-offset-1 col-xs-3" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2">
+										<input ng-pattern="/^[0-9]*$/" ng-model="lada2" ng-value="lada2" id="lada2" class="input tel2 col-md-2 col-md-offset-1 col-xs-6" name="lada2" placeholder="LADA" value="" type="tel" ng-keyup="" size="2" maxlength="3"  minlength="2">
 
-										<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2 col-md-3 col-md-offset-1 col-xs-6" placeholder="Teléfono (opcional)" value="" name="phone2" type="tel" size="9" maxlength="8" minlength="7" autocomplete="off"    ui-validate="'!$value || $value != phone'" ui-validate="'phone'" >
+										<input ng-pattern="/^[0-9]*$/" ng-model="phone2" ng-value="phone2" id="phone2" class="input tel2 col-md-3 col-md-offset-1 col-xs-offset-1 col-xs-11" placeholder="Teléfono (opcional)" value="" name="phone2" type="tel" size="9" maxlength="8" minlength="7" autocomplete="off"    ui-validate="'!$value || $value != phone'" ui-validate="'phone'" >
 										
 									</div>
 								</div>
@@ -457,41 +343,38 @@
 							</div>
 						</div>
 
-						<div class="row btn-row">
-							
-							<div class="col-xs-12 col-md-12">
-								<div class="col-sm-4 col-xs-4 ">
-											
-									<input class="btn form-control btn-danger" wz-previous value="Anterior" />
-								</div>
-						       	<div class="col-sm-4 col-xs-4 ">
-									
-						      	  <input class="btn form-control btn-warning" value="Reiniciar" ng-click="reset()" />
-								</div>
-								<div class="col-sm-4 col-xs-4 ">
-										
-							        <input type="submit" class="btn form-control btn-danger" id="next" wz-next ng-disabled="!pers.$valid"  value="Registrarme" />
-									
-						       	</div>
-							</div>
-							<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
-				    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
-					    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
-					    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
-			    			</div>
-						</div>
-					</fieldset>	
 					</div>
-				</div>
+				</fieldset>
+
+				<fieldset class="row btn-row">
+					
+					<div class="col-xs-12 col-md-12">
+						
+				       	<div class="col-sm-6 col-xs-6 ">
+							
+				      	  <input class="btn form-control btn-danger" value="Reiniciar" ng-click="reset()" />
+						</div>
+						<div class="col-sm-6 col-xs-6 ">
+								
+					        <input type="submit" class="btn form-control btn-danger" id="next" ng-click="end()" wz-next ng-disabled="!forma.$valid"  value="Registrarme" />
+							
+				       	</div>
+					</div>
+					<div class="margin-bottom-15 margin-top-15 col-xs-10-offset-2 col-md-9 col-md-offset-3">
+		    			<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/aviso-de-privacidad/">Aviso de Privacidad</a></span>
+			    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/terminos-y-condiciones/">Términos y Condiciones</a></span>
+			    		<span class="req col-md-3 col-xs-4 text-center"><a href="http://www.seisgrados.com.mx/politicas-de-venta/">Políticas de Venta</a></span>
+	    			</div>
+				</fieldset>
     		</form>
 	        	
-	    </wz-step>
-	    
-	  
-<!--
-				
--->
-	</wizard>
+	    <!-- </wz-step> -->
+
+<!-- 	</wizard> -->
+	</section>
+	    	
+		    
+	    	
 
 	<footer ng-hide="!footer">
 		
@@ -506,14 +389,11 @@
 
 	<script src="public/lib/jquery/dist/jquery.min.js" ></script>
 	<script src="js/script.js" ></script>
-	<script src="public/lib/jquery-ui/jquery-ui.min.js"></script>
 	<script src="public/lib/angular/angular.min.js" ></script>
 	<script src="public/lib/angular-ui-utils/ui-utils.min.js" ></script>
 	<script src="public/lib/angular-sanitize/angular-sanitize.min.js" ></script>
 	<script src="js/app.js" ></script>
 	<script src="js/filtros.js" ></script>
-	<script src="public/lib/angular-wizard/dist/angular-wizard.js" ></script>
-	<script src="public/lib/lodash/dist/lodash.compat.min.js" ></script>
 	<script src="public/lib/store.js/store.min.js" ></script>
 
 	<!-- Facebook Conversion Code for Conversiones Abril 2015 -->
