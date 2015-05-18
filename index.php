@@ -113,17 +113,28 @@
 
 			<div class="row ">
 				
-	    		<div class="col-xs-12 col-md-6 margin-bottom-15">
-		    		<a href="tel:5526483265" class="btn btn-danger form-control">
-	    				<p>Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i></p> 
-	    			</a>
-	    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
+	    		<div class="col-xs-12 col-md-6 margin-bottom-15 text-center">
+		    		<div class="row">
+		    			<a href="tel:5526483265" class="btn btn-danger btn-lg" style="padding: .8em 1em 1em 1em;">
+		    				Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i>
+		    			</a>
+		    		</div>
+
+		    		<div class="row">
+	    				<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
+		    		</div>
+	    			
 				</div>
-				<div class="col-xs-12 col-md-6">
-	    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class=" btn btn-danger form-control">
-	    				<p>Regístrate &nbsp <i class="fa fa-file-text-o"></i></p>
-	    			</a>
-	    			<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
+
+				<div class="col-xs-12 col-md-6 text-center">
+					<div class="row">
+		    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class=" btn btn-danger btn-lg" style="padding: .8em 1em 1em 1em;">
+		    				Regístrate &nbsp <i class="fa fa-file-text-o"></i>
+		    			</a>
+					</div>
+	    			<div class="row">
+	    				<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
+	    			</div>
 	    		</div>
 			</div>
     		
@@ -347,13 +358,18 @@
 					
 					<div class="col-xs-12 col-md-12">
 						
-				       	<div class="col-sm-6 col-xs-6 ">
-							
-				      	  <input class="btn form-control btn-danger" value="Reiniciar" ng-click="reset()" />
-						</div>
-						<div class="col-sm-6 col-xs-6 ">
+				       	<div class="col-sm-6 col-xs-6 text-center">
+				       		<div class="col-sm-4">
+							</div>
 								
-					        <input type="submit" class="btn form-control btn-danger" id="next" ng-click="pass()" wz-next ng-disabled="!forma.$valid"  value="Registrarme" />
+							
+				      	  	<input class="btn btn-danger col-sm-4 col-sm-offset-4" value="Reiniciar" ng-click="reset()" />
+						</div>
+						<div class="col-sm-6 col-xs-6 text-center">
+							<div class="col-sm-4">
+							</div>
+								
+					        <input type="submit" class="btn btn-danger col-sm-4 " id="next" ng-click="pass()"  wz-next ng-disabled="!forma.$valid"  value="Registrarme" />
 							
 				       	</div>
 					</div>

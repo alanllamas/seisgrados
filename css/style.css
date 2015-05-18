@@ -79,7 +79,6 @@
 	.btn{
 	    color: #C9302C;
 	    font-weight: bolder;
-	    padding: 2px;
 		margin: 20px 3px;
 	}
 	.btn-danger {
@@ -255,9 +254,7 @@
 		left: 42.5%;
 		top: 42.5%;
 	}
-	/*.btn-row{
-		bottom: 4%;
-	}*/
+
 }
 
 .sg-logo{
