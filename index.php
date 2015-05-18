@@ -31,20 +31,20 @@
 					':genero'           => convertToLatin1($data[0]->sexo),
 					':quiere_conocer'   => convertToLatin1($data[0]->quisiera_conocer),
 					':busco_tipo'       => convertToLatin1($data[0]->busco_tipo),
-					':primer_nombre'    => convertToLatin1($data[1]->firstname),
-					':segundo_nombre'   => convertToLatin1($data[1]->secondname),
-					':apellido_paterno' => convertToLatin1($data[1]->lastname1),
-					':apellido_materno' => convertToLatin1($data[1]->lastname2),
-					':email'            => convertToLatin1($data[1]->email),
-					':confirma_email'   => convertToLatin1($data[1]->confirm),
-					':estado'           => convertToLatin1($data[2]->estado),
-					':ciudad'           => convertToLatin1($data[2]->ciudad),
-					':tipo_telefono'    => convertToLatin1($data[2]->tel1_tipo),
-					':lada'             => convertToLatin1($data[2]->lada),
-					':telefono'         => convertToLatin1($data[2]->phone),
-					':tipo_telefono_2'  => convertToLatin1($data[2]->tel2_tipo),
-					':lada_2'           => convertToLatin1($data[2]->lada2),
-					':telefono_2'       => convertToLatin1($data[2]->phone2),
+					':primer_nombre'    => convertToLatin1($data[0]->firstname),
+					':segundo_nombre'   => convertToLatin1($data[0]->secondname),
+					':apellido_paterno' => convertToLatin1($data[0]->lastname1),
+					':apellido_materno' => convertToLatin1($data[0]->lastname2),
+					':email'            => convertToLatin1($data[0]->email),
+					':confirma_email'   => convertToLatin1($data[0]->confirm),
+					':estado'           => convertToLatin1($data[0]->estado),
+					':ciudad'           => convertToLatin1($data[0]->ciudad),
+					':tipo_telefono'    => convertToLatin1($data[0]->tel1_tipo),
+					':lada'             => convertToLatin1($data[0]->lada),
+					':telefono'         => convertToLatin1($data[0]->phone),
+					':tipo_telefono_2'  => convertToLatin1($data[0]->tel2_tipo),
+					':lada_2'           => convertToLatin1($data[0]->lada2),
+					':telefono_2'       => convertToLatin1($data[0]->phone2),
 
 				)
 			);
@@ -183,21 +183,17 @@
 					
 					<h2>Datos para tu Cuenta</h2>
 					<h4>Todos los campos marcados con <span class="req" >*</span> son obligatorios. </h4>
+
 					<div class="row">
-						
 						
 						<h3 class="col-md-12 " >Nombres<span class="req" >*</span></h3>
 							
-					
 						<div class="col-md-6 col-xs-12 ">
-							
-							<input class="input form-control placeholder" required name="firstname" type="text" size="20" placeholder="Nombre (requerido)" id="firstname" ng-model="firstname" ng-value="firstname" ng-value="firstname" >
-							
+							<input class="input form-control placeholder" required name="firstname" type="text" size="20" placeholder="Nombre (requerido)" id="firstname" ng-model="firstname" ng-value="firstname" ng-value="firstname" >							
 						</div> 
-						
+
 						<div class="col-md-6 col-xs-12">
-							
-						<input class="input form-control placeholder" placeholder="Otros Nombres (opcional)"  name="secondname" type="text" size="20" id="secondname" ng-model="secondname" ng-value="secondname" >
+							<input class="input form-control placeholder" placeholder="Otros Nombres (opcional)"  name="secondname" type="text" size="20" id="secondname" ng-model="secondname" ng-value="secondname" >
 						</div>
 
 					</div>
@@ -206,27 +202,28 @@
 						
 						<h3 class="col-md-12 ">Apellido(s) <span class="req" >*</span></h3>
 
-							<div class="col-md-6 col-xs-12 ">
-								
+						<div class="col-md-6 col-xs-12 ">			
 							<input class="input form-control placeholder" placeholder="Paterno (requerido)" required name="lastname1"  type="text" size="20" id="lastname1" ng-model="lastname1" ng-value="lastname1" >
-							</div>
-							<div class="col-md-6 col-xs-12">
-								
+						</div>
+
+						<div class="col-md-6 col-xs-12">			
 							<input class="input form-control placeholder" placeholder="Materno (opcional)"name="lastname2"  type="text" size="20" id="lastname2" ng-model="lastname2" ng-value="lastname2" >
-							</div>
+						</div>
 							
 				
 					</div>
 
 					<div class="row">
+
 						<div class="col-md-6 col-xs-12 ">
-						<h3>Correo Electrónico de Contacto<span class="req" >*</span></h3>
+							<h3>Correo Electrónico de Contacto<span class="req" >*</span></h3>
 							
 							<input class="input form-control placeholder" required name="email" type="email" placeholder="Correo@valido.com (requerido) " ng-pattern="/\S+@\S+\.\S+/" size="30" id="email"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="email" ng-value="email" >
 							
 						</div>
+
 						<div class="col-md-6 col-xs-12 ">
-						<h3>Confirma tu Correo Electrónico de Contacto<span class="req" >*</span></h3>
+							<h3>Confirma tu Correo Electrónico de Contacto<span class="req" >*</span></h3>
 							
 							<input class="input form-control placeholder" required name="confirm" type="email" placeholder="Correo@existente.com (requerido)" ng-pattern="/\S+@\S+\.\S+/" size="30" id="confirm"  onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" ng-model="confirmEmail" ng-value="confirmEmail" ui-validate="'$value === email'" ui-validate="'email'" >
 						</div>
@@ -356,7 +353,7 @@
 						</div>
 						<div class="col-sm-6 col-xs-6 ">
 								
-					        <input type="submit" class="btn form-control btn-danger" id="next" ng-click="end()" wz-next ng-disabled="!forma.$valid"  value="Registrarme" />
+					        <input type="submit" class="btn form-control btn-danger" id="next" ng-click="pass()" wz-next ng-disabled="!forma.$valid"  value="Registrarme" />
 							
 				       	</div>
 					</div>
