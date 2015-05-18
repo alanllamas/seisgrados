@@ -111,19 +111,6 @@ var app = angular.module('myApp', ['ui.validate','ngSanitize']);
 				// console.log(info)
 				// console.log(get)
 			
-		
-			return	true;
-		};
-		
-		$scope.reset = function () {
-			if (confirm('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')) {
-				store.clear();
-				window.location.reload(true)
-			};
-		}
-		$scope.end = function () {
-		
-
 				var formData = new FormData();
 
 				Info = JSON.stringify(info);
@@ -151,7 +138,16 @@ var app = angular.module('myApp', ['ui.validate','ngSanitize']);
 						$('.main').append("<h1 class='text-center' >Ha ocurrido algo inesperado reinicia la pagina y vuelve a enviar tu forma.</h1>");
 					};
 		        });
-		 };
+		
+			return	true;
+		};
+		
+		$scope.reset = function () {
+			if (confirm('Estas seguro de querer reiniciar el formulario, se perderan todos los datos que has ingresado.')) {
+				store.clear();
+				window.location.reload(true)
+			};
+		};
 
 	}]);
 				
