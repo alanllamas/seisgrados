@@ -111,6 +111,47 @@
 					<span class="req">6</span>rados. Encuentros Inteligentes.
 			</h2> 
 
+
+
+
+	<div class="row ">
+				<div class="col-xs-12 col-md-4">
+					<div class="row">
+			    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger btn-lg" style="padding: .8em 1em 1em 1em;">
+		    				Chatea &nbsp <i class="fa fa-comments"></i>
+		    			</a>
+					</div>
+					<div class="row">
+	    				<p class='text-center'>Chatea con nosotros.</p>
+	    			</div>
+    			</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="row">
+		    			<a ng-model="welcome" ng-click="welcome = true; footer = true;" class=" btn btn-danger btn-lg" style="padding: .8em 1em 1em 1em;">
+		    				Regístrate &nbsp <i class="fa fa-file-text-o"></i>
+		    			</a>
+	    			</div>
+					<div class="row">
+	    				<p class='text-center'>Te contactaremos de 24 a 48 horas hábiles</p>
+	    			</div>
+	    		</div>
+	    		<div class="col-xs-12 col-md-4 margin-bottom-15">
+	    			<div class="row">
+			    		<a href="tel:5526483265" class="btn btn-danger btn-lg" style="padding: .8em 1em 1em 1em;">
+		    				Llámanos &nbsp <i style="font-size:1.3em;" class="fa fa-mobile"></i>
+		    			</a>
+					</div>
+					<div class="row">
+		    			<p class='text-center'>Horario de atención: de 10 a 19 hrs.</p>
+					</div>
+				</div>
+			</div>
+
+
+
+
+<!-- 
+
 			<div class="row ">
 				
 	    		<div class="col-xs-12 col-md-6 margin-bottom-15 text-center">
@@ -137,7 +178,7 @@
 	    			</div>
 	    		</div>
 			</div>
-    		
+    		 -->
 
 	</section>
 	<section class="main" ng-show="welcome">
@@ -380,10 +421,7 @@
 	    			</div>
 				</fieldset>
     		</form>
-	        	
-	    <!-- </wz-step> -->
 
-<!-- 	</wizard> -->
 	</section>
 	    	
 		    
@@ -449,7 +487,7 @@
 		ga('create', 'UA-34706835-2', 'auto');
 		ga('send', 'pageview');
 	</script>
-<!--		
+	
 <script type="text/javascript">
 window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
 d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
@@ -465,7 +503,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
   });
  
 </script>
--->
+
 <script>
 var versaTag = {};
 versaTag.id = "2970";
