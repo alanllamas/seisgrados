@@ -117,7 +117,7 @@
 	<div class="row ">
 				<div class="col-xs-12 col-md-4">
 					<div class="row">
-			    		<a href="javascript:void($zopim.livechat.say(''))" class="btn btn-danger btn-lg" style="padding: .8em 1em 1em 1em;">
+			    		<a href="javascript:$zopim.livechat.window.show()" class="btn btn-danger btn-lg" style="padding: .8em 1em 1em 1em;">
 		    				Chatea &nbsp <i class="fa fa-comments"></i>
 		    			</a>
 					</div>
